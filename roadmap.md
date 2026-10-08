@@ -1,0 +1,24 @@
+# Roadmap
+
+- [x] Expand shared Yume page content and reusable sections
+- [x] Build Stay and Weddings & Events pages
+- [x] Build Dine, Pool, and Turf pages
+- [x] Build filterable Gallery with lightbox
+- [x] Build validated Contact enquiry form and directions
+- [x] Verify metadata, mobile layout, navigation, and central interactions
+- [x] Update home story copy to user's location wording (Thane / Sonivali / Badlapur W station), then re-verify page
+- [x] Replace home story picture with a looping video, slightly taller than the text column, ratio preserved
+- [x] Split wedding band headline: "Your dream wedding," / "by the river" on a second line in a complementary second font
+- [x] Home: review slider with more reviews, three dots and left/right arrows
+- [x] Home: smaller, rewritten wedding band headline
+- [x] Home: second row of six photos in the Instagram strip
+- [x] Home: wedding headline set in a heavier weight
+- [x] Dine/Pool/Turf: photo row shows 4 pictures, all at a smaller equal height
+- [x] Home: reduce the story video height — it reads too long
+- [x] Home wedding band: "by the river" in white, price line moved below the Check my Date button, spacing checked
+- [x] Pool page: add a pool video
+- [x] Contact page: put the enquiry form in a highlighted box with shadow/backdrop
+- [x] Pool page: hero back to the still photo, clip moved into its own section
+- [x] Home wedding band: price line aligned to the button width, original font size restored
+- [x] Footer: move the Instagram / call / email icon buttons under the tagline
+- [x] Contact hero: add Instagram / call / email icon buttons under the intro line

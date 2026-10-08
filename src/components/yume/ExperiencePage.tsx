@@ -1,0 +1,41 @@
+import { ArrowRight } from "lucide-react";
+import { EnquiryBand, Facts, ImageMosaic, InteriorHero, PageShell, SectionHeading, VideoBand } from "@/components/yume/InteriorPage";
+import { GALLERY, site, type EXPERIENCE_KEY, type ExperienceContent } from "@/data/content";
+
+export function ExperiencePage({ content, experience }: { content: ExperienceContent; experience: EXPERIENCE_KEY }) {
+  const images = GALLERY.filter((item) => item.category.toLowerCase() === experience).slice(0, 4);
+
+  return (
+    <PageShell>
+      <InteriorHero eyebrow={content.eyebrow} title={content.title} intro={content.intro} image={content.image} imageAlt={`${content.eyebrow} at Yume Resort`} />
+      <section className="px-6 py-20 md:px-10 md:py-28">
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:gap-24">
+          <div>
+            <SectionHeading eyebrow="The experience" title={content.story} />
+            <div className="mt-10 flex flex-wrap gap-3">
+              <a href={`tel:${site.phones[0].href}`} className="rounded-md border border-ink/20 px-6 py-3 text-xs uppercase tracking-[0.2em] transition-colors hover:border-ink">Call to enquire</a>
+              <a href={`https://wa.me/917028043300?text=${encodeURIComponent(content.message)}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-ink px-6 py-3 text-xs uppercase tracking-[0.2em] text-cream transition-colors hover:bg-sage">{content.cta}<ArrowRight className="h-4 w-4" /></a>
+            </div>
+          </div>
+          <Facts items={content.facts} />
+        </div>
+      </section>
+      {content.video ? (
+        <VideoBand
+          video={content.video}
+          poster={content.image}
+          alt={`${content.eyebrow} film at Yume Resort`}
+          title={content.video.title}
+          caption={content.video.caption}
+        />
+      ) : null}
+      <section className="px-6 pb-20 md:px-10 md:pb-28">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading eyebrow="Around Yume" title="A glimpse of your day." />
+          <div className="mt-10"><ImageMosaic images={images} /></div>
+        </div>
+      </section>
+      <EnquiryBand title="Ready to make a plan?" body="Share your preferred date, group size and any questions. Our team will confirm availability and the latest rates." message={content.message} label={content.cta} />
+    </PageShell>
+  );
+}
