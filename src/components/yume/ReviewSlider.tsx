@@ -36,15 +36,12 @@ export function ReviewSlider() {
     if (page > pages.length - 1) setPage(0);
   }, [page, pages.length]);
 
-  const go = (dir: number) =>
-    setPage((p) => (p + dir + pages.length) % pages.length);
+  const go = (dir: number) => setPage((p) => (p + dir + pages.length) % pages.length);
 
   return (
     <section className="px-6 py-24 md:px-12">
       <div className="mx-auto max-w-7xl" data-reveal>
-        <p className="text-[11px] uppercase tracking-[0.3em] text-ink/50">
-          Guest Stories
-        </p>
+        <p className="text-[11px] uppercase tracking-[0.3em] text-ink/50">Guest Stories</p>
         <h2 className="mt-4 font-yume-serif text-3xl tracking-tight md:text-5xl">
           What guests say.
         </h2>

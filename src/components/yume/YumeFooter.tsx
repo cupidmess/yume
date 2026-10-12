@@ -10,9 +10,7 @@ export function YumeFooter() {
           <p className="font-yume-serif text-3xl tracking-tight">
             yume<span className="text-peach">.</span>
           </p>
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/60">
-            {site.tagline}
-          </p>
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/60">{site.tagline}</p>
           <ul className="mt-6 flex items-center gap-3">
             <li>
               <a
@@ -47,16 +45,12 @@ export function YumeFooter() {
         </div>
 
         <div>
-          <p className="text-[11px] uppercase tracking-[0.3em] text-cream/50">
-            Visit
-          </p>
+          <p className="text-[11px] uppercase tracking-[0.3em] text-cream/50">Visit</p>
           <p className="mt-4 text-sm leading-relaxed">{site.address}</p>
         </div>
 
         <div>
-          <p className="text-[11px] uppercase tracking-[0.3em] text-cream/50">
-            Call & Write
-          </p>
+          <p className="text-[11px] uppercase tracking-[0.3em] text-cream/50">Call & Write</p>
           <ul className="mt-4 space-y-2 text-sm">
             {site.phones.map((phone) => (
               <li key={phone.href}>
@@ -74,14 +68,10 @@ export function YumeFooter() {
         </div>
 
         <div>
-          <p className="text-[11px] uppercase tracking-[0.3em] text-cream/50">
-            Quick Links
-          </p>
+          <p className="text-[11px] uppercase tracking-[0.3em] text-cream/50">Quick Links</p>
           <ul className="mt-4 space-y-2 text-sm">
             {NAV.flatMap((item) =>
-              "children" in item
-                ? item.children
-                : [{ label: item.label, to: item.to }],
+              "children" in item ? item.children : [{ label: item.label, to: item.to }],
             ).map((link) => (
               <li key={link.to}>
                 <Link to={link.to} className="hover:text-peach">
@@ -95,7 +85,9 @@ export function YumeFooter() {
 
       <div className="border-t border-cream/10">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 px-6 py-6 text-xs text-cream/50 md:flex-row md:items-center md:justify-between md:px-10">
-          <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} {site.name}. All rights reserved.
+          </p>
           <p>
             <a
               href={site.instagram.url}

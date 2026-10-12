@@ -4,16 +4,169 @@ import { ContactForm } from "@/components/yume/ContactForm";
 import { PageShell, SectionHeading } from "@/components/yume/InteriorPage";
 import { CONTACT, IMAGES, WA_MESSAGES, site, waLink } from "@/data/content";
 
-const description = "Contact Yume Resort in Sonivali, Badlapur for stays, weddings, dining, pool and turf enquiries.";
+const description =
+  "Contact Yume Resort in Sonivali, Badlapur for stays, weddings, dining, pool and turf enquiries.";
 export const Route = createFileRoute("/_yume/contact")({
-  head: () => ({ meta: [{ title: "Contact — Yume Resort" }, { name: "description", content: description }, { property: "og:title", content: "Contact — Yume Resort" }, { property: "og:description", content: description }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }),
+  head: () => ({
+    meta: [
+      { title: "Contact — Yume Resort" },
+      { name: "description", content: description },
+      { property: "og:title", content: "Contact — Yume Resort" },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: ContactPage,
 });
 
 function ContactPage() {
-  return <PageShell>
-    <section className="grid min-h-[72svh] bg-ink pt-24 text-cream lg:grid-cols-2"><div className="flex flex-col justify-end px-6 py-16 md:px-10 lg:px-16 lg:py-20"><p className="text-[11px] uppercase tracking-[0.3em] text-cream/55">{CONTACT.hero.eyebrow}</p><h1 className="mt-4 max-w-xl font-yume-serif text-4xl leading-[1.05] tracking-tight md:text-6xl">{CONTACT.hero.title}</h1><p className="mt-6 max-w-lg leading-relaxed text-cream/65">{CONTACT.hero.intro}</p><ul className="mt-8 flex items-center gap-3"><li><a href={site.instagram.url} target="_blank" rel="noreferrer" aria-label="Yume Resort on Instagram" className="grid h-9 w-9 place-items-center rounded-[5px] border border-cream/20 text-cream/70 transition-colors hover:border-peach hover:text-peach"><Instagram className="h-4 w-4" aria-hidden="true" /></a></li><li><a href={`tel:${site.phones[0].href}`} aria-label={`Call Yume Resort on ${site.phones[0].display}`} className="grid h-9 w-9 place-items-center rounded-[5px] border border-cream/20 text-cream/70 transition-colors hover:border-peach hover:text-peach"><Phone className="h-4 w-4" aria-hidden="true" /></a></li><li><a href={`mailto:${site.email}`} aria-label="Email Yume Resort" className="grid h-9 w-9 place-items-center rounded-[5px] border border-cream/20 text-cream/70 transition-colors hover:border-peach hover:text-peach"><Mail className="h-4 w-4" aria-hidden="true" /></a></li></ul></div><img src={IMAGES.story} alt="A peaceful corner of Yume Resort" className="h-full min-h-[420px] w-full object-cover" /></section>
-    <section className="px-6 py-20 md:px-10 md:py-28"><div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24"><div><SectionHeading eyebrow="Reach us" title="Call, write or come by." /><div className="mt-10 space-y-7 text-sm"><div className="flex gap-4"><MapPin className="mt-0.5 h-5 w-5 text-sage" /><p className="max-w-sm leading-relaxed">{site.address}<span className="mt-2 block text-ink/50">{CONTACT.location.coordinates} · {CONTACT.location.landmark}</span></p></div><div className="flex gap-4"><Phone className="mt-0.5 h-5 w-5 text-sage" /><div>{site.phones.map((phone) => <a key={phone.href} href={`tel:${phone.href}`} className="mb-2 block hover:text-sage">{phone.display}</a>)}</div></div><div className="flex gap-4"><MessageCircle className="mt-0.5 h-5 w-5 text-sage" /><a href={waLink(WA_MESSAGES.general)} target="_blank" rel="noreferrer" className="underline decoration-ink/20 underline-offset-4">Chat on WhatsApp</a></div>{!site.email.startsWith("[ADD") ? <a href={`mailto:${site.email}`}>{site.email}</a> : <p className="text-ink/45">Email: {site.email}</p>}</div></div><div><SectionHeading eyebrow="Enquiry" title="Tell us what you’re planning." /><div className="mt-10 rounded-md border border-ink/10 bg-background p-6 shadow-[0_18px_50px_-12px_rgba(20,32,26,0.22),0_2px_6px_rgba(20,32,26,0.08)] md:p-10"><ContactForm /></div></div></div></section>
-    <section className="bg-sage px-6 py-20 text-cream md:px-10 md:py-24"><div className="mx-auto max-w-7xl"><p className="text-[11px] uppercase tracking-[0.3em] text-cream/60">Getting here</p><h2 className="mt-4 font-yume-serif text-3xl tracking-tight md:text-5xl">The city fades. Yume begins.</h2><div className="mt-12 grid gap-px bg-cream/20 md:grid-cols-3">{CONTACT.directions.map((direction) => <article key={direction.from} className="bg-sage py-7 md:px-8 first:md:pl-0"><h3 className="font-yume-serif text-2xl">{direction.from}</h3><p className="mt-4 text-sm leading-relaxed text-cream/70">{direction.detail}</p></article>)}</div><div className="mt-12 border-t border-cream/20 pt-8"><p className="text-[11px] uppercase tracking-[0.3em] text-cream/60">Location coordinates</p><p className="mt-3 font-yume-serif text-2xl tracking-tight md:text-4xl">{CONTACT.location.coordinates}</p><p className="mt-3 text-sm text-cream/70">{CONTACT.location.landmark} · Maharashtra</p><a href={CONTACT.location.mapsUrl} target="_blank" rel="noreferrer" className="mt-4 inline-block text-xs uppercase tracking-[0.2em] text-cream/60 underline underline-offset-4 hover:text-cream">View this point on the map</a><div className="mt-8 overflow-hidden rounded-md border border-cream/20"><iframe title="Map preview of Barvi Dam, Badlapur, near Yume Resort" src={`https://maps.google.com/maps?q=${encodeURIComponent(CONTACT.location.decimal)}&z=13&output=embed`} className="h-[360px] w-full border-0 md:h-[460px]" loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen /></div></div></div></section>
-  </PageShell>;
+  return (
+    <PageShell>
+      <section className="grid min-h-[72svh] bg-ink pt-24 text-cream lg:grid-cols-2">
+        <div className="flex flex-col justify-end px-6 py-16 md:px-10 lg:px-16 lg:py-20">
+          <p className="text-[11px] uppercase tracking-[0.3em] text-cream/55">
+            {CONTACT.hero.eyebrow}
+          </p>
+          <h1 className="mt-4 max-w-xl font-yume-serif text-4xl leading-[1.05] tracking-tight md:text-6xl">
+            {CONTACT.hero.title}
+          </h1>
+          <p className="mt-6 max-w-lg leading-relaxed text-cream/65">{CONTACT.hero.intro}</p>
+          <ul className="mt-8 flex items-center gap-3">
+            <li>
+              <a
+                href={site.instagram.url}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Yume Resort on Instagram"
+                className="grid h-9 w-9 place-items-center rounded-[5px] border border-cream/20 text-cream/70 transition-colors hover:border-peach hover:text-peach"
+              >
+                <Instagram className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </li>
+            <li>
+              <a
+                href={`tel:${site.phones[0].href}`}
+                aria-label={`Call Yume Resort on ${site.phones[0].display}`}
+                className="grid h-9 w-9 place-items-center rounded-[5px] border border-cream/20 text-cream/70 transition-colors hover:border-peach hover:text-peach"
+              >
+                <Phone className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </li>
+            <li>
+              <a
+                href={`mailto:${site.email}`}
+                aria-label="Email Yume Resort"
+                className="grid h-9 w-9 place-items-center rounded-[5px] border border-cream/20 text-cream/70 transition-colors hover:border-peach hover:text-peach"
+              >
+                <Mail className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <img
+          src={IMAGES.story}
+          alt="A peaceful corner of Yume Resort"
+          className="h-full min-h-[420px] w-full object-cover"
+        />
+      </section>
+      <section className="px-6 py-20 md:px-10 md:py-28">
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+          <div>
+            <SectionHeading eyebrow="Reach us" title="Call, write or come by." />
+            <div className="mt-10 space-y-7 text-sm">
+              <div className="flex gap-4">
+                <MapPin className="mt-0.5 h-5 w-5 text-sage" />
+                <p className="max-w-sm leading-relaxed">
+                  {site.address}
+                  <span className="mt-2 block text-ink/50">
+                    {CONTACT.location.coordinates} · {CONTACT.location.landmark}
+                  </span>
+                </p>
+              </div>
+              <div className="flex gap-4">
+                <Phone className="mt-0.5 h-5 w-5 text-sage" />
+                <div>
+                  {site.phones.map((phone) => (
+                    <a
+                      key={phone.href}
+                      href={`tel:${phone.href}`}
+                      className="mb-2 block hover:text-sage"
+                    >
+                      {phone.display}
+                    </a>
+                  ))}
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <MessageCircle className="mt-0.5 h-5 w-5 text-sage" />
+                <a
+                  href={waLink(WA_MESSAGES.general)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline decoration-ink/20 underline-offset-4"
+                >
+                  Chat on WhatsApp
+                </a>
+              </div>
+              {!site.email.startsWith("[ADD") ? (
+                <a href={`mailto:${site.email}`}>{site.email}</a>
+              ) : (
+                <p className="text-ink/45">Email: {site.email}</p>
+              )}
+            </div>
+          </div>
+          <div>
+            <SectionHeading eyebrow="Enquiry" title="Tell us what you’re planning." />
+            <div className="mt-10 rounded-md border border-ink/10 bg-background p-6 shadow-[0_18px_50px_-12px_rgba(20,32,26,0.22),0_2px_6px_rgba(20,32,26,0.08)] md:p-10">
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-sage px-6 py-20 text-cream md:px-10 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-[11px] uppercase tracking-[0.3em] text-cream/60">Getting here</p>
+          <h2 className="mt-4 font-yume-serif text-3xl tracking-tight md:text-5xl">
+            The city fades. Yume begins.
+          </h2>
+          <div className="mt-12 grid gap-px bg-cream/20 md:grid-cols-3">
+            {CONTACT.directions.map((direction) => (
+              <article key={direction.from} className="bg-sage py-7 md:px-8 first:md:pl-0">
+                <h3 className="font-yume-serif text-2xl">{direction.from}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-cream/70">{direction.detail}</p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-12 border-t border-cream/20 pt-8">
+            <p className="text-[11px] uppercase tracking-[0.3em] text-cream/60">
+              Location coordinates
+            </p>
+            <p className="mt-3 font-yume-serif text-2xl tracking-tight md:text-4xl">
+              {CONTACT.location.coordinates}
+            </p>
+            <p className="mt-3 text-sm text-cream/70">{CONTACT.location.landmark} · Maharashtra</p>
+            <a
+              href={CONTACT.location.mapsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-block text-xs uppercase tracking-[0.2em] text-cream/60 underline underline-offset-4 hover:text-cream"
+            >
+              View this point on the map
+            </a>
+            <div className="mt-8 overflow-hidden rounded-md border border-cream/20">
+              <iframe
+                title="Map preview of Barvi Dam, Badlapur, near Yume Resort"
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(CONTACT.location.decimal)}&z=13&output=embed`}
+                className="h-[360px] w-full border-0 md:h-[460px]"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </PageShell>
+  );
 }

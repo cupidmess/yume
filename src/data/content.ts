@@ -12,8 +12,6 @@
 
 import heroImg from "@/assets/yume/hero.jpg";
 import storyImg from "@/assets/yume/story.jpg";
-import storyVideoAsset from "@/assets/yume/story.mp4.asset.json";
-import storyWebmAsset from "@/assets/yume/story.webm.asset.json";
 import stayImg from "@/assets/yume/stay.jpg";
 import dineImg from "@/assets/yume/dine.jpg";
 import poolImg from "@/assets/yume/pool.jpg";
@@ -53,9 +51,9 @@ const roomPhotos = (main: string) => [
 
 export const IMAGES = {
   hero: heroImg,
-  story: storyImg,
-  storyVideo: storyVideoAsset.url,
-  storyVideoWebm: storyWebmAsset.url,
+  story: storyImg,    
+  storyVideo: "/yume-story.mp4",
+  storyVideoWebm: undefined,
   weddingBand: weddingBandImg,
   stay: stayImg,
   dine: dineImg,
@@ -99,15 +97,50 @@ export const STAY = {
   hero: {
     eyebrow: "Stay at Yume",
     title: "Wake slowly, close to the river.",
-    intro: "Quiet rooms and private villas for unhurried weekends, family time and a night away from the city.",
+    intro:
+      "Quiet rooms and private villas for unhurried weekends, family time and a night away from the city.",
   },
-  intro: "Every stay is designed around easy comfort: green views, time by the pool and the freedom to do very little at all.",
+  intro:
+    "Every stay is designed around easy comfort: green views, time by the pool and the freedom to do very little at all.",
   rooms: [
-    { name: "Garden Room", description: "A calm base for couples, opening towards the resort gardens.", occupancy: "2 guests", bed: "[ADD bed type]", price: "From ₹[ADD] / night", image: stayImg, gallery: roomPhotos(stayImg) },
-    { name: "Family Room", description: "Extra room for families or small groups spending the weekend together.", occupancy: "[ADD] guests", bed: "[ADD bed type]", price: "From ₹[ADD] / night", image: storyImg, gallery: roomPhotos(storyImg) },
-    { name: "Private Villa", description: "A more private stay for celebrations, reunions and longer escapes.", occupancy: "[ADD] guests", bed: "[ADD configuration]", price: "From ₹[ADD] / night", image: heroImg, gallery: roomPhotos(heroImg) },
+    {
+      name: "Garden Room",
+      description: "A calm base for couples, opening towards the resort gardens.",
+      occupancy: "2 guests",
+      bed: "[ADD bed type]",
+      price: "From ₹[ADD] / night",
+      image: stayImg,
+      gallery: roomPhotos(stayImg),
+    },
+    {
+      name: "Family Room",
+      description: "Extra room for families or small groups spending the weekend together.",
+      occupancy: "[ADD] guests",
+      bed: "[ADD bed type]",
+      price: "From ₹[ADD] / night",
+      image: storyImg,
+      gallery: roomPhotos(storyImg),
+    },
+    {
+      name: "Private Villa",
+      description: "A more private stay for celebrations, reunions and longer escapes.",
+      occupancy: "[ADD] guests",
+      bed: "[ADD configuration]",
+      price: "From ₹[ADD] / night",
+      image: heroImg,
+      gallery: roomPhotos(heroImg),
+    },
   ],
-  amenities: ["Pool access", "On-site dining", "Air-conditioned rooms", "Parking", "Garden and river surroundings", "[ADD Wi-Fi details]", "[ADD breakfast details]", "[ADD in-room amenities]"],
+  amenities: [
+    "Pool access",
+    "On-site dining",
+    "Air-conditioned rooms",
+    "Parking",
+    "Garden and river surroundings",
+    "[ADD Wi-Fi details]",
+    "[ADD breakfast details]",
+    "[ADD in-room amenities]",
+  ],
   policies: [
     { label: "Check-in", value: "[ADD check-in time]" },
     { label: "Check-out", value: "[ADD check-out time]" },
@@ -119,46 +152,148 @@ export const STAY = {
 };
 
 export const WEDDINGS = {
-  hero: { eyebrow: "Weddings & Events", title: "Say yes to the river.", intro: "Gather the people you love for a celebration framed by open lawns, water and evening light." },
-  intro: "From an intimate ceremony to a full wedding weekend, Yume brings venue, stay, dining and celebration into one relaxed destination.",
+  hero: {
+    eyebrow: "Weddings & Events",
+    title: "Say yes to the river.",
+    intro:
+      "Gather the people you love for a celebration framed by open lawns, water and evening light.",
+  },
+  intro:
+    "From an intimate ceremony to a full wedding weekend, Yume brings venue, stay, dining and celebration into one relaxed destination.",
   venues: [
-    { name: "Riverside Lawn", description: "An open-air setting for ceremonies, receptions and sunset celebrations.", capacity: "Up to [ADD] guests", image: weddingBandImg },
-    { name: "Celebration Turf", description: "A generous flexible space for larger gatherings, stages and dining layouts.", capacity: "Up to [ADD] guests", image: weddingsImg },
-    { name: "Indoor Gathering Space", description: "A sheltered setting for smaller functions and weather-ready plans.", capacity: "Up to [ADD] guests", image: dineImg },
+    {
+      name: "Riverside Lawn",
+      description: "An open-air setting for ceremonies, receptions and sunset celebrations.",
+      capacity: "Up to [ADD] guests",
+      image: weddingBandImg,
+    },
+    {
+      name: "Celebration Turf",
+      description: "A generous flexible space for larger gatherings, stages and dining layouts.",
+      capacity: "Up to [ADD] guests",
+      image: weddingsImg,
+    },
+    {
+      name: "Indoor Gathering Space",
+      description: "A sheltered setting for smaller functions and weather-ready plans.",
+      capacity: "Up to [ADD] guests",
+      image: dineImg,
+    },
   ],
   packages: [
-    { name: "The Intimate", note: "For close-knit celebrations", inclusions: ["Venue access", "Guest dining setup", "Basic lighting", "[ADD inclusions]"], price: "From ₹[ADD]" },
-    { name: "The Celebration", note: "For a complete wedding day", inclusions: ["Venue access", "Catering coordination", "Décor planning", "Stay allocation", "[ADD inclusions]"], price: "From ₹[ADD]" },
-    { name: "The Weekend", note: "For a destination-style gathering", inclusions: ["Multi-day venue access", "Guest accommodation", "Welcome gathering", "Wedding day coordination", "[ADD inclusions]"], price: "From ₹[ADD]" },
+    {
+      name: "The Intimate",
+      note: "For close-knit celebrations",
+      inclusions: ["Venue access", "Guest dining setup", "Basic lighting", "[ADD inclusions]"],
+      price: "From ₹[ADD]",
+    },
+    {
+      name: "The Celebration",
+      note: "For a complete wedding day",
+      inclusions: [
+        "Venue access",
+        "Catering coordination",
+        "Décor planning",
+        "Stay allocation",
+        "[ADD inclusions]",
+      ],
+      price: "From ₹[ADD]",
+    },
+    {
+      name: "The Weekend",
+      note: "For a destination-style gathering",
+      inclusions: [
+        "Multi-day venue access",
+        "Guest accommodation",
+        "Welcome gathering",
+        "Wedding day coordination",
+        "[ADD inclusions]",
+      ],
+      price: "From ₹[ADD]",
+    },
   ],
   services: [
-    { label: "Catering", value: "Menus shaped around your guest list, service style and celebration. [ADD cuisine options]" },
-    { label: "Décor", value: "Work with your chosen decorator or ask us about trusted local partners." },
-    { label: "Music & sound", value: "DJ, live music and sound plans are coordinated around venue guidelines. [ADD limits]" },
+    {
+      label: "Catering",
+      value:
+        "Menus shaped around your guest list, service style and celebration. [ADD cuisine options]",
+    },
+    {
+      label: "Décor",
+      value: "Work with your chosen decorator or ask us about trusted local partners.",
+    },
+    {
+      label: "Music & sound",
+      value: "DJ, live music and sound plans are coordinated around venue guidelines. [ADD limits]",
+    },
     { label: "Vendors", value: "[ADD outside-vendor, corkage and production policy]" },
   ],
 };
 
 export const EXPERIENCES = {
   dine: {
-    eyebrow: "Dine at Yume", title: "Tables under open sky.", intro: "Relaxed meals, familiar flavours and long conversations in the green quiet of the resort.", image: dineImg,
-    story: "Come for lunch, stay through sunset. Our dining experience is made for families, friends and resort guests who prefer an easy pace.",
-    facts: [{ label: "Cuisine", value: "[ADD cuisine and menu highlights]" }, { label: "Weekdays", value: "[ADD opening hours]" }, { label: "Weekends", value: "[ADD opening hours]" }, { label: "Seating", value: "[ADD indoor / outdoor capacity]" }, { label: "Reservations", value: "Recommended for weekends and groups" }, { label: "Dietary needs", value: "Please tell us when reserving. [ADD options]" }],
-    cta: "Reserve a table", message: WA_MESSAGES.bookTable,
+    eyebrow: "Dine at Yume",
+    title: "Tables under open sky.",
+    intro:
+      "Relaxed meals, familiar flavours and long conversations in the green quiet of the resort.",
+    image: dineImg,
+    story:
+      "Come for lunch, stay through sunset. Our dining experience is made for families, friends and resort guests who prefer an easy pace.",
+    facts: [
+      { label: "Cuisine", value: "[ADD cuisine and menu highlights]" },
+      { label: "Weekdays", value: "[ADD opening hours]" },
+      { label: "Weekends", value: "[ADD opening hours]" },
+      { label: "Seating", value: "[ADD indoor / outdoor capacity]" },
+      { label: "Reservations", value: "Recommended for weekends and groups" },
+      { label: "Dietary needs", value: "Please tell us when reserving. [ADD options]" },
+    ],
+    cta: "Reserve a table",
+    message: WA_MESSAGES.bookTable,
     video: undefined,
   },
   pool: {
-    eyebrow: "Pool Days", title: "Long afternoons by the water.", intro: "A refreshing day out for families and friends, with dining and green spaces close by.", image: poolImg,
-    story: "Settle into a lounger, break for lunch and make a full day of it. Day visits are subject to availability, especially on weekends.",
-    facts: [{ label: "Day pass", value: "Adults ₹[ADD] · Children ₹[ADD]" }, { label: "Timings", value: "[ADD pool opening hours]" }, { label: "Facilities", value: "[ADD changing rooms, showers and loungers]" }, { label: "Children", value: "Children must be supervised by an adult" }, { label: "Lifeguard", value: "[ADD lifeguard availability]" }, { label: "What to bring", value: "Swimwear, towels and sun protection. [ADD towel policy]" }],
-    cta: "Plan a pool day", message: "Hi Yume! I'd like to enquire about a pool day pass. Could you share availability and rates?",
-    video: { mp4: poolVideoAsset.url, webm: poolVideoWebmAsset.url, title: "The pool, in motion.", caption: "A short look at the water before you plan your visit — day passes are subject to availability, especially on weekends." },
+    eyebrow: "Pool Days",
+    title: "Long afternoons by the water.",
+    intro: "A refreshing day out for families and friends, with dining and green spaces close by.",
+    image: poolImg,
+    story:
+      "Settle into a lounger, break for lunch and make a full day of it. Day visits are subject to availability, especially on weekends.",
+    facts: [
+      { label: "Day pass", value: "Adults ₹[ADD] · Children ₹[ADD]" },
+      { label: "Timings", value: "[ADD pool opening hours]" },
+      { label: "Facilities", value: "[ADD changing rooms, showers and loungers]" },
+      { label: "Children", value: "Children must be supervised by an adult" },
+      { label: "Lifeguard", value: "[ADD lifeguard availability]" },
+      { label: "What to bring", value: "Swimwear, towels and sun protection. [ADD towel policy]" },
+    ],
+    cta: "Plan a pool day",
+    message:
+      "Hi Yume! I'd like to enquire about a pool day pass. Could you share availability and rates?",
+    video: {
+      mp4: poolVideoAsset.url,
+      webm: poolVideoWebmAsset.url,
+      title: "The pool, in motion.",
+      caption:
+        "A short look at the water before you plan your visit — day passes are subject to availability, especially on weekends.",
+    },
   },
   turf: {
-    eyebrow: "Play at Yume", title: "Floodlit games till late.", intro: "Bring your team for football, box cricket and an evening of friendly competition.", image: turfImg,
-    story: "Our all-weather turf is available in bookable slots for casual games, regular groups and small tournaments.",
-    facts: [{ label: "Sports", value: "Football · Box cricket · [ADD other sports]" }, { label: "Hours", value: "[ADD weekday and weekend hours]" }, { label: "Slot length", value: "[ADD duration options]" }, { label: "Rates", value: "From ₹[ADD] per slot" }, { label: "Floodlights", value: "Available for evening bookings" }, { label: "Equipment", value: "[ADD included / rental equipment]" }],
-    cta: "Book a turf slot", message: WA_MESSAGES.bookSlot,
+    eyebrow: "Play at Yume",
+    title: "Floodlit games till late.",
+    intro: "Bring your team for football, box cricket and an evening of friendly competition.",
+    image: turfImg,
+    story:
+      "Our all-weather turf is available in bookable slots for casual games, regular groups and small tournaments.",
+    facts: [
+      { label: "Sports", value: "Football · Box cricket · [ADD other sports]" },
+      { label: "Hours", value: "[ADD weekday and weekend hours]" },
+      { label: "Slot length", value: "[ADD duration options]" },
+      { label: "Rates", value: "From ₹[ADD] per slot" },
+      { label: "Floodlights", value: "Available for evening bookings" },
+      { label: "Equipment", value: "[ADD included / rental equipment]" },
+    ],
+    cta: "Book a turf slot",
+    message: WA_MESSAGES.bookSlot,
     video: undefined,
   },
 };
@@ -189,8 +324,20 @@ export const GALLERY = [
 ];
 
 export const CONTACT = {
-  hero: { eyebrow: "Contact", title: "Let’s plan your time at Yume.", intro: "Tell us what brings you here and our team will help with availability, rates and the details that matter." },
-  enquiryTypes: ["Stay", "Wedding or event", "Dining", "Pool day", "Turf booking", "General enquiry"],
+  hero: {
+    eyebrow: "Contact",
+    title: "Let’s plan your time at Yume.",
+    intro:
+      "Tell us what brings you here and our team will help with availability, rates and the details that matter.",
+  },
+  enquiryTypes: [
+    "Stay",
+    "Wedding or event",
+    "Dining",
+    "Pool day",
+    "Turf booking",
+    "General enquiry",
+  ],
   location: {
     landmark: "Barvi Dam, Badlapur",
     coordinates: "19.1927° N, 73.3397° E",
@@ -198,9 +345,20 @@ export const CONTACT = {
     mapsUrl: "https://www.google.com/maps?q=19.1927152,73.3396625",
   },
   directions: [
-    { from: "From Mumbai", detail: "Drive towards Badlapur via Thane and Kalyan. [ADD preferred route and approximate travel time]" },
-    { from: "From Thane", detail: "Continue via Kalyan towards Badlapur, then follow the route to Sonivali — about an hour from Thane." },
-    { from: "From Kalyan", detail: "Head towards Badlapur and continue to Sonivali. [ADD landmark and travel time]" },
+    {
+      from: "From Mumbai",
+      detail:
+        "Drive towards Badlapur via Thane and Kalyan. [ADD preferred route and approximate travel time]",
+    },
+    {
+      from: "From Thane",
+      detail:
+        "Continue via Kalyan towards Badlapur, then follow the route to Sonivali — about an hour from Thane.",
+    },
+    {
+      from: "From Kalyan",
+      detail: "Head towards Badlapur and continue to Sonivali. [ADD landmark and travel time]",
+    },
   ],
 };
 
@@ -227,11 +385,8 @@ export const WEDDING_BAND = {
   from: "Starting from ₹1.5 L",
 };
 
-
 export type NavChild = { label: string; to: string };
-export type NavItem =
-  | { label: string; to: string }
-  | { label: string; children: NavChild[] };
+export type NavItem = { label: string; to: string } | { label: string; children: NavChild[] };
 
 export const NAV: NavItem[] = [
   { label: "Stay", to: "/stay" },

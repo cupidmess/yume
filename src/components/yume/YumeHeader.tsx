@@ -22,9 +22,7 @@ export function YumeHeader() {
     };
   }, [open]);
 
-  const linkClass = scrolled
-    ? "text-ink hover:opacity-70"
-    : "text-cream hover:opacity-80";
+  const linkClass = scrolled ? "text-ink hover:opacity-70" : "text-cream hover:opacity-80";
 
   return (
     <>
@@ -35,11 +33,7 @@ export function YumeHeader() {
       >
         <div className="mx-auto grid w-full max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-6 py-4 md:px-10 lg:flex lg:justify-between">
           <div className="flex min-w-0 items-center">
-            <Link
-              to="/"
-              className="font-yume-serif text-2xl tracking-tight"
-              resetScroll={false}
-            >
+            <Link to="/" className="font-yume-serif text-2xl tracking-tight" resetScroll={false}>
               yume<span className="text-peach">.</span>
             </Link>
           </div>
@@ -89,9 +83,7 @@ export function YumeHeader() {
               target="_blank"
               rel="noreferrer"
               className={`hidden rounded-md px-5 py-2.5 text-xs uppercase tracking-[0.2em] transition-colors md:inline-flex ${
-                scrolled
-                  ? "bg-ink text-cream hover:bg-sage"
-                  : "bg-cream text-ink hover:bg-peach"
+                scrolled ? "bg-ink text-cream hover:bg-sage" : "bg-cream text-ink hover:bg-peach"
               }`}
             >
               Enquire
@@ -121,15 +113,20 @@ export function YumeHeader() {
           <span className="font-yume-serif text-2xl tracking-tight">
             yume<span className="text-peach">.</span>
           </span>
-          <Button type="button" variant="ghost" size="icon" onClick={() => setOpen(false)} aria-label="Close menu" className="text-cream hover:bg-cream/10 hover:text-cream">
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            onClick={() => setOpen(false)}
+            aria-label="Close menu"
+            className="text-cream hover:bg-cream/10 hover:text-cream"
+          >
             <X className="h-6 w-6" />
           </Button>
         </div>
         <nav className="flex flex-1 flex-col justify-center gap-5 px-6">
           {NAV.flatMap((item) =>
-            "children" in item
-              ? item.children
-              : [{ label: item.label, to: item.to }],
+            "children" in item ? item.children : [{ label: item.label, to: item.to }],
           ).map((link) => (
             <Link
               key={link.to}

@@ -8,7 +8,6 @@ import {
   STATS,
   STORY,
   WEDDING_BAND,
-
   WA_MESSAGES,
   WAYS,
   site,
@@ -73,9 +72,7 @@ export const Route = createFileRoute("/_yume/")({
 
 function useReveal() {
   useEffect(() => {
-    const els = Array.from(
-      document.querySelectorAll<HTMLElement>("[data-reveal]"),
-    );
+    const els = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       els.forEach((el) => el.classList.add("is-visible"));
       return;
@@ -147,17 +144,10 @@ function YumeHome() {
 
       {/* Spotlight — Barvi Dam bar */}
       <section aria-label="Yume is 10 minutes from Badlapur Station">
-        <Link
-          to={SPOTLIGHT.to}
-          className="group block overflow-hidden bg-ink py-5 md:py-7"
-        >
+        <Link to={SPOTLIGHT.to} className="group block overflow-hidden bg-ink py-5 md:py-7">
           <div className="yume-marquee flex w-max items-center group-hover:[animation-play-state:paused]">
             {[0, 1].map((copy) => (
-              <div
-                key={copy}
-                aria-hidden={copy === 1}
-                className="flex shrink-0 items-center"
-              >
+              <div key={copy} aria-hidden={copy === 1} className="flex shrink-0 items-center">
                 <span className="px-6 text-[11px] uppercase tracking-[0.3em] text-cream md:px-10">
                   {SPOTLIGHT.title}
                 </span>
@@ -176,9 +166,7 @@ function YumeHome() {
       <section className="px-6 py-24 md:px-12 md:py-32">
         <div className="mx-auto grid max-w-7xl items-start gap-12 md:grid-cols-12">
           <div className="md:col-span-7" data-reveal>
-            <p className="text-[11px] uppercase tracking-[0.3em] text-ink/50">
-              The Story
-            </p>
+            <p className="text-[11px] uppercase tracking-[0.3em] text-ink/50">The Story</p>
             <p className="mt-6 font-yume-serif text-3xl leading-[1.15] tracking-tight md:text-[2.6rem]">
               {STORY.lead}
             </p>
@@ -203,13 +191,10 @@ function YumeHome() {
         </div>
       </section>
 
-
       {/* Five ways to spend a day */}
       <section className="px-6 pb-24 md:px-12 md:pb-32">
         <div className="mx-auto max-w-7xl" data-reveal>
-          <p className="text-[11px] uppercase tracking-[0.3em] text-ink/50">
-            A Day at Yume
-          </p>
+          <p className="text-[11px] uppercase tracking-[0.3em] text-ink/50">A Day at Yume</p>
           <h2 className="mt-4 font-yume-serif text-3xl tracking-tight md:text-5xl">
             Five ways to spend a day at Yume.
           </h2>
@@ -231,9 +216,7 @@ function YumeHome() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-5">
-                <p className="text-[10px] uppercase tracking-[0.3em] text-cream/80">
-                  {way.blurb}
-                </p>
+                <p className="text-[10px] uppercase tracking-[0.3em] text-cream/80">{way.blurb}</p>
                 <p className="mt-1 font-yume-serif text-2xl text-cream opacity-80 transition-opacity duration-500 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 md:text-3xl">
                   {way.label}
                 </p>
@@ -307,9 +290,7 @@ function YumeHome() {
       <section className="px-6 pb-24 md:px-12">
         <div className="mx-auto max-w-7xl" data-reveal>
           <div className="flex flex-wrap items-end justify-between gap-4">
-            <h2 className="font-yume-serif text-3xl tracking-tight md:text-5xl">
-              Life at Yume.
-            </h2>
+            <h2 className="font-yume-serif text-3xl tracking-tight md:text-5xl">Life at Yume.</h2>
             <a
               href={site.instagram.url}
               target="_blank"

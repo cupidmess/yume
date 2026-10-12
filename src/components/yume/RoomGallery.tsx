@@ -21,10 +21,20 @@ export function RoomGallery({ name, photos }: { name: string; photos: Photo[] })
             className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 motion-reduce:transition-none ${i === active ? "opacity-100" : "opacity-0"}`}
           />
         ))}
-        <button type="button" onClick={() => go(-1)} aria-label="Previous photo" className={`${btn} left-3`}>
+        <button
+          type="button"
+          onClick={() => go(-1)}
+          aria-label="Previous photo"
+          className={`${btn} left-3`}
+        >
           <ChevronLeft className="h-5 w-5" />
         </button>
-        <button type="button" onClick={() => go(1)} aria-label="Next photo" className={`${btn} right-3`}>
+        <button
+          type="button"
+          onClick={() => go(1)}
+          aria-label="Next photo"
+          className={`${btn} right-3`}
+        >
           <ChevronRight className="h-5 w-5" />
         </button>
         <p className="absolute bottom-3 left-3 bg-ink/70 px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-cream">
