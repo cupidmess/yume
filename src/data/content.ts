@@ -13,6 +13,15 @@
 import heroImg from "@/assets/yume/hero.jpg";
 import storyImg from "@/assets/yume/story.jpg";
 import stayImg from "@/assets/yume/stay.jpg";
+import del3 from "@/assets/yume/del3.jpg"
+import delbed from "@/assets/yume/delbed.jpg"
+import delux from "@/assets/yume/delux.jpg"
+import delux2 from "@/assets/yume/delux2.jpg"
+import deluxbalc from "@/assets/yume/deluxbalc.jpg"
+import deluxebalc from "@/assets/yume/deluxebalc.jpg"
+import sup from "@/assets/yume/sup.jpg"
+import superior from "@/assets/yume/superior.jpg"
+import del2 from "@/assets/yume/del2.jpg"
 import dineImg from "@/assets/yume/dine.jpg";
 import poolImg from "@/assets/yume/pool.jpg";
 import turfImg from "@/assets/yume/turf.jpg";
@@ -43,13 +52,28 @@ import turf3 from "@/assets/yume/turf-3.jpg";
 // Placeholder room photos — swap per room with real photography.
 const roomPhotos = (main: string) => [
   { src: main, label: "Room" },
-  { src: roomBed, label: "Bedroom" },
+  { src: deluxbalc, label: "Bedroom" },
   { src: roomBath, label: "Washroom" },
-  { src: roomDesk, label: "Writing table" },
-  { src: roomBalcony, label: "Balcony view" },
-  { src: insta3, label: "Terrace details" },
+  { src: deluxebalc, label: "Writing table" },
+  { src: del2, label: "Balcony view" },
+  { src: roomDesk, label: "Terrace details" },
 ];
-
+const deluxePics = (main: string) => [
+  { src: main, label: "Room" },
+  { src: delux, label: "Bedroom" },
+  { src: del3, label: "Washroom" },
+  { src: delbed, label: "Writing table" },
+  { src: roomBalcony, label: "Balcony view" },
+  { src: roomDesk, label: "Terrace details" },
+];
+const superior = (main: string) => [
+  { src: main, label: "Room" },
+  { src: superior, label: "Bedroom" },
+  { src: del3, label: "Washroom" },
+  { src: delbed, label: "Writing table" },
+  { src: roomBalcony, label: "Balcony view" },
+  { src: roomDesk, label: "Terrace details" },
+];
 export const IMAGES = {
   hero: heroImg,
   story: storyImg,    
@@ -103,35 +127,39 @@ export const STAY = {
   },
   intro:
     "Every stay is designed around easy comfort: green views, time by the pool and the freedom to do very little at all.",
-  rooms: [
-    {
-      name: "Garden Room",
-      description: "A calm base for couples, opening towards the resort gardens.",
-      occupancy: "2 guests",
-      bed: "[ADD bed type]",
-      price: "From ₹[ADD] / night",
-      image: stayImg,
-      gallery: roomPhotos(stayImg),
-    },
-    {
-      name: "Family Room",
-      description: "Extra room for families or small groups spending the weekend together.",
-      occupancy: "[ADD] guests",
-      bed: "[ADD bed type]",
-      price: "From ₹[ADD] / night",
-      image: storyImg,
-      gallery: roomPhotos(storyImg),
-    },
-    {
-      name: "Private Villa",
-      description: "A more private stay for celebrations, reunions and longer escapes.",
-      occupancy: "[ADD] guests",
-      bed: "[ADD configuration]",
-      price: "From ₹[ADD] / night",
-      image: heroImg,
-      gallery: roomPhotos(heroImg),
-    },
-  ],
+  
+    rooms: [
+      {
+        name: "Deluxe Room (With Balcony)",
+        description:
+          "A comfortable stay with a private balcony, perfect for couples seeking a relaxing resort escape.",
+        occupancy: "2 guests",
+        bed: "[ADD bed type]",
+        price: "From ₹5,499 / night",
+        image: stayImg,
+        gallery: roomPhotos(stayImg),
+      },
+      {
+        name: "Deluxe Room (Without Balcony)",
+        description:
+          "A welcoming and comfortable room for couples looking for a peaceful getaway surrounded by nature.",
+        occupancy: "2 guests",
+        bed: "[ADD bed type]",
+        price: "From ₹4,999 / night",
+        image: delux2,
+        gallery: deluxePics(delux2),
+      },
+      {
+        name: "Superior Room",
+        description:
+          "A spacious option for families and groups looking to spend a relaxing weekend together.",
+        occupancy: "4+ guests",
+        bed: "[ADD bed configuration]",
+        price: "From ₹2,000 / person",
+        image: sup,
+        gallery: superior(sup),
+      },
+    ],
   amenities: [
     "Pool access",
     "On-site dining",
@@ -169,7 +197,7 @@ export const WEDDINGS = {
       image: wed,
     },
     {
-      name: "Celebration Turf",
+      name: "Celebration Turf", 
       description: "A generous flexible space for larger gatherings, stages and dining layouts.",
       capacity: "Up to [ADD] guests",
       image: wed2,

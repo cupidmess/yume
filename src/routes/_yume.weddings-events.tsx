@@ -6,7 +6,7 @@ import {
   PageShell,
   SectionHeading,
 } from "@/components/yume/InteriorPage";
-import { WA_MESSAGES, WEDDINGS, waLink } from "@/data/content";
+import { IMAGES, WA_MESSAGES, WEDDINGS, waLink } from "@/data/content";
 
 const description =
   "Riverside wedding venues, event packages and date enquiries at Yume Resort, Sonivali, Badlapur.";
@@ -46,7 +46,7 @@ function WeddingsPage() {
     <PageShell>
       <InteriorHero
         {...WEDDINGS.hero}
-        image={WEDDINGS.venues[0].image}
+        image={IMAGES.weddingBand}
         imageAlt="Riverside wedding at Yume Resort"
       />
       <section className="px-6 py-20 md:px-10 md:py-28">
