@@ -15,8 +15,6 @@ import storyImg from "@/assets/yume/story.jpg";
 import stayImg from "@/assets/yume/stay.jpg";
 import dineImg from "@/assets/yume/dine.jpg";
 import poolImg from "@/assets/yume/pool.jpg";
-import poolVideoAsset from "@/assets/yume/pool.mp4.asset.json";
-import poolVideoWebmAsset from "@/assets/yume/pool.webm.asset.json";
 import turfImg from "@/assets/yume/turf.jpg";
 import weddingsImg from "@/assets/yume/weddings.jpg";
 import weddingBandImg from "@/assets/yume/wedding-band.jpg";
@@ -270,8 +268,8 @@ export const EXPERIENCES = {
     message:
       "Hi Yume! I'd like to enquire about a pool day pass. Could you share availability and rates?",
     video: {
-      mp4: poolVideoAsset.url,
-      webm: poolVideoWebmAsset.url,
+      mp4: "./pool.mp4",
+      webm: undefined,
       title: "The pool, in motion.",
       caption:
         "A short look at the water before you plan your visit — day passes are subject to availability, especially on weekends.",
