@@ -18,6 +18,9 @@ import poolImg from "@/assets/yume/pool.jpg";
 import turfImg from "@/assets/yume/turf.jpg";
 import weddingsImg from "@/assets/yume/weddings.jpg";
 import weddingBandImg from "@/assets/yume/wedding-band.jpg";
+import wed from "@/assets/yume/wed.jpg";
+import wed2 from "@/assets/yume/wed2.jpg";
+import wed3 from "@/assets/yume/wed3.jpg";
 import insta1 from "@/assets/yume/insta-1.jpg";
 import insta2 from "@/assets/yume/insta-2.jpg";
 import insta3 from "@/assets/yume/insta-3.jpg";
@@ -163,19 +166,19 @@ export const WEDDINGS = {
       name: "Riverside Lawn",
       description: "An open-air setting for ceremonies, receptions and sunset celebrations.",
       capacity: "Up to [ADD] guests",
-      image: weddingBandImg,
+      image: wed,
     },
     {
       name: "Celebration Turf",
       description: "A generous flexible space for larger gatherings, stages and dining layouts.",
       capacity: "Up to [ADD] guests",
-      image: weddingsImg,
+      image: wed2,
     },
     {
       name: "Indoor Gathering Space",
       description: "A sheltered setting for smaller functions and weather-ready plans.",
       capacity: "Up to [ADD] guests",
-      image: dineImg,
+      image: wed3,
     },
   ],
   packages: [
