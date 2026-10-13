@@ -1,0 +1,11 @@
+.review-card {
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.review-card:hover {
+  opacity: 0.9;
+}

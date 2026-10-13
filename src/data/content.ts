@@ -87,12 +87,13 @@ export const IMAGES = {
   weddings: weddingsImg,
 };
 
+
 export const site = {
   name: "Yume Resort",
   tagline: "A hidden retreat for unforgettable moments.",
   location: "Sonivali, Badlapur",
-  address: "Sonivali, Badlapur, Maharashtra - [ADD full address]",
-  email: "[ADD email]",
+  address: "Sonavali Gaon (near Trishul Golden Ville and Barvi Dam Road), Badlapur West, Maharashtra 421503.",
+  email: "theyumeresort@gmail.com",
   phones: [
     { display: "+91 70280 43300", href: "+917028043300" },
     { display: "+91 70280 53300", href: "+917028053300" },
@@ -125,58 +126,93 @@ export const STAY = {
     intro:
       "Quiet rooms and private villas for unhurried weekends, family time and a night away from the city.",
   },
+
   intro:
     "Every stay is designed around easy comfort: green views, time by the pool and the freedom to do very little at all.",
-  
-    rooms: [
-      {
-        name: "Deluxe Room (With Balcony)",
-        description:
-          "A comfortable stay with a private balcony, perfect for couples seeking a relaxing resort escape.",
-        occupancy: "2 guests",
-        bed: "[ADD bed type]",
-        price: "From ₹5,499 / night",
-        image: stayImg,
-        gallery: roomPhotos(stayImg),
-      },
-      {
-        name: "Deluxe Room (Without Balcony)",
-        description:
-          "A welcoming and comfortable room for couples looking for a peaceful getaway surrounded by nature.",
-        occupancy: "2 guests",
-        bed: "[ADD bed type]",
-        price: "From ₹4,999 / night",
-        image: delux2,
-        gallery: deluxePics(delux2),
-      },
-      {
-        name: "Superior Room",
-        description:
-          "A spacious option for families and groups looking to spend a relaxing weekend together.",
-        occupancy: "4+ guests",
-        bed: "[ADD bed configuration]",
-        price: "From ₹2,000 / person",
-        image: sup,
-        gallery: superior(sup),
-      },
-    ],
+
+  rooms: [
+    {
+      name: "Deluxe Room (With Balcony)",
+      description:
+        "A comfortable stay with a private balcony, perfect for couples seeking a relaxing resort escape.",
+      occupancy: "2 guests",
+      bed: "[ADD bed type]",
+      price: "From ₹5,499 / night",
+      image: stayImg,
+      gallery: roomPhotos(stayImg),
+    },
+    {
+      name: "Deluxe Room (Without Balcony)",
+      description:
+        "A welcoming and comfortable room for couples looking for a peaceful getaway surrounded by nature.",
+      occupancy: "2 guests",
+      bed: "[ADD bed type]",
+      price: "From ₹4,999 / night",
+      image: delux2,
+      gallery: deluxePics(delux2),
+    },
+    {
+      name: "Superior Room",
+      description:
+        "A spacious option for families and groups looking to spend a relaxing weekend together.",
+      occupancy: "4+ guests",
+      bed: "[ADD bed configuration]",
+      price: "From ₹2,000 / person",
+      image: sup,
+      gallery: superior(sup),
+    },
+  ],
+
   amenities: [
-    "Pool access",
-    "On-site dining",
+    "Swimming pool",
+    "On-site restaurant",
     "Air-conditioned rooms",
     "Parking",
     "Garden and river surroundings",
+    "Cricket turf",
     "[ADD Wi-Fi details]",
-    "[ADD breakfast details]",
     "[ADD in-room amenities]",
   ],
+
   policies: [
-    { label: "Check-in", value: "[ADD check-in time]" },
-    { label: "Check-out", value: "[ADD check-out time]" },
-    { label: "Children", value: "Families are welcome. [ADD child policy]" },
-    { label: "Pets", value: "[ADD pet policy]" },
-    { label: "Cancellation", value: "[ADD cancellation and refund policy]" },
-    { label: "House rules", value: "[ADD quiet hours and guest rules]" },
+    {
+      label: "Check-in",
+      value: "1:00 PM (13:00 hrs)",
+    },
+    {
+      label: "Check-out",
+      value: "10:30 AM",
+    },
+    {
+      label: "Children aged 0–7",
+      value: "Complimentary stay.",
+    },
+    {
+      label: "Children aged 8–14",
+      value: "₹1,200 per child.",
+    },
+    {
+      label: "Guests aged 15 and above",
+      value: "Counted as adults and charged accordingly.",
+    },
+    {
+      label: "Pets",
+      value: "[ADD pet policy]",
+    },
+    {
+      label: "Cancellation",
+      value:
+        "Cancellation charges depend on the notice period. Please refer to the cancellation policy.",
+    },
+    {
+      label: "Early check-in and late check-out",
+      value:
+        "Subject to availability and additional charges as per hotel policy.",
+    },
+    {
+      label: "Early departure",
+      value: "One room night's charges apply.",
+    },
   ],
 };
 
@@ -187,33 +223,44 @@ export const WEDDINGS = {
     intro:
       "Gather the people you love for a celebration framed by open lawns, water and evening light.",
   },
+
   intro:
     "From an intimate ceremony to a full wedding weekend, Yume brings venue, stay, dining and celebration into one relaxed destination.",
+
   venues: [
     {
       name: "Riverside Lawn",
-      description: "An open-air setting for ceremonies, receptions and sunset celebrations.",
+      description:
+        "An open-air setting for ceremonies, receptions and sunset celebrations.",
       capacity: "Up to [ADD] guests",
       image: wed,
     },
     {
-      name: "Celebration Turf", 
-      description: "A generous flexible space for larger gatherings, stages and dining layouts.",
+      name: "Celebration Turf",
+      description:
+        "A generous flexible space for larger gatherings, stages and dining layouts.",
       capacity: "Up to [ADD] guests",
       image: wed2,
     },
     {
       name: "Indoor Gathering Space",
-      description: "A sheltered setting for smaller functions and weather-ready plans.",
+      description:
+        "A sheltered setting for smaller functions and weather-ready plans.",
       capacity: "Up to [ADD] guests",
       image: wed3,
     },
   ],
+
   packages: [
     {
       name: "The Intimate",
       note: "For close-knit celebrations",
-      inclusions: ["Venue access", "Guest dining setup", "Basic lighting", "[ADD inclusions]"],
+      inclusions: [
+        "Venue access",
+        "Guest dining setup",
+        "Basic lighting",
+        "[ADD inclusions]",
+      ],
       price: "From ₹[ADD]",
     },
     {
@@ -241,6 +288,7 @@ export const WEDDINGS = {
       price: "From ₹[ADD]",
     },
   ],
+
   services: [
     {
       label: "Catering",
@@ -249,13 +297,19 @@ export const WEDDINGS = {
     },
     {
       label: "Décor",
-      value: "Work with your chosen decorator or ask us about trusted local partners.",
+      value:
+        "Work with your chosen decorator or ask us about trusted local partners.",
     },
     {
       label: "Music & sound",
-      value: "DJ, live music and sound plans are coordinated around venue guidelines. [ADD limits]",
+      value:
+        "DJ, live music and sound plans are coordinated around venue guidelines. [ADD limits]",
     },
-    { label: "Vendors", value: "[ADD outside-vendor, corkage and production policy]" },
+    {
+      label: "Vendors",
+      value:
+        "[ADD outside-vendor, corkage and production policy]",
+    },
   ],
 };
 
@@ -268,62 +322,264 @@ export const EXPERIENCES = {
     image: dineImg,
     story:
       "Come for lunch, stay through sunset. Our dining experience is made for families, friends and resort guests who prefer an easy pace.",
+
     facts: [
-      { label: "Cuisine", value: "[ADD cuisine and menu highlights]" },
-      { label: "Weekdays", value: "[ADD opening hours]" },
-      { label: "Weekends", value: "[ADD opening hours]" },
-      { label: "Seating", value: "[ADD indoor / outdoor capacity]" },
-      { label: "Reservations", value: "Recommended for weekends and groups" },
-      { label: "Dietary needs", value: "Please tell us when reserving. [ADD options]" },
+      {
+        label: "Cuisine",
+        value: "[ADD cuisine and menu highlights]",
+      },
+      {
+        label: "Restaurant timings",
+        value: "8:00 AM – 12:00 AM",
+      },
+      {
+        label: "Breakfast",
+        value: "9:00 AM – 10:00 AM",
+      },
+      {
+        label: "Lunch",
+        value: "1:00 PM – 2:30 PM",
+      },
+      {
+        label: "Hi-Tea",
+        value: "5:00 PM – 5:30 PM",
+      },
+      {
+        label: "Dinner",
+        value: "9:00 PM – 10:30 PM",
+      },
+      {
+        label: "Seating",
+        value: "[ADD indoor / outdoor capacity]",
+      },
+      {
+        label: "Reservations",
+        value: "Recommended for weekends and groups.",
+      },
+      {
+        label: "Dietary needs",
+        value: "Please tell us when reserving. [ADD options]",
+      },
     ],
+
     cta: "Reserve a table",
     message: WA_MESSAGES.bookTable,
     video: undefined,
   },
+
   pool: {
     eyebrow: "Pool Days",
     title: "Long afternoons by the water.",
-    intro: "A refreshing day out for families and friends, with dining and green spaces close by.",
+    intro:
+      "A refreshing day out for families and friends, with dining and green spaces close by.",
     image: poolImg,
     story:
       "Settle into a lounger, break for lunch and make a full day of it. Day visits are subject to availability, especially on weekends.",
+
     facts: [
-      { label: "Day pass", value: "Adults ₹[ADD] · Children ₹[ADD]" },
-      { label: "Timings", value: "[ADD pool opening hours]" },
-      { label: "Facilities", value: "[ADD changing rooms, showers and loungers]" },
-      { label: "Children", value: "Children must be supervised by an adult" },
-      { label: "Lifeguard", value: "[ADD lifeguard availability]" },
-      { label: "What to bring", value: "Swimwear, towels and sun protection. [ADD towel policy]" },
+      {
+        label: "Day pass",
+        value: "Adults ₹[ADD] · Children ₹[ADD]",
+      },
+      {
+        label: "Swimming pool timings",
+        value: "8:00 AM – 12:00 PM",
+      },
+      {
+        label: "Day picnic timings",
+        value: "9:00 AM – 6:00 PM",
+      },
+      {
+        label: "Facilities",
+        value: "[ADD changing rooms, showers and loungers]",
+      },
+      {
+        label: "Children",
+        value: "Children must be supervised by an adult.",
+      },
+      {
+        label: "Lifeguard",
+        value: "[ADD lifeguard availability]",
+      },
+      {
+        label: "What to bring",
+        value: "Swimwear, towels and sun protection. [ADD towel policy]",
+      },
     ],
+
     cta: "Plan a pool day",
     message:
       "Hi Yume! I'd like to enquire about a pool day pass. Could you share availability and rates?",
+
     video: {
       mp4: "./pool.mp4",
       webm: undefined,
       title: "The pool, in motion.",
       caption:
-        "A short look at the water before you plan your visit - day passes are subject to availability, especially on weekends.",
+        "A short look at the water before you plan your visit. Day passes are subject to availability, especially on weekends.",
     },
   },
+
   turf: {
     eyebrow: "Play at Yume",
     title: "Floodlit games till late.",
-    intro: "Bring your team for football, box cricket and an evening of friendly competition.",
+    intro:
+      "Bring your team for football, box cricket and an evening of friendly competition.",
     image: turfImg,
     story:
       "Our all-weather turf is available in bookable slots for casual games, regular groups and small tournaments.",
+
     facts: [
-      { label: "Sports", value: "Football · Box cricket · [ADD other sports]" },
-      { label: "Hours", value: "[ADD weekday and weekend hours]" },
-      { label: "Slot length", value: "[ADD duration options]" },
-      { label: "Rates", value: "From ₹[ADD] per slot" },
-      { label: "Floodlights", value: "Available for evening bookings" },
-      { label: "Equipment", value: "[ADD included / rental equipment]" },
+      {
+        label: "Sports",
+        value: "Football · Box cricket · [ADD other sports]",
+      },
+      {
+        label: "Cricket turf timings",
+        value: "7:00 AM – 11:00 PM",
+      },
+      {
+        label: "Slot length",
+        value: "[ADD duration options]",
+      },
+      {
+        label: "Rates",
+        value: "From ₹[ADD] per slot",
+      },
+      {
+        label: "Floodlights",
+        value: "Available for evening bookings.",
+      },
+      {
+        label: "Equipment",
+        value: "[ADD included / rental equipment]",
+      },
     ],
+
     cta: "Book a turf slot",
     message: WA_MESSAGES.bookSlot,
     video: undefined,
+  },
+};
+
+export const HOTEL_POLICIES = {
+  termsAndConditions: [
+    {
+      title: "Right of admission",
+      description:
+        "The hotel reserves the right of admission.",
+    },
+    {
+      title: "Check-in and check-out",
+      description:
+        "Check-in time is 1:00 PM (13:00 hrs) and check-out time is 10:30 AM. Early check-in and late check-out are subject to availability and additional charges as per hotel policy. Early departure is subject to one room night's charges.",
+    },
+    {
+      title: "Guaranteed reservations",
+      description:
+        "Reservations are held on a confirmed basis subject to a written guarantee from the company or valid credit card details.",
+    },
+    {
+      title: "Non-guaranteed reservations",
+      description:
+        "Non-guaranteed reservations will be released at 6:00 PM on the date of arrival.",
+    },
+    {
+      title: "Airport transfers",
+      description:
+        "Airport transfers are available at an additional cost unless specifically included in the booking.",
+    },
+    {
+      title: "Cancellations",
+      description:
+        "The hotel requires at least 72 hours' prior notice for cancellation. Cancellations received after this period are subject to one room night's charges. The applicable cancellation terms for advance bookings and group bookings may differ.",
+    },
+    {
+      title: "Advance-purchase bookings",
+      description:
+        "Deposits for advance-purchase bookings are non-refundable, even if the booking is cancelled or modified.",
+    },
+    {
+      title: "Smoking policy",
+      description:
+        "Smoking is prohibited in public areas, including the lobby, restaurants, bars and lounges, swimming pool, and health club. Smoking rooms may be requested when making a reservation and are subject to availability.",
+    },
+  ],
+
+  cancellationPolicy: [
+    {
+      notice: "Two months in advance",
+      retention: "20% of the minimum guaranteed amount",
+    },
+    {
+      notice: "One month in advance",
+      retention: "35% of the minimum guaranteed amount",
+    },
+    {
+      notice: "15 days in advance",
+      retention: "50% of the minimum guaranteed amount",
+    },
+    {
+      notice: "One week in advance",
+      retention: "75% of the minimum guaranteed amount",
+    },
+    {
+      notice: "Three days in advance",
+      retention: "100% of the minimum guaranteed amount",
+    },
+  ],
+
+  childPolicy: [
+    {
+      age: "0–7 years",
+      charge: "Complimentary stay",
+    },
+    {
+      age: "8–14 years",
+      charge: "₹1,200 per child",
+    },
+    {
+      age: "15 years and above",
+      charge: "Counted as an adult and charged accordingly",
+    },
+  ],
+
+  amenitiesAndTimings: [
+    {
+      amenity: "Cricket Turf",
+      timings: "7:00 AM – 11:00 PM",
+    },
+    {
+      amenity: "Swimming Pool",
+      timings: "8:00 AM – 12:00 PM",
+    },
+    {
+      amenity: "Restaurant",
+      timings: "8:00 AM – 12:00 AM",
+    },
+  ],
+
+  mealTimings: [
+    {
+      meal: "Breakfast",
+      timings: "9:00 AM – 10:00 AM",
+    },
+    {
+      meal: "Lunch",
+      timings: "1:00 PM – 2:30 PM",
+    },
+    {
+      meal: "Hi-Tea",
+      timings: "5:00 PM – 5:30 PM",
+    },
+    {
+      meal: "Dinner",
+      timings: "9:00 PM – 10:30 PM",
+    },
+  ],
+
+  dayPicnic: {
+    timings: "9:00 AM – 6:00 PM",
   },
 };
 
@@ -406,7 +662,7 @@ export const SPOTLIGHT = {
 export const STORY = {
   eyebrow: "The Story",
   lead: "Set where the hills soften into the river, Yume is a quiet escape from the city - mornings in mist, afternoons by the pool, evenings under string lights.",
-  body: "Nested one hour away from Thane, in Badlapur, Sonivali - just 10 minutes from Badlapur(W) station. We host slow weekend stays, long lunches, floodlit games and weddings by the water. Come for a day, or stay the weekend.",
+  body: "Nestled one hour away from Thane, in Badlapur, Sonivali - just 10 kilometers from Badlapur (W) station. We host slow weekend stays, long lunches, floodlit games and weddings by the water. Come for a day, or stay the weekend.",
 };
 
 // Home page wedding band - the small price line under the headline.
@@ -468,52 +724,74 @@ export const WAYS = [
 
 // [ADD] placeholders - replace values when known.
 export const STATS = [
-  { value: "[ADD]", label: "Rooms & villas" },
-  { value: "[ADD]", label: "Guests hosted" },
-  { value: "[ADD]", label: "Weddings & events" },
+  { value: "50+", label: "Rooms" },
+  { value: "2500", label: "Guests hosted" },
+  { value: "150+", label: "Weddings & events" },
 ];
 
 // TODO: swap placeholder reviews for live Google data.
-export const GOOGLE_RATING = { score: "4.9", source: "Google Reviews" };
+export const GOOGLE_RATING = { score: "4.6", source: "Google Reviews" };
+
+
+const GOOGLE_REVIEWS_URL =
+  "https://www.google.com/travel/hotels/entity/CgoIh4XIqNubjJVGEAE/reviews?q=yume%20badlapur";
 
 export const REVIEWS = [
   {
-    name: "Aarav S.",
-    text: "A perfect weekend escape from the city. The pool afternoons and the quiet mornings by the river - we didn't want to leave.",
+    name: "Swati Shrivastava",
+    rating: 5,
+    text: "I went there office outing. 1 night well spent there. Arrangements, decoration, pool, food, room, cleanliness all are excellent. Behavior of staff also very polite and supporting. Very beautiful property. Best choice for office outing.",
+    source: "Google",
+    sourceUrl:
+      "https://www.google.com/maps/contrib/100016086773076366385?hl=en-GB",
   },
   {
-    name: "Priya & Rohan",
-    text: "We hosted our wedding here and it felt like a dream. The lawn at dusk, the lights, the food - guests still talk about it.",
+    name: "Farhat Chaudhary",
+    rating: 5,
+    text: "We had a wonderful and pleasant stay. The property is great, with up-to-mark facilities and amenities, tasty food, and courteous staff.",
+    source: "Google",
+    sourceUrl:
+      "https://www.google.com/maps/contrib/102229897441006322619?hl=en-GB",
   },
   {
-    name: "Ketaki M.",
-    text: "Booked the turf for a Sunday game and stayed for dinner. Warm staff, beautiful spaces, very easy drive from Mumbai.",
+    name: "Pari Chandwani",
+    rating: 5,
+    text: "The place was as beautiful as it looked in the images. The food was so delicious, the staff was cooperative, and the environment was very positive. I will recommend everyone to visit this place.",
+    source: "Google",
+    sourceUrl:
+      "https://www.google.com/maps/contrib/109879166062428812453?hl=en-GB",
   },
   {
-    name: "Neha & Siddharth",
-    text: "Arrived late, no fuss, and the room was ready with tea. We slept properly for the first time in months.",
+    name: "Ashish S",
+    rating: 5,
+    text: "We were looking for a sportacation-type place or resort, and this is a perfect place to serve the purpose. A resort beside the river with huge lawns and a great cricket turf.",
+    source: "Google",
+    sourceUrl:
+      "https://www.google.com/maps/contrib/115715239017790155733?hl=en-GB",
   },
   {
-    name: "Farhan Q.",
-    text: "The long lunch turned into a seven-hour sit-down. Nobody rushed us, and the river view kept changing all afternoon.",
+    name: "Manish Sewlani",
+    rating: 5,
+    text: "Yume Resort is a wonderful place to enjoy your time with family and friends. I visited with my family and enjoyed great food and hospitality.",
+    source: "Google",
+    sourceUrl:
+      "https://www.google.com/maps/contrib/108067342256081235202?hl=en-GB",
   },
   {
-    name: "Aditi R.",
-    text: "Came for one night with my parents, extended to two. The garden room is quiet, the staff remember your name.",
-  },
-  {
-    name: "Vikram S.",
-    text: "Ran a small corporate offsite here. Screen, sound, food, and a turf match in the evening - everything in one place.",
-  },
-  {
-    name: "Meera J.",
-    text: "The pool at golden hour is the best thing in Badlapur. Booked the same weekend again before we even checked out.",
-  },
-  {
-    name: "Tanmay & Sneha",
-    text: "Our sangeet was set on the lawn with string lights. The team handled the vendors, we only had to show up and enjoy.",
+    name: "Paresh Vadiya",
+    rating: 5,
+    text: "The resort is very good, with a big swimming pool, games and activities, a well-maintained garden, and delicious food cooked in a traditional way. The staff was very supportive and behaved well.",
+    source: "Google",
+    sourceUrl:
+      "https://www.google.com/maps/contrib/117959876744954681008?hl=en-GB",
   },
 ];
+
+export const REVIEWS_CTA = {
+  label: "Read All Google Reviews",
+  url: GOOGLE_REVIEWS_URL,
+};
+
 
 // TODO: connect the live @yume.resort Instagram feed here.
 export const INSTAGRAM_TILES = [

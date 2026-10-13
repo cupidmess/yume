@@ -69,10 +69,15 @@ export function ReviewSlider() {
                 className="grid w-full shrink-0 gap-6 md:grid-cols-3"
               >
                 {group.map((review) => (
-                  <figure
-                    key={review.name}
-                    className="flex h-full flex-col border border-ink/10 p-8"
-                  >
+                
+<a
+  key={review.name}
+  href={review.sourceUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex h-full flex-col border border-ink/10 p-8 text-inherit no-underline transition-colors hover:border-ink/30 cursor-pointer"
+>
+
                     <span className="flex text-peach">
                       {[0, 1, 2, 3, 4].map((s) => (
                         <Star key={s} className="h-3.5 w-3.5 fill-current" />
@@ -84,7 +89,7 @@ export function ReviewSlider() {
                     <figcaption className="mt-6 text-[11px] uppercase tracking-[0.25em] text-ink/50">
                       {review.name} · Google review
                     </figcaption>
-                  </figure>
+                  </a>
                 ))}
               </div>
             ))}
