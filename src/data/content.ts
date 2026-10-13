@@ -1,5 +1,5 @@
 // ============================================================
-// Yume Resort — central content file.
+// Yume Resort - central content file.
 // Edit all copy, contact details and image references here;
 // components read from this file so content can be updated
 // without touching layout code.
@@ -49,7 +49,7 @@ import roomBalcony from "@/assets/yume/room-balcony.jpg";
 import turf2 from "@/assets/yume/turf-2.jpg";
 import turf3 from "@/assets/yume/turf-3.jpg";
 
-// Placeholder room photos — swap per room with real photography.
+// Placeholder room photos - swap per room with real photography.
 const roomPhotos = (main: string) => [
   { src: main, label: "Room" },
   { src: deluxbalc, label: "Bedroom" },
@@ -91,7 +91,7 @@ export const site = {
   name: "Yume Resort",
   tagline: "A hidden retreat for unforgettable moments.",
   location: "Sonivali, Badlapur",
-  address: "Sonivali, Badlapur, Maharashtra — [ADD full address]",
+  address: "Sonivali, Badlapur, Maharashtra - [ADD full address]",
   email: "[ADD email]",
   phones: [
     { display: "+91 70280 43300", href: "+917028043300" },
@@ -303,7 +303,7 @@ export const EXPERIENCES = {
       webm: undefined,
       title: "The pool, in motion.",
       caption:
-        "A short look at the water before you plan your visit — day passes are subject to availability, especially on weekends.",
+        "A short look at the water before you plan your visit - day passes are subject to availability, especially on weekends.",
     },
   },
   turf: {
@@ -382,7 +382,7 @@ export const CONTACT = {
     {
       from: "From Thane",
       detail:
-        "Continue via Kalyan towards Badlapur, then follow the route to Sonivali — about an hour from Thane.",
+        "Continue via Kalyan towards Badlapur, then follow the route to Sonivali - about an hour from Thane.",
     },
     {
       from: "From Kalyan",
@@ -391,25 +391,25 @@ export const CONTACT = {
   ],
 };
 
-// Home page spotlight — the location story.
+// Home page spotlight - the location story.
 export const SPOTLIGHT = {
   eyebrow: "Spotlight",
   title: "10 KM FROM BADLAPUR STATION",
-  copy: "Yume sits minutes from Barvi Dam, Badlapur — the quiet backwaters and green hills just beyond the city. Mist over the water in the morning, golden light on the dam road by evening. Come for the dam views, stay for the river.",
+  copy: "Yume sits minutes from Barvi Dam, Badlapur - the quiet backwaters and green hills just beyond the city. Mist over the water in the morning, golden light on the dam road by evening. Come for the dam views, stay for the river.",
   linkLabel: "Find us near Barvi Dam",
   to: "/contact",
   image: insta6,
   imageAlt: "Evening light on the water near Barvi Dam",
 };
 
-// Home page story block — the two paragraphs under the hero.
+// Home page story block - the two paragraphs under the hero.
 export const STORY = {
   eyebrow: "The Story",
-  lead: "Set where the hills soften into the river, Yume is a quiet escape from the city — mornings in mist, afternoons by the pool, evenings under string lights.",
-  body: "Nested one hour away from Thane, in Badlapur, Sonivali — just 10 minutes from Badlapur(W) station. We host slow weekend stays, long lunches, floodlit games and weddings by the water. Come for a day, or stay the weekend.",
+  lead: "Set where the hills soften into the river, Yume is a quiet escape from the city - mornings in mist, afternoons by the pool, evenings under string lights.",
+  body: "Nested one hour away from Thane, in Badlapur, Sonivali - just 10 minutes from Badlapur(W) station. We host slow weekend stays, long lunches, floodlit games and weddings by the water. Come for a day, or stay the weekend.",
 };
 
-// Home page wedding band — the small price line under the headline.
+// Home page wedding band - the small price line under the headline.
 export const WEDDING_BAND = {
   from: "Starting from ₹1.5 L",
 };
@@ -466,7 +466,7 @@ export const WAYS = [
   },
 ];
 
-// [ADD] placeholders — replace values when known.
+// [ADD] placeholders - replace values when known.
 export const STATS = [
   { value: "[ADD]", label: "Rooms & villas" },
   { value: "[ADD]", label: "Guests hosted" },
@@ -479,11 +479,11 @@ export const GOOGLE_RATING = { score: "4.9", source: "Google Reviews" };
 export const REVIEWS = [
   {
     name: "Aarav S.",
-    text: "A perfect weekend escape from the city. The pool afternoons and the quiet mornings by the river — we didn't want to leave.",
+    text: "A perfect weekend escape from the city. The pool afternoons and the quiet mornings by the river - we didn't want to leave.",
   },
   {
     name: "Priya & Rohan",
-    text: "We hosted our wedding here and it felt like a dream. The lawn at dusk, the lights, the food — guests still talk about it.",
+    text: "We hosted our wedding here and it felt like a dream. The lawn at dusk, the lights, the food - guests still talk about it.",
   },
   {
     name: "Ketaki M.",
@@ -503,7 +503,7 @@ export const REVIEWS = [
   },
   {
     name: "Vikram S.",
-    text: "Ran a small corporate offsite here. Screen, sound, food, and a turf match in the evening — everything in one place.",
+    text: "Ran a small corporate offsite here. Screen, sound, food, and a turf match in the evening - everything in one place.",
   },
   {
     name: "Meera J.",
