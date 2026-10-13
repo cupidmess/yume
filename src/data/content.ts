@@ -121,7 +121,7 @@ export const STAY = {
     eyebrow: "Stay at Yume",
     title: "Wake slowly, close to the river.",
     intro:
-      "Quiet rooms and private villas for unhurried weekends, family time and a night away from the city.",
+      "Quiet rooms for unhurried weekends, family time and a night away from the city.",
   },
 
   intro:

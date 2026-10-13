@@ -12,7 +12,7 @@ import { RoomGallery } from "@/components/yume/RoomGallery";
 import { STAY, WA_MESSAGES, waLink } from "@/data/content";
 
 const description =
-  "Rooms, villas, amenities and stay enquiries at Yume Resort, Sonivali, Badlapur.";
+  "Rooms, amenities and stay enquiries at Yume Resort, Sonivali, Badlapur.";
 export const Route = createFileRoute("/_yume/stay")({
   head: () => ({
     meta: [
