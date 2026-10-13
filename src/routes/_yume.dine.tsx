@@ -6,9 +6,9 @@ const description = "Outdoor dining and relaxed meals at Yume Resort, Sonivali, 
 export const Route = createFileRoute("/_yume/dine")({
   head: () => ({
     meta: [
-      { title: "Dine — Yume Resort" },
+      { title: "Dine - Yume Resort" },
       { name: "description", content: description },
-      { property: "og:title", content: "Dine — Yume Resort" },
+      { property: "og:title", content: "Dine - Yume Resort" },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

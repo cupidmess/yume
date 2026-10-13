@@ -6,9 +6,9 @@ const description = "Pool day passes, facilities and enquiries at Yume Resort, S
 export const Route = createFileRoute("/_yume/pool")({
   head: () => ({
     meta: [
-      { title: "Pool — Yume Resort" },
+      { title: "Pool - Yume Resort" },
       { name: "description", content: description },
-      { property: "og:title", content: "Pool — Yume Resort" },
+      { property: "og:title", content: "Pool - Yume Resort" },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

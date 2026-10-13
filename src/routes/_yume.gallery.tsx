@@ -11,9 +11,9 @@ const filters = ["All", "Stay", "Pool", "Turf", "Dine", "Weddings"] as const;
 export const Route = createFileRoute("/_yume/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Yume Resort" },
+      { title: "Gallery - Yume Resort" },
       { name: "description", content: description },
-      { property: "og:title", content: "Gallery — Yume Resort" },
+      { property: "og:title", content: "Gallery - Yume Resort" },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

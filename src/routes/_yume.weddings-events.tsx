@@ -13,9 +13,9 @@ const description =
 export const Route = createFileRoute("/_yume/weddings-events")({
   head: () => ({
     meta: [
-      { title: "Weddings & Events — Yume Resort" },
+      { title: "Weddings & Events - Yume Resort" },
       { name: "description", content: description },
-      { property: "og:title", content: "Weddings & Events — Yume Resort" },
+      { property: "og:title", content: "Weddings & Events - Yume Resort" },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -94,7 +94,7 @@ function WeddingsPage() {
                 <p className="mt-2 text-sm text-cream/55">{pack.note}</p>
                 <ul className="mt-7 space-y-3 text-sm text-cream/75">
                   {pack.inclusions.map((item) => (
-                    <li key={item}>— {item}</li>
+                    <li key={item}>- {item}</li>
                   ))}
                 </ul>
                 <p className="mt-8 font-yume-serif text-2xl">{pack.price}</p>

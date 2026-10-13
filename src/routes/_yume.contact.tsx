@@ -9,9 +9,9 @@ const description =
 export const Route = createFileRoute("/_yume/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Yume Resort" },
+      { title: "Contact - Yume Resort" },
       { name: "description", content: description },
-      { property: "og:title", content: "Contact — Yume Resort" },
+      { property: "og:title", content: "Contact - Yume Resort" },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

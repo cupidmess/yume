@@ -18,15 +18,15 @@ import { ReviewSlider } from "@/components/yume/ReviewSlider";
 export const Route = createFileRoute("/_yume/")({
   head: () => ({
     meta: [
-      { title: "Yume Resort — A hidden retreat for unforgettable moments" },
+      { title: "Yume Resort - A hidden retreat for unforgettable moments" },
       {
         name: "description",
         content:
-          "Yume Resort, Sonivali, Badlapur — stays, dining, pool, turf and riverside weddings. A hidden retreat just outside Mumbai. Enquire on WhatsApp.",
+          "Yume Resort, Sonivali, Badlapur - stays, dining, pool, turf and riverside weddings. A hidden retreat just outside Mumbai. Enquire on WhatsApp.",
       },
       {
         property: "og:title",
-        content: "Yume Resort — A hidden retreat for unforgettable moments",
+        content: "Yume Resort - A hidden retreat for unforgettable moments",
       },
       {
         property: "og:description",
@@ -142,7 +142,7 @@ function YumeHome() {
         </div>
       </section>
 
-      {/* Spotlight — Barvi Dam bar */}
+      {/* Spotlight - Barvi Dam bar */}
       <section aria-label="Yume is 10 minutes from Badlapur Station">
         <Link to={SPOTLIGHT.to} className="group block overflow-hidden bg-ink py-5 md:py-7">
           <div className="yume-marquee flex w-max items-center group-hover:[animation-play-state:paused]">
