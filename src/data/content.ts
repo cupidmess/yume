@@ -15,7 +15,6 @@ import storyImg from "@/assets/yume/story.jpg";
 import stayImg from "@/assets/yume/stay.jpg";
 import del3 from "@/assets/yume/del3.jpg"
 import delbed from "@/assets/yume/delbed.jpg"
-import delux from "@/assets/yume/delux.jpg"
 import delux2 from "@/assets/yume/delux2.jpg"
 import deluxbalc from "@/assets/yume/deluxbalc.jpg"
 import deluxebalc from "@/assets/yume/deluxebalc.jpg"
@@ -60,7 +59,7 @@ const roomPhotos = (main: string) => [
 ];
 const deluxePics = (main: string) => [
   { src: main, label: "Room" },
-  { src: delux, label: "Bedroom" },
+  { src: del3, label: "Bedroom" },
   { src: del3, label: "Washroom" },
   { src: delbed, label: "Writing table" },
   { src: roomBalcony, label: "Balcony view" },
