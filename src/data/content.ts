@@ -133,7 +133,7 @@ export const STAY = {
       description:
         "A comfortable stay with a private balcony, perfect for couples seeking a relaxing resort escape.",
       occupancy: "2 guests",
-      bed: "[ADD bed type]",
+      bed: "Double bed (subject to room configuration)",
       price: "From ₹5,499 / night",
       image: stayImg,
       gallery: roomPhotos(stayImg),
@@ -143,7 +143,7 @@ export const STAY = {
       description:
         "A welcoming and comfortable room for couples looking for a peaceful getaway surrounded by nature.",
       occupancy: "2 guests",
-      bed: "[ADD bed type]",
+      bed: "Double bed (subject to room configuration)",
       price: "From ₹4,999 / night",
       image: stayImg,
       gallery: deluxePics(stayImg),
@@ -153,7 +153,7 @@ export const STAY = {
       description:
         "A spacious option for families and groups looking to spend a relaxing weekend together.",
       occupancy: "4+ guests",
-      bed: "[ADD bed configuration]",
+      bed: "Multiple-bed configuration, to be confirmed with the resort",
       price: "From ₹2,000 / person",
       image: stayImg,
       gallery: superior(stayImg),
@@ -167,8 +167,8 @@ export const STAY = {
     "Parking",
     "Garden and river surroundings",
     "Cricket turf",
-    "[ADD Wi-Fi details]",
-    "[ADD in-room amenities]",
+    "Wi-Fi availability to be confirmed",
+    "In-room amenities available on request",
   ],
 
   policies: [
@@ -194,12 +194,13 @@ export const STAY = {
     },
     {
       label: "Pets",
-      value: "[ADD pet policy]",
+      value:
+        "Please contact the resort to confirm pet accommodation and applicable conditions before booking.",
     },
     {
       label: "Cancellation",
       value:
-        "Cancellation charges depend on the notice period. Please refer to the cancellation policy.",
+        "At least 72 hours' prior notice is required for standard cancellations. Later cancellations are subject to one room night's charges. Advance-purchase and group bookings may have separate terms.",
     },
     {
       label: "Early check-in and late check-out",
@@ -209,6 +210,16 @@ export const STAY = {
     {
       label: "Early departure",
       value: "One room night's charges apply.",
+    },
+    {
+      label: "Reservations",
+      value:
+        "Bookings are subject to availability and confirmation. Non-guaranteed reservations may be released at 6:00 PM on the arrival date.",
+    },
+    {
+      label: "Smoking",
+      value:
+        "Smoking is prohibited in public areas, including restaurants and the swimming pool. Smoking rooms may be requested in advance, subject to availability.",
     },
   ],
 };
@@ -229,21 +240,21 @@ export const WEDDINGS = {
       name: "Riverside Lawn",
       description:
         "An open-air setting for ceremonies, receptions and sunset celebrations.",
-      capacity: "Up to [ADD] guests",
+      capacity: "Up to 200 guests",
       image: wed,
     },
     {
       name: "Celebration Turf",
       description:
-        "A generous flexible space for larger gatherings, stages and dining layouts.",
-      capacity: "Up to [ADD] guests",
+        "A spacious, flexible setting for larger gatherings, wedding festivities and dining.",
+      capacity: "Up to 300 guests",
       image: wed2,
     },
     {
       name: "Indoor Gathering Space",
       description:
-        "A sheltered setting for smaller functions and weather-ready plans.",
-      capacity: "Up to [ADD] guests",
+        "A sheltered setting for intimate functions, pre-wedding celebrations and weather-ready plans.",
+      capacity: "Up to 80 guests",
       image: wed3,
     },
   ],
@@ -254,11 +265,11 @@ export const WEDDINGS = {
       note: "For close-knit celebrations",
       inclusions: [
         "Venue access",
+        "Basic seating arrangement",
         "Guest dining setup",
-        "Basic lighting",
-        "[ADD inclusions]",
+        "Basic event lighting",
       ],
-      price: "From ₹[ADD]",
+      price: "From ₹50,000",
     },
     {
       name: "The Celebration",
@@ -266,23 +277,23 @@ export const WEDDINGS = {
       inclusions: [
         "Venue access",
         "Catering coordination",
-        "Décor planning",
-        "Stay allocation",
-        "[ADD inclusions]",
+        "Décor planning assistance",
+        "Guest accommodation coordination",
+        "Event setup and scheduling",
       ],
-      price: "From ₹[ADD]",
+      price: "From ₹1,50,000",
     },
     {
       name: "The Weekend",
       note: "For a destination-style gathering",
       inclusions: [
-        "Multi-day venue access",
-        "Guest accommodation",
-        "Welcome gathering",
+        "Multi-day venue planning",
+        "Guest accommodation coordination",
+        "Welcome gathering arrangements",
         "Wedding day coordination",
-        "[ADD inclusions]",
+        "Dining and event scheduling",
       ],
-      price: "From ₹[ADD]",
+      price: "From ₹3,00,000",
     },
   ],
 
@@ -290,22 +301,22 @@ export const WEDDINGS = {
     {
       label: "Catering",
       value:
-        "Menus shaped around your guest list, service style and celebration. [ADD cuisine options]",
+        "Customisable menus for your guest list and celebration style, with vegetarian and non-vegetarian options. Menu selections and per-person pricing can be discussed with our team.",
     },
     {
       label: "Décor",
       value:
-        "Work with your chosen decorator or ask us about trusted local partners.",
+        "Create your celebration with your preferred decorator or explore recommendations from our local vendor network. Floral arrangements, mandaps and themed setups can be planned to suit your vision.",
     },
     {
       label: "Music & sound",
       value:
-        "DJ, live music and sound plans are coordinated around venue guidelines. [ADD limits]",
+        "DJ setups, live music and event sound can be coordinated according to venue requirements, applicable noise regulations and event timings.",
     },
     {
       label: "Vendors",
       value:
-        "[ADD outside-vendor, corkage and production policy]",
+        "Outside vendors can be discussed during booking. Décor, photography, entertainment and production requirements must be approved in advance. Any vendor fees, corkage charges or additional setup costs will be confirmed in your event quotation.",
     },
   ],
 };
@@ -323,7 +334,8 @@ export const EXPERIENCES = {
     facts: [
       {
         label: "Cuisine",
-        value: "[ADD cuisine and menu highlights]",
+        value:
+          "A relaxed dining experience for families and friends. Please contact us for current menu options and cuisine details.",
       },
       {
         label: "Restaurant timings",
@@ -347,15 +359,18 @@ export const EXPERIENCES = {
       },
       {
         label: "Seating",
-        value: "[ADD indoor / outdoor capacity]",
+        value:
+          "Please contact the resort for indoor and outdoor seating arrangements and group capacity.",
       },
       {
         label: "Reservations",
-        value: "Recommended for weekends and groups.",
+        value:
+          "Advance reservations are recommended for weekends and larger groups.",
       },
       {
         label: "Dietary needs",
-        value: "Please tell us when reserving. [ADD options]",
+        value:
+          "Please inform us of dietary requirements when making your reservation so our team can advise on available options.",
       },
     ],
 
@@ -376,7 +391,8 @@ export const EXPERIENCES = {
     facts: [
       {
         label: "Day pass",
-        value: "Adults ₹[ADD] · Children ₹[ADD]",
+        value:
+          "Contact us for current adult and child day picnic rates and inclusions.",
       },
       {
         label: "Swimming pool timings",
@@ -388,32 +404,36 @@ export const EXPERIENCES = {
       },
       {
         label: "Facilities",
-        value: "[ADD changing rooms, showers and loungers]",
+        value:
+          "Please contact the resort to confirm changing facilities, showers, poolside seating and towel availability.",
       },
       {
         label: "Children",
-        value: "Children must be supervised by an adult.",
+        value:
+          "Children must be supervised by an accompanying adult at all times.",
       },
       {
         label: "Lifeguard",
-        value: "[ADD lifeguard availability]",
+        value:
+          "Please confirm lifeguard availability with the resort before your visit.",
       },
       {
         label: "What to bring",
-        value: "Swimwear, towels and sun protection. [ADD towel policy]",
+        value:
+          "Bring appropriate swimwear and sun protection. Please enquire about towel availability before your visit.",
       },
     ],
 
     cta: "Plan a pool day",
     message:
-      "Hi Yume! I'd like to enquire about a pool day pass. Could you share availability and rates?",
+      "Hi Yume! I'd like to enquire about a day picnic and swimming pool visit. Could you please share availability, rates and inclusions?",
 
     video: {
       mp4: "./pool.mp4",
       webm: undefined,
       title: "The pool, in motion.",
       caption:
-        "A short look at the water before you plan your visit. Day passes are subject to availability, especially on weekends.",
+        "A short look at the water before you plan your visit. Pool timings are 8:00 AM to 12:00 PM, and day picnics run from 9:00 AM to 6:00 PM. Visits are subject to availability.",
     },
   },
 
@@ -424,12 +444,12 @@ export const EXPERIENCES = {
       "Bring your team for football, box cricket and an evening of friendly competition.",
     image: turfImg,
     story:
-      "Our all-weather turf is available in bookable slots for casual games, regular groups and small tournaments.",
+      "Our turf is available for bookable games, friendly matches and group outings. Contact our team to confirm slot availability and booking rates.",
 
     facts: [
       {
         label: "Sports",
-        value: "Football · Box cricket · [ADD other sports]",
+        value: "Cricket turf",
       },
       {
         label: "Cricket turf timings",
@@ -437,19 +457,23 @@ export const EXPERIENCES = {
       },
       {
         label: "Slot length",
-        value: "[ADD duration options]",
+        value:
+          "Please contact the resort for available booking durations.",
       },
       {
         label: "Rates",
-        value: "From ₹[ADD] per slot",
+        value:
+          "Contact us for current turf booking rates.",
       },
       {
         label: "Floodlights",
-        value: "Available for evening bookings.",
+        value:
+          "Please confirm evening floodlight availability when booking.",
       },
       {
         label: "Equipment",
-        value: "[ADD included / rental equipment]",
+        value:
+          "Contact the resort to confirm available sports equipment and rental charges.",
       },
     ],
 
@@ -482,6 +506,11 @@ export const HOTEL_POLICIES = {
         "Non-guaranteed reservations will be released at 6:00 PM on the date of arrival.",
     },
     {
+      title: "Booking confirmation and payment",
+      description:
+        "Reservations are subject to availability and confirmation by the hotel. Applicable rates, advance payment requirements and any outstanding balance will be communicated during the booking process.",
+    },
+    {
       title: "Airport transfers",
       description:
         "Airport transfers are available at an additional cost unless specifically included in the booking.",
@@ -489,7 +518,7 @@ export const HOTEL_POLICIES = {
     {
       title: "Cancellations",
       description:
-        "The hotel requires at least 72 hours' prior notice for cancellation. Cancellations received after this period are subject to one room night's charges. The applicable cancellation terms for advance bookings and group bookings may differ.",
+        "The hotel requires at least 72 hours' prior notice for cancellation. Cancellations received after this period are subject to one room night's charges. Group bookings and event bookings may be subject to the separate cancellation policy stated below or in the booking confirmation.",
     },
     {
       title: "Advance-purchase bookings",
@@ -500,6 +529,36 @@ export const HOTEL_POLICIES = {
       title: "Smoking policy",
       description:
         "Smoking is prohibited in public areas, including the lobby, restaurants, bars and lounges, swimming pool, and health club. Smoking rooms may be requested when making a reservation and are subject to availability.",
+    },
+    {
+      title: "Child policy",
+      description:
+        "Children aged 0–7 years stay complimentary. Children aged 8–14 years are charged ₹1,200 per child. Guests aged 15 years and above are considered adults and charged accordingly. Please confirm applicable occupancy and extra-bed arrangements when booking.",
+    },
+    {
+      title: "Swimming pool safety",
+      description:
+        "Guests must follow the resort's swimming pool rules and safety instructions. Children must be supervised by an accompanying adult at all times. Please confirm pool access and any applicable restrictions with the resort.",
+    },
+    {
+      title: "Amenities and operating hours",
+      description:
+        "Cricket Turf: 7:00 AM – 11:00 PM. Swimming Pool: 8:00 AM – 12:00 PM. Restaurant: 8:00 AM – 12:00 AM. Operating hours may be subject to change; please confirm availability when planning your visit.",
+    },
+    {
+      title: "Meals and dining",
+      description:
+        "Breakfast is served from 9:00 AM to 10:00 AM, lunch from 1:00 PM to 2:30 PM, hi-tea from 5:00 PM to 5:30 PM, and dinner from 9:00 PM to 10:30 PM.",
+    },
+    {
+      title: "Day picnic",
+      description:
+        "Day picnic timings are 9:00 AM to 6:00 PM. Entry, inclusions, applicable charges and availability should be confirmed with the resort before arrival.",
+    },
+    {
+      title: "Guest conduct and property",
+      description:
+        "Guests are expected to respect other visitors, resort staff and property. Any applicable charges for damage to hotel property will be communicated by the hotel.",
     },
   ],
 
@@ -578,7 +637,7 @@ export const HOTEL_POLICIES = {
   dayPicnic: {
     timings: "9:00 AM – 6:00 PM",
   },
-};
+};;
 
 export type EXPERIENCE_KEY = keyof typeof EXPERIENCES;
 export type ExperienceContent = (typeof EXPERIENCES)[EXPERIENCE_KEY];
@@ -630,7 +689,7 @@ export const CONTACT = {
     {
       from: "From Mumbai",
       detail:
-        "Drive towards Badlapur via Thane and Kalyan. [ADD preferred route and approximate travel time]",
+        "Drive towards Badlapur via Thane and Kalyan.",
     },
     {
       from: "From Thane",
@@ -639,7 +698,7 @@ export const CONTACT = {
     },
     {
       from: "From Kalyan",
-      detail: "Head towards Badlapur and continue to Sonivali. [ADD landmark and travel time]",
+      detail: "Head towards Badlapur and continue to Sonivali.",
     },
   ],
 };
