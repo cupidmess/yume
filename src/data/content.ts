@@ -127,38 +127,71 @@ export const STAY = {
   intro:
     "Every stay is designed around easy comfort: green views, time by the pool and the freedom to do very little at all.",
 
-  rooms: [
-    {
-      name: "Deluxe Room (With Balcony)",
-      description:
-        "A comfortable stay with a private balcony, perfect for couples seeking a relaxing resort escape.",
-      occupancy: "2 guests",
-      bed: "Double bed (subject to room configuration)",
-      price: "From ₹5,499 / night",
-      image: stayImg,
-      gallery: roomPhotos(stayImg),
+ rooms: [
+  {
+    name: "Deluxe Room (Without Balcony)",
+    description: "A welcoming and comfortable room for couples looking for a peaceful getaway surrounded by nature. Choose a couple stay with food, or a group package with or without food.",
+    image: stayImg,
+    gallery: deluxePics(stayImg),
+    packages: [
+      { name: "Couple · With food", weekdayGuests: "2 guests", weekendGuests: "2 guests", unit: "per couple", weekday: 4999, weekend: 6500 },
+      { name: "Group · Without food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 1000, weekend: 3000 },
+      { name: "Group · With food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 2300, weekend: 3000 },
+    ],
+    compare: {
+      short: "Deluxe · No balcony",
+      food: "Couples stay with food included; groups choose with or without food.",
+      inclusions: ["Air-conditioned room", "Pool & garden access", "On-site dining", "Group packages from 4 guests"],
     },
-    {
-      name: "Deluxe Room (Without Balcony)",
-      description:
-        "A welcoming and comfortable room for couples looking for a peaceful getaway surrounded by nature.",
-      occupancy: "2 guests",
-      bed: "Double bed (subject to room configuration)",
-      price: "From ₹4,999 / night",
-      image: stayImg,
-      gallery: deluxePics(stayImg),
+  },
+  {
+    name: "Deluxe Room (With Balcony)",
+    description: "A comfortable stay with a private balcony, perfect for couples seeking a relaxing resort escape.",
+    image: stayImg,
+    gallery: roomPhotos(stayImg),
+    packages: [
+      { name: "Couple · With food", weekdayGuests: "2 guests", weekendGuests: "2 guests", unit: "per couple", weekday: 5499, weekend: 7000 },
+      { name: "Group · Without food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 1000, weekend: 3000 },
+      { name: "Group · With food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 2300, weekend: 3000 },
+    ],
+    compare: {
+      short: "Deluxe · Balcony",
+      food: "Couples stay with food included; groups choose with or without food.",
+      inclusions: ["Room with private balcony", "Pool & garden access", "On-site dining", "Group packages from 4 guests"],
     },
-    {
-      name: "Superior Room",
-      description:
-        "A spacious option for families and groups looking to spend a relaxing weekend together.",
-      occupancy: "4+ guests",
-      bed: "Multiple-bed configuration, to be confirmed with the resort",
-      price: "From ₹2,000 / person",
-      image: stayImg,
-      gallery: superior(stayImg),
+  },
+  {
+    name: "Superior Room",
+    description: "A spacious option for families and groups looking to spend a relaxing weekend together.",
+    image: stayImg,
+    gallery: superior(stayImg),
+    packages: [
+      { name: "Group of 4+ · Without food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 2000, weekend: 3000 },
+      { name: "Group of 8+ · Without food", weekdayGuests: "Minimum 8 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 1000, weekend: 3000 },
+      { name: "Group of 4+ · With food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 3000, weekend: 3000 },
+      { name: "Group of 8+ · With food", weekdayGuests: "Minimum 8 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 2300, weekend: 3000 },
+    ],
+    compare: {
+      short: "Superior",
+      food: "Groups choose with or without food; a couple package isn't offered.",
+      inclusions: ["Air-conditioned room", "Pool & garden access", "On-site dining", "Groups of 8+ save on weekdays"],
     },
-  ],
+  },
+],
+tariff: {
+  heading: "Room packages",
+  view: "View packages",
+  weekday: "Weekdays",
+  weekend: "Weekend",
+  enquiry: "Enquire about package",
+  note: "Rates are subject to seasonal offers and availability. Terms & conditions apply.",
+  deluxeNote: "Group rates are listed for Deluxe rooms; please confirm balcony availability when enquiring.",
+  compare: {
+    title: "Compare rooms & packages.",
+    intro: "Rates, food options and inclusions for all three room categories, side by side.",
+    link: "Compare all rooms",
+  },
+},
 
   amenities: [
     "Swimming pool",
@@ -707,7 +740,7 @@ export const CONTACT = {
 // Home page spotlight - the location story.
 export const SPOTLIGHT = {
   eyebrow: "Spotlight",
-  title: "10 KM FROM BADLAPUR STATION",
+  title: "3 KM FROM BADLAPUR STATION",
   copy: "Yume sits minutes from Barvi Dam, Badlapur - the quiet backwaters and green hills just beyond the city. Mist over the water in the morning, golden light on the dam road by evening. Come for the dam views, stay for the river.",
   linkLabel: "Find us near Barvi Dam",
   to: "/contact",
@@ -719,7 +752,7 @@ export const SPOTLIGHT = {
 export const STORY = {
   eyebrow: "The Story",
   lead: "Set where the hills soften into the river, Yume is a quiet escape from the city.",
-  body: "Nestled one hour away from Thane, in Badlapur, Sonivali - just 10 kilometers from Badlapur (W) station. We host slow weekend stays, long lunches, floodlit games and weddings by the water. Come for a day, or stay the weekend.",
+  body: "Nestled one hour away from Thane, in Badlapur, Sonivali - just 3 kilometers from Badlapur (W) station. We host slow weekend stays, long lunches, floodlit games and weddings by the water. Come for a day, or stay the weekend.",
 };
 
 // Home page wedding band - the small price line under the headline.
