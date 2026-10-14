@@ -268,6 +268,7 @@ export const WEDDINGS = {
         "Basic seating arrangement",
         "Guest dining setup",
         "Basic event lighting",
+        "lorem ipsum lorem lorem",
       ],
       price: "From ₹50,000",
     },
@@ -444,7 +445,7 @@ export const EXPERIENCES = {
       "Bring your team together and make every moment count.",
     image: turfImg,
     story:
-      "From friendly kickabouts to competitive matches, our turf is where good games, great company and unforgettable moments come together.",
+      "From friendly kickabouts to competitive matches, our turf is where good games, great company and unforgettable moments come together. ",
 
     facts: [
       {
