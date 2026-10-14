@@ -6,16 +6,16 @@ import {
   PageShell,
   SectionHeading,
 } from "@/components/yume/InteriorPage";
-import { IMAGES, WA_MESSAGES, WEDDINGS, waLink } from "@/data/content";
+import { WA_MESSAGES, WEDDINGS, waLink } from "@/data/content";
 
 const description =
   "Riverside wedding venues, event packages and date enquiries at Yume Resort, Sonivali, Badlapur.";
 export const Route = createFileRoute("/_yume/weddings-events")({
   head: () => ({
     meta: [
-      { title: "Weddings & Events - Yume Resort" },
+      { title: "Weddings & Events — Yume Resort" },
       { name: "description", content: description },
-      { property: "og:title", content: "Weddings & Events - Yume Resort" },
+      { property: "og:title", content: "Weddings & Events — Yume Resort" },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -46,14 +46,14 @@ function WeddingsPage() {
     <PageShell>
       <InteriorHero
         {...WEDDINGS.hero}
-        image={IMAGES.weddingBand}
+        image={WEDDINGS.venues[0].image}
         imageAlt="Riverside wedding at Yume Resort"
       />
       <section className="px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Celebrate here"
-            title="One destination, every occasion."
+            title="One destination, every part of the occasion."
             body={WEDDINGS.intro}
           />
           <div className="mt-14 grid gap-14">
@@ -84,20 +84,20 @@ function WeddingsPage() {
           <h2 className="mt-4 font-yume-serif text-3xl tracking-tight md:text-5xl">
             Choose a starting point.
           </h2>
-          <div className="mt-12 grid border-t border-cream/20 md:grid-cols-3">
+          <div className="mt-12 grid border-t border-cream/20 md:grid-cols-2 lg:grid-cols-4">
             {WEDDINGS.packages.map((pack) => (
               <article
                 key={pack.name}
-                className="border-b border-cream/20 py-8 md:border-r md:px-8 first:md:pl-0 last:md:border-r-0"
+                className="flex flex-col border-b border-cream/20 py-8 md:px-8 md:first:pl-0 lg:border-l lg:border-cream/20 lg:first:border-l-0"
               >
-                <p className="font-yume-serif text-3xl">{pack.name}</p>
+               <p className="font-yume-serif text-lg lg:text-xl font-semibold whitespace-nowrap">{pack.name}</p>
                 <p className="mt-2 text-sm text-cream/55">{pack.note}</p>
                 <ul className="mt-7 space-y-3 text-sm text-cream/75">
                   {pack.inclusions.map((item) => (
-                    <li key={item}>- {item}</li>
+                    <li key={item}>— {item}</li>
                   ))}
                 </ul>
-                <p className="mt-8 font-yume-serif text-2xl">{pack.price}</p>
+                <p className="mt-auto pt-8 font-yume-serif text-2xl">{pack.price}</p>
                 <a
                   href={waLink(
                     `Hi Yume! I'd like to know more about the ${pack.name} wedding package.`,

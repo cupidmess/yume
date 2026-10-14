@@ -163,34 +163,33 @@ function YumeHome() {
       </section>
 
       {/* Story */}
-      <section className="px-6 py-24 md:px-12 md:py-32">
-        <div className="mx-auto grid max-w-7xl items-start gap-12 md:grid-cols-12">
-          <div className="md:col-span-7" data-reveal>
-            <p className="text-[11px] uppercase tracking-[0.3em] text-ink/50">The Story</p>
-            <p className="mt-6 font-yume-serif text-3xl leading-[1.15] tracking-tight md:text-[2.6rem]">
-              {STORY.lead}
-            </p>
-            <p className="mt-8 max-w-xl text-ink/70">{STORY.body}</p>
-          </div>
-          <div className="md:col-span-5 md:mt-16" data-reveal>
-            <video
-              ref={storyVideoRef}
-              poster={IMAGES.story}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-label="A quiet veranda at Yume Resort in morning light"
-              className="aspect-[4/5] w-full object-cover"
-            >
-              <source src={IMAGES.storyVideoWebm} type="video/webm" />
-              <source src={IMAGES.storyVideo} type="video/mp4" />
-            </video>
-          </div>
-        </div>
-      </section>
-
+<section className="px-6 py-24 md:px-12 md:py-32">
+  <div className="mx-auto flex max-w-7xl flex-col gap-12">
+    <div data-reveal>
+      <p className="text-[11px] uppercase tracking-[0.3em] text-ink/50">The Story</p>
+      <p className="mt-6 max-w-3xl font-yume-serif text-3xl leading-[1.15] tracking-tight md:text-[2.6rem]">
+    {STORY.lead}
+  </p>
+  <p className="mt-8 max-w-2xl text-ink/70">{STORY.body}</p>
+</div>
+    <div data-reveal>
+      <video
+        ref={storyVideoRef}
+        poster={IMAGES.story}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-label="A quiet veranda at Yume Resort in morning light"
+        className="aspect-[4/5] w-full object-cover md:aspect-video"
+      >
+        <source src={IMAGES.storyVideoWebm} type="video/webm" />
+        <source src={IMAGES.storyVideo} type="video/mp4" />
+      </video>
+    </div>
+  </div>
+</section>
       {/* Five ways to spend a day */}
       <section className="px-6 pb-24 md:px-12 md:pb-32">
         <div className="mx-auto max-w-7xl" data-reveal>

@@ -1,4 +1,27 @@
+import { Baby, Car, Check, Clock, CalendarCheck, DoorOpen, Dog, Dumbbell, Flower2, Music, Mountain, Sparkles, Users, Utensils, Waves, Wifi, Wind } from "lucide-react";
 import { STAY } from "@/data/content";
+
+// Each inclusion line gets the icon that best matches its wording; unmatched items fall back to a check.
+const iconRules: { test: RegExp; Icon: typeof Check }[] = [
+  { test: /air[- ]?condition/i, Icon: Wind },
+  { test: /pool/i, Icon: Waves },
+  { test: /garden|river|lawn|green/i, Icon: Flower2 },
+  { test: /dining|food|meal|breakfast|restaurant|cuisine/i, Icon: Utensils },
+  { test: /balcony|terrace/i, Icon: DoorOpen },
+  { test: /group|guests|pax|families/i, Icon: Users },
+  { test: /parking/i, Icon: Car },
+  { test: /wi[- ]?fi/i, Icon: Wifi },
+  { test: /check[- ]in/i, Icon: CalendarCheck },
+  { test: /check[- ]out/i, Icon: Clock },
+  { test: /music|\bdj\b|sound/i, Icon: Music },
+  { test: /spa|wellness/i, Icon: Sparkles },
+  { test: /gym|fitness/i, Icon: Dumbbell },
+  { test: /view|hill|valley/i, Icon: Mountain },
+  { test: /kids|child|baby/i, Icon: Baby },
+  { test: /pet/i, Icon: Dog },
+];
+
+const iconFor = (item: string) => iconRules.find(({ test }) => test.test(item))?.Icon ?? Check;
 
 const currency = (rate: number) => `₹${rate.toLocaleString("en-IN")}`;
 
@@ -73,16 +96,20 @@ function CompareCard({ room }: { room: Room }) {
 
       <div className="mt-4 border-t border-ink/10 pt-4">
         <p className="text-[10px] uppercase tracking-[0.18em] text-ink/45">Inclusions</p>
-        <ul className="mt-2 space-y-1.5">
-          {room.compare.inclusions.map((item) => (
-            <li key={item} className="flex items-start gap-2.5 text-[13px] leading-relaxed text-ink/75">
-              <span
-                aria-hidden
-                className="mt-[9px] h-px w-4 shrink-0 bg-sage/60 transition-all duration-500 ease-out motion-reduce:transition-none group-hover:w-6 group-hover:bg-peach motion-reduce:group-hover:w-4 motion-reduce:group-hover:bg-sage/60"
-              />
-              {item}
-            </li>
-          ))}
+        <ul className="mt-2 space-y-2">
+          {room.compare.inclusions.map((item) => {
+            const Icon = iconFor(item);
+            return (
+              <li key={item} className="flex items-start gap-2.5 text-[13px] leading-relaxed text-ink/75">
+                <Icon
+                  aria-hidden
+                  strokeWidth={1.5}
+                  className="mt-[3px] h-[15px] w-[15px] shrink-0 text-sage transition-colors duration-500 ease-out group-hover:text-peach motion-reduce:transition-none"
+                />
+                {item}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </article>

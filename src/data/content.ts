@@ -130,7 +130,7 @@ export const STAY = {
  rooms: [
   {
     name: "Deluxe Room (Without Balcony)",
-    description: "A welcoming and comfortable room for couples looking for a peaceful getaway surrounded by nature. Choose a couple stay with food, or a group package with or without food.",
+    description: "A relaxing retreat surrounded by nature, offering a comfortable stay for families, friends, and weekend travellers. Choose from flexible stay packages with or without meals, tailored to your getaway.",
     image: stayImg,
     gallery: deluxePics(stayImg),
     packages: [
@@ -146,7 +146,7 @@ export const STAY = {
   },
   {
     name: "Deluxe Room (With Balcony)",
-    description: "A comfortable stay with a private balcony, perfect for couples seeking a relaxing resort escape.",
+    description: "A thoughtfully designed room with a private balcony, offering a peaceful space to unwind and enjoy the natural surroundings.",
     image: stayImg,
     gallery: roomPhotos(stayImg),
     packages: [
@@ -261,32 +261,33 @@ export const WEDDINGS = {
   hero: {
     eyebrow: "Weddings & Events",
     title: "Vows, by the river.",
-    intro:
-      "Celebrate your forever in a setting as beautiful as your love.",
+    intro: "Celebrate your forever in a setting as beautiful as your love.",
   },
 
   intro:
     "From an intimate ceremony to a full wedding weekend, Yume brings venue, stay, dining and celebration into one relaxed destination.",
 
+  // TODO: confirm capacities for the Small Lawn, Big Lawn and Small Hall
+  // (carried over from the previous copy; the booklet doesn't state them).
   venues: [
     {
-      name: "Riverside Lawn",
+      name: "Big Lawn",
       description:
-        "An open-air setting for ceremonies, receptions and sunset celebrations.",
+        "An open-air setting for weddings, receptions and sunset celebrations by the river.",
       capacity: "Up to 200 guests",
       image: wed,
     },
     {
-      name: "Celebration Turf",
+      name: "Small Lawn",
       description:
-        "A spacious, flexible setting for larger gatherings, wedding festivities and dining.",
-      capacity: "Up to 300 guests",
+        "An intimate open-air setting for ceremonies, haldi, mehendi and smaller gatherings.",
+      capacity: "Up to 100 guests",
       image: wed2,
     },
     {
-      name: "Indoor Gathering Space",
+      name: "Small Hall",
       description:
-        "A sheltered setting for intimate functions, pre-wedding celebrations and weather-ready plans.",
+        "A sheltered setting for pre-wedding celebrations such as sangeet, haldi and mehendi, and weather-ready plans.",
       capacity: "Up to 80 guests",
       image: wed3,
     },
@@ -294,40 +295,48 @@ export const WEDDINGS = {
 
   packages: [
     {
-      name: "The Intimate",
-      note: "For close-knit celebrations",
+      name: "Express Vows",
+      note: "1 day · No stay",
       inclusions: [
-        "Venue access",
-        "Basic seating arrangement",
-        "Guest dining setup",
-        "Basic event lighting",
-        "lorem ipsum lorem lorem",
+        "Small Lawn (Big Lawn with Diamond tier)",
+        "1 catered meal service for 100 guests",
+        "Silver, Gold and Diamond catering tiers",
+        "Extra guests charged at the per-plate rate",
       ],
-      price: "From ₹50,000",
+      price: "From ₹1,45,000",
     },
     {
-      name: "The Celebration",
-      note: "For a complete wedding day",
+      name: "Celebration Night",
+      note: "1.5 days · 1 night stay",
       inclusions: [
-        "Venue access",
-        "Catering coordination",
-        "Décor planning assistance",
-        "Guest accommodation coordination",
-        "Event setup and scheduling",
+        "Venue for 1 event with main dinner for 100 guests",
+        "Full room buyout for 1 night (50, 70 or 90 guests)",
+        "Lunch, hi-tea and breakfast for staying guests",
+        "Complimentary half-day room use on day 2 until 4:00 PM",
       ],
-      price: "From ₹1,50,000",
+      price: "From ₹3,50,000",
     },
     {
-      name: "The Weekend",
-      note: "For a destination-style gathering",
+      name: "Dream Wedding Weekend",
+      note: "42 hours · 2 night stay",
       inclusions: [
-        "Multi-day venue planning",
-        "Guest accommodation coordination",
-        "Welcome gathering arrangements",
-        "Wedding day coordination",
-        "Dining and event scheduling",
+        "Day 1: Small Hall (complimentary) for haldi/mehendi, with family catering",
+        "Day 2: Big Lawn for the main wedding, catering for 100 guests",
+        "Full room buyout for 2 nights (50, 70 or 90 guests)",
+        "Food for staying guests",
       ],
-      price: "From ₹3,00,000",
+      price: "From ₹6,50,000",
+    },
+    {
+      name: "Royal Wedding Celebration",
+      note: "3 days · 2 night stay",
+      inclusions: [
+        "Day 1: Small Hall (complimentary) for sangeet/haldi/mehendi, 50 guests",
+        "Day 2: Big Lawn for the wedding, 100 guests",
+        "Day 3: Big Lawn for the reception, 100 guests (loyalty discount applied)",
+        "Full room buyout for 2 nights, with in-room meals for 2.5 days",
+      ],
+      price: "From ₹8,99,000",
     },
   ],
 
@@ -335,7 +344,7 @@ export const WEDDINGS = {
     {
       label: "Catering",
       value:
-        "Customisable menus for your guest list and celebration style, with vegetarian and non-vegetarian options. Menu selections and per-person pricing can be discussed with our team.",
+        "Vegetarian menus across Silver (₹650/plate), Gold (₹750) and Diamond (₹850) tiers. Non-vegetarian is available at ₹200 extra per plate. Guests beyond 100 are charged at the per-plate rate. Packages include food for one day only unless stated.",
     },
     {
       label: "Décor",
@@ -352,9 +361,15 @@ export const WEDDINGS = {
       value:
         "Outside vendors can be discussed during booking. Décor, photography, entertainment and production requirements must be approved in advance. Any vendor fees, corkage charges or additional setup costs will be confirmed in your event quotation.",
     },
+    {
+      label: "Check-in & check-out",
+      value:
+        "Check-in is at 1:00 PM and check-out at 4:00 PM the next day for stay packages.",
+    },
   ],
-};
 
+  contact: "70280 43300 / 70280 53300",
+};
 export const EXPERIENCES = {
   dine: {
     eyebrow: "Dine at Yume",
