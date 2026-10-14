@@ -118,9 +118,10 @@ function ContactPage() {
           </div>
           <div>
             <SectionHeading eyebrow="Enquiry" title="Tell us what you’re planning." />
-            <div className="mt-10 rounded-md border border-ink/10 bg-background p-6 shadow-[0_18px_50px_-12px_rgba(20,32,26,0.22),0_2px_6px_rgba(20,32,26,0.08)] md:p-10">
-              <ContactForm />
-            </div>
+            <div className="mt-10 rounded-md border border-ink/10 bg-[#f7f3eb] p-6 shadow-[0_18px_50px_-12px_rgba(20,32,26,0.22),0_2px_6px_rgba(20,32,26,0.08)] md:p-10">
+  <ContactForm />
+</div>
+            
           </div>
         </div>
       </section>

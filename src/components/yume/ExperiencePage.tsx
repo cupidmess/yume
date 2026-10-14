@@ -64,7 +64,18 @@ export function ExperiencePage({
       ) : null}
       <section className="px-6 pb-20 md:px-10 md:pb-28">
         <div className="mx-auto max-w-7xl">
-          <SectionHeading eyebrow="Around Yume" title="A glimpse of your day." />
+<SectionHeading
+  eyebrow="Around Yume"
+  title={
+    experience === "dine"
+      ? "A taste of togetherness."
+      : experience === "pool"
+        ? "A moment to unwind."
+        : experience === "turf"
+          ? "Where the game comes alive."
+          : "A glimpse of your day."
+  }
+/>
           <div className="mt-10">
             <ImageMosaic images={images} />
           </div>

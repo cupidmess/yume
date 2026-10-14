@@ -53,7 +53,7 @@ function WeddingsPage() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Celebrate here"
-            title="One destination, every part of the occasion."
+            title="One destination, every occasion."
             body={WEDDINGS.intro}
           />
           <div className="mt-14 grid gap-14">

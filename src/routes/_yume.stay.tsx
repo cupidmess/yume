@@ -38,7 +38,7 @@ function StayPage() {
       <section className="px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
-            eyebrow="Rooms & villas"
+            eyebrow="Rooms"
             title="A comfortable place to pause."
             body={STAY.intro}
           />

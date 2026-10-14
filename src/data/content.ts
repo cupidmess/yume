@@ -121,7 +121,7 @@ export const STAY = {
     eyebrow: "Stay at Yume",
     title: "Wake slowly, close to the river.",
     intro:
-      "Quiet rooms for unhurried weekends, family time and a night away from the city.",
+      "Escape the ordinary and find comfort in every little moment.",
   },
 
   intro:
@@ -227,9 +227,9 @@ export const STAY = {
 export const WEDDINGS = {
   hero: {
     eyebrow: "Weddings & Events",
-    title: "Say yes to the river.",
+    title: "Vows, by the river.",
     intro:
-      "Gather the people you love for a celebration framed by open lawns, water and evening light.",
+      "Celebrate your forever in a setting as beautiful as your love.",
   },
 
   intro:
@@ -324,9 +324,9 @@ export const WEDDINGS = {
 export const EXPERIENCES = {
   dine: {
     eyebrow: "Dine at Yume",
-    title: "Tables under open sky.",
+    title: "Savour every moment.",
     intro:
-      "Relaxed meals, familiar flavours and long conversations in the green quiet of the resort.",
+      "Discover beautiful flavours, shared moments, and dining worth remembering.",
     image: dineImg,
     story:
       "Come for lunch, stay through sunset. Our dining experience is made for families, friends and resort guests who prefer an easy pace.",
@@ -383,10 +383,10 @@ export const EXPERIENCES = {
     eyebrow: "Pool Days",
     title: "Long afternoons by the water.",
     intro:
-      "A refreshing day out for families and friends, with dining and green spaces close by.",
+      "Soak in the sunshine and let time slow down.",
     image: poolImg,
     story:
-      "Settle into a lounger, break for lunch and make a full day of it. Day visits are subject to availability, especially on weekends.",
+      "Spend the afternoon by the water, soak up the sunshine and savour a little time away from the everyday.",
 
     facts: [
       {
@@ -441,10 +441,10 @@ export const EXPERIENCES = {
     eyebrow: "Play at Yume",
     title: "Floodlit games till late.",
     intro:
-      "Bring your team for football, box cricket and an evening of friendly competition.",
+      "Bring your team together and make every moment count.",
     image: turfImg,
     story:
-      "Our turf is available for bookable games, friendly matches and group outings. Contact our team to confirm slot availability and booking rates.",
+      "From friendly kickabouts to competitive matches, our turf is where good games, great company and unforgettable moments come together.",
 
     facts: [
       {
@@ -717,7 +717,7 @@ export const SPOTLIGHT = {
 // Home page story block - the two paragraphs under the hero.
 export const STORY = {
   eyebrow: "The Story",
-  lead: "Set where the hills soften into the river, Yume is a quiet escape from the city - mornings in mist, afternoons by the pool, evenings under string lights.",
+  lead: "Set where the hills soften into the river, Yume is a quiet escape from the city.",
   body: "Nestled one hour away from Thane, in Badlapur, Sonivali - just 10 kilometers from Badlapur (W) station. We host slow weekend stays, long lunches, floodlit games and weddings by the water. Come for a day, or stay the weekend.",
 };
 
@@ -748,25 +748,25 @@ export const NAV: NavItem[] = [
 export const WAYS = [
   {
     label: "Stay",
-    blurb: "Slow mornings in linen and light.",
+    blurb: "A Stay Beyond Ordinary.",
     to: "/stay",
     image: stayImg,
   },
   {
     label: "Dine",
-    blurb: "Tables under open sky.",
+    blurb: "Savour Every Moment.",
     to: "/dine",
     image: dineImg,
   },
   {
     label: "Pool",
-    blurb: "Long afternoons by the water.",
+    blurb: "Dive into leisure.",
     to: "/pool",
     image: poolImg,
   },
   {
     label: "Turf",
-    blurb: "Floodlit games till late.",
+    blurb: "Game On, Always.",
     to: "/turf",
     image: turfImg,
   },
@@ -780,8 +780,8 @@ export const WAYS = [
 
 // [ADD] placeholders - replace values when known.
 export const STATS = [
-  { value: "50+", label: "Rooms" },
-  { value: "2500", label: "Guests hosted" },
+  { value: "10+", label: "Amenities" },
+  { value: "2500+", label: "OCCUPANCIES" },
   { value: "150+", label: "Weddings & events" },
 ];
 
