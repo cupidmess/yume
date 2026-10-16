@@ -154,7 +154,6 @@ export const STAY = {
 
   intro:
     "Every stay is designed around easy comfort: green views, time by the pool and the freedom to do very little at all.",
-
  rooms: [
   {
     name: "Deluxe Room (Without Balcony)",
@@ -163,8 +162,8 @@ export const STAY = {
     gallery: deluxePics(stayImg),
     packages: [
       { name: "Couple · With food", weekdayGuests: "2 guests", weekendGuests: "2 guests", unit: "per couple", weekday: 4999, weekend: 6500 },
-      { name: "Group · Without food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 1000, weekend: 3000 },
-      { name: "Group · With food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 2300, weekend: 3000 },
+      { name: "Group · Without food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 1000, weekend: "-" },
+      { name: "Group · With food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 4 guests", unit: "per person", weekday: 2300, weekend: 2500 },
     ],
     compare: {
       short: "Deluxe · No balcony",
@@ -179,8 +178,8 @@ export const STAY = {
     gallery: roomPhotos(stayImg),
     packages: [
       { name: "Couple · With food", weekdayGuests: "2 guests", weekendGuests: "2 guests", unit: "per couple", weekday: 5499, weekend: 7000 },
-      { name: "Group · Without food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 1000, weekend: 3000 },
-      { name: "Group · With food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 2300, weekend: 3000 },
+      { name: "Group · Without food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 1000, weekend: "-" },
+      { name: "Group · With food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 4 guests", unit: "per person", weekday: 2400, weekend: 3000 },
     ],
     compare: {
       short: "Deluxe · Balcony",
@@ -194,10 +193,10 @@ export const STAY = {
     image: stayImg,
     gallery: superior(stayImg),
     packages: [
-      { name: "Group of 4+ · Without food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 2000, weekend: 3000 },
-      { name: "Group of 8+ · Without food", weekdayGuests: "Minimum 8 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 1000, weekend: 3000 },
-      { name: "Group of 4+ · With food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 3000, weekend: 3000 },
-      { name: "Group of 8+ · With food", weekdayGuests: "Minimum 8 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 2300, weekend: 3000 },
+      { name: "Group of 4+ · Without food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 2000, weekend: "-" },
+      { name: "Group of 8+ · Without food", weekdayGuests: "Minimum 8 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 1000, weekend: "-" },
+      { name: "Group of 8+ · With food", weekdayGuests: "Minimum 8 guests", weekendGuests: "Minimum 8 guests", unit: "per person", weekday: 2300, weekend: 3000 },
+     
     ],
     compare: {
       short: "Superior",
