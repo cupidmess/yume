@@ -9,7 +9,9 @@ import {
   VideoBand,
 } from "@/components/yume/InteriorPage";
 import { GALLERY, site, type EXPERIENCE_KEY, type ExperienceContent } from "@/data/content";
-
+import dineMain from "@/assets/yume/dinemain.jpg";
+import poolMain from "@/assets/yume/poolmain.jpg"
+import turfMain from "@/assets/yume/turfmain.jpg"
 export function ExperiencePage({
   content,
   experience,
@@ -17,17 +19,29 @@ export function ExperiencePage({
   content: ExperienceContent;
   experience: EXPERIENCE_KEY;
 }) {
-  const images = GALLERY.filter((item) => item.category.toLowerCase() === experience).slice(0, 4);
-
+  const imageCategories: Record<EXPERIENCE_KEY, string[]> = {
+    pool: ["pool1", "pool2", "pool3", "pool4"],
+    dine: ["dine1", "dine2", "dine3", "dine4"],
+    turf: ["turf1", "turf2", "turf3", "turf4"],
+  };
+  
+  const images = GALLERY.filter((item) =>
+    imageCategories[experience].includes(item.category.toLowerCase())
+  );
+  const EXPERIENCE_HERO_IMAGES: Record<EXPERIENCE_KEY, string> = {
+    dine: dineMain,
+    pool: poolMain,
+    turf: turfMain,
+  };
   return (
     <PageShell>
-      <InteriorHero
-        eyebrow={content.eyebrow}
-        title={content.title}
-        intro={content.intro}
-        image={content.image}
-        imageAlt={`${content.eyebrow} at Yume Resort`}
-      />
+ <InteriorHero
+  eyebrow={content.eyebrow}
+  title={content.title}
+  intro={content.intro}
+  image={EXPERIENCE_HERO_IMAGES[experience]}
+  imageAlt={`${content.eyebrow} at Yume Resort`}
+/>
       <section className="px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:gap-24">
           <div>

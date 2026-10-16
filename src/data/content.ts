@@ -13,12 +13,23 @@
 import heroImg from "@/assets/yume/hero.jpg";
 import storyImg from "@/assets/yume/story.jpg";
 import stayImg from "@/assets/yume/stay.jpg";
-// import del3 from "@/assets/yume/del3.jpg"
-// import delbed from "@/assets/yume/delbed.jpg"
-// import deluxbalc from "@/assets/yume/deluxbalc.jpg"
-// import sup from "@/assets/yume/sup.jpg"
-// import superior from "@/assets/yume/superior.jpg"
-// import del2 from "@/assets/yume/del2.jpg"
+import dine1 from "@/assets/yume/dineImage1.jpg"
+import dine2 from "@/assets/yume/dineImage2.jpg"
+import dine3 from "@/assets/yume/dineImage3.jpg"
+import dine4 from "@/assets/yume/dineImage4.jpg"
+import pool1 from "@/assets/yume/poolImage1.jpg"
+import pool2 from "@/assets/yume/poolImage2.jpg"
+import pool3 from "@/assets/yume/poolImage3.jpg"
+import pool4 from "@/assets/yume/poolImage4.jpg"
+import turf1 from "@/assets/yume/turfImage1.jpg"
+import room11 from "@/assets/yume/room1-1.jpg"
+import room14 from "@/assets/yume/room1-4.jpg"
+import room21 from "@/assets/yume/room2-1.jpg"
+import room23 from "@/assets/yume/room2-3.jpg"
+import room31 from "@/assets/yume/room3-1.jpg"
+import room32 from "@/assets/yume/room3-2.jpg"
+import room33 from "@/assets/yume/room3-3.jpg"
+import room34 from "@/assets/yume/room3-4.jpg"
 import dineImg from "@/assets/yume/dine.jpg";
 import poolImg from "@/assets/yume/pool.jpg";
 import turfImg from "@/assets/yume/turf.jpg";
@@ -43,33 +54,50 @@ import roomBed from "@/assets/yume/room-bed.jpg";
 import roomBath from "@/assets/yume/room-bath.jpg";
 import roomDesk from "@/assets/yume/room-desk.jpg";
 import roomBalcony from "@/assets/yume/room-balcony.jpg";
-import turf2 from "@/assets/yume/turf-2.jpg";
-import turf3 from "@/assets/yume/turf-3.jpg";
+import turf2 from "@/assets/yume/turfImage2.jpg";
+import turf3 from "@/assets/yume/turfImage3.jpg";
+import turf4 from "@/assets/yume/turfImage4.jpg";
+// Pool gallery images
+const poolImage1 = pool1;
+const poolImage2 = pool2;
+const poolImage3 = pool3;
+const poolImage4 = pool4;
 
+// Dine gallery images
+const dineImage1 = dine1;
+const dineImage2 = dine2;
+const dineImage3 = dine3;
+const dineImage4 = dine4;
+
+// Turf gallery images
+const turfImage1 = turf1;
+const turfImage2 = turf2;
+const turfImage3 = turf3;
+const turfImage4 = turf4;
 // Placeholder room photos - swap per room with real photography.
 const roomPhotos = (main: string) => [
-  { src: main, label: "Room" },
+  { src: room21, label: "Room" },
   { src: main, label: "Bedroom" },
-  { src: roomBath, label: "Washroom" },
-  { src: main, label: "Writing table" },
-  { src: main, label: "Balcony view" },
+  { src: main, label: "Washroom" },
+  { src: room14, label: "Writing table" },
+  { src: room23, label: "Balcony view" },
   { src: roomDesk, label: "Terrace details" },
 ];
 const deluxePics = (main: string) => [
-  { src: main, label: "Room" },
+  { src: room11, label: "Room" },
   { src: main, label: "Bedroom" },
   { src: main, label: "Washroom" },
-  { src: main, label: "Writing table" },
+  { src: room14, label: "Writing table" },
   { src: roomBalcony, label: "Balcony view" },
   { src: roomDesk, label: "Terrace details" },
 ];
 const superior = (main: string) => [
-  { src: main, label: "Room" },
-  { src: superior, label: "Bedroom" },
+  { src: room31, label: "Room" },
+  { src: main, label: "Bedroom" },
   { src: main, label: "Washroom" },
-  { src: main, label: "Writing table" },
-  { src: roomBalcony, label: "Balcony view" },
-  { src: roomDesk, label: "Terrace details" },
+  { src: room33, label: "Writing table" },
+  { src: room34, label: "Balcony view" },
+  { src: room32, label: "Terrace details" },
 ];
 export const IMAGES = {
   hero: heroImg,
@@ -711,6 +739,70 @@ export const GALLERY = [
   { src: insta10, alt: "The turf lit at dusk, a lantern at the edge", category: "Turf" },
   { src: turf2, alt: "The turf at dusk with floodlights on", category: "Turf" },
   { src: turf3, alt: "Cricket bat and ball resting on the turf", category: "Turf" },
+  {
+    src: poolImage1,
+    alt: "Swimming pool",
+    category: "pool1",
+  },
+  {
+    src: poolImage2,
+    alt: "Poolside seating",
+    category: "pool2",
+  },
+  {
+    src: poolImage3,
+    alt: "Pool surrounded by greenery",
+    category: "pool3",
+  },
+  {
+    src: poolImage4,
+    alt: "Pool at the resort",
+    category: "pool4",
+  },
+
+  // Dine In page images
+  {
+    src: dineImage1,
+    alt: "Dining area",
+    category: "dine1",
+  },
+  {
+    src: dineImage2,
+    alt: "Restaurant interior",
+    category: "dine2",
+  },
+  {
+    src: dineImage3,
+    alt: "Outdoor dining",
+    category: "dine3",
+  },
+  {
+    src: dineImage4,
+    alt: "Dining ambience",
+    category: "dine4",
+  },
+
+  // Turf page images
+  {
+    src: turfImage1,
+    alt: "Turf playing area",
+    category: "turf1",
+  },
+  {
+    src: turfImage2,
+    alt: "Football on the turf",
+    category: "turf2",
+  },
+  {
+    src: turfImage3,
+    alt: "Turf surrounded by greenery",
+    category: "turf3",
+  },
+  {
+    src: turfImage4,
+    alt: "Outdoor games",
+    category: "turf4",
+  },
 ];
 
 export const CONTACT = {

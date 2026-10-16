@@ -125,6 +125,7 @@
 // }
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
+import mainstay from "@/assets/yume/mainstay.jpg"
 import {
   ContactStrip,
   EnquiryBand,
@@ -159,7 +160,7 @@ function StayPage() {
     <PageShell>
       <InteriorHero
         {...STAY.hero}
-        image={STAY.rooms[0].image}
+        image={mainstay}
         imageAlt="A restful stay at Yume Resort"
       />
       <section className="px-6 py-20 md:px-10 md:py-28">

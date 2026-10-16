@@ -121,7 +121,12 @@ export function ContactStrip() {
   );
 }
 
-export function ImageMosaic({ images }: { images: ReadonlyArray<{ src: string; alt: string }> }) {
+
+export function ImageMosaic({
+  images,
+}: {
+  images: ReadonlyArray<{ src: string; alt: string }>;
+}) {
   return (
     <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
       {images.map((image, index) => (
@@ -136,6 +141,7 @@ export function ImageMosaic({ images }: { images: ReadonlyArray<{ src: string; a
     </div>
   );
 }
+
 
 export function PageShell({ children }: { children: ReactNode }) {
   return <main>{children}</main>;
