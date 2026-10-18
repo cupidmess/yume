@@ -145,17 +145,29 @@ function YumeHome() {
       {/* Spotlight - Barvi Dam bar */}
       <section aria-label="Yume is 10 minutes from Badlapur Station">
         <Link to={SPOTLIGHT.to} className="group block overflow-hidden bg-ink py-5 md:py-7">
-          <div className="yume-marquee flex w-max items-center group-hover:[animation-play-state:paused]">
+          {/* Each half repeats the phrase so it always spans wider than the viewport; translating by -50% then loops seamlessly. */}
+          <div
+            className="yume-marquee flex w-max items-center group-hover:[animation-play-state:paused]"
+            style={{ animationDuration: "120s" }}
+          >
             {[0, 1].map((copy) => (
               <div key={copy} aria-hidden={copy === 1} className="flex shrink-0 items-center">
-                <span className="px-6 text-[11px] uppercase tracking-[0.3em] text-cream md:px-10">
-                  {SPOTLIGHT.title}
-                </span>
-                <Waves className="h-5 w-5 shrink-0 text-peach md:h-6 md:w-6" />
-                <span className="px-6 text-[11px] uppercase tracking-[0.3em] text-cream/60 md:px-10">
-                  {site.location}
-                </span>
-                <Waves className="h-5 w-5 shrink-0 text-peach md:h-6 md:w-6" />
+                {[0, 1, 2, 3].map((repeat) => (
+                  <div
+                    key={repeat}
+                    aria-hidden={repeat > 0 || undefined}
+                    className="flex shrink-0 items-center"
+                  >
+                    <span className="px-6 text-[11px] uppercase tracking-[0.3em] text-cream md:px-10">
+                      {SPOTLIGHT.title}
+                    </span>
+                    <Waves className="h-5 w-5 shrink-0 text-peach md:h-6 md:w-6" />
+                    <span className="px-6 text-[11px] uppercase tracking-[0.3em] text-cream/60 md:px-10">
+                      {site.location}
+                    </span>
+                    <Waves className="h-5 w-5 shrink-0 text-peach md:h-6 md:w-6" />
+                  </div>
+                ))}
               </div>
             ))}
           </div>

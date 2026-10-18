@@ -12,6 +12,8 @@
 
 import heroImg from "@/assets/yume/hero.jpg";
 import landingHero from "@/assets/yume/landingpage/14_20261018_013247_0002.png";
+import landingHeroInsta2 from "@/assets/yume/landingpage/hero-insta-2.jpg";
+import landingHeroInsta5 from "@/assets/yume/landingpage/hero-insta-5.jpg";
 import storyImg from "@/assets/yume/story.jpg";
 import stayImg from "@/assets/yume/stay.jpg";
 import dine1 from "@/assets/yume/dineImage1.jpg"
@@ -108,7 +110,7 @@ const superiorGallery = [
   { src: stayDeluxeWashroom, label: "Washroom" },
 ];
 export const IMAGES = {
-  hero: landingHero,
+  hero: landingHeroInsta5,
   story: storyImg,    
   storyVideo: "/yume-story.mp4",
   storyVideoWebm: undefined,
@@ -929,7 +931,7 @@ export const WAYS = [
 // [ADD] placeholders - replace values when known.
 export const STATS = [
   { value: "10+", label: "Amenities" },
-  { value: "2500+", label: "OCCUPANCIES" },
+  { value: "2500+", label: "guests hosted" },
   { value: "150+", label: "Weddings & events" },
 ];
 
