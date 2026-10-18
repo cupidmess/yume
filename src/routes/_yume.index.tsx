@@ -108,13 +108,17 @@ function YumeHome() {
     <main>
       {/* Hero */}
       <section className="relative h-[92svh] min-h-[560px] overflow-hidden">
-        <img
-          src={IMAGES.hero}
-          alt="Yume Resort at golden hour, beside the river"
-          className="absolute inset-0 h-full w-full object-cover"
-          width={1920}
-          height={1200}
-        />
+        {/* Portrait crop on mobile keeps the property above the heading. */}
+        <picture>
+          <source media="(max-width: 767px)" srcSet={IMAGES.heroMobile} width={1080} height={1920} />
+          <img
+            src={IMAGES.hero}
+            alt="Yume Resort at golden hour, beside the river"
+            className="absolute inset-0 h-full w-full object-cover"
+            width={1920}
+            height={1200}
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/25 to-ink/10" />
         <div className="relative flex h-full flex-col justify-end px-6 pb-16 md:px-12 md:pb-24">
           <p className="text-[11px] uppercase tracking-[0.3em] text-cream/80">

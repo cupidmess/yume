@@ -14,6 +14,7 @@ import heroImg from "@/assets/yume/hero.jpg";
 import landingHero from "@/assets/yume/landingpage/14_20261018_013247_0002.png";
 import landingHeroInsta2 from "@/assets/yume/landingpage/hero-insta-2.jpg";
 import landingHeroInsta5 from "@/assets/yume/landingpage/hero-insta-5.jpg";
+import landingHeroInsta5Mobile from "@/assets/yume/landingpage/hero-insta-5-mobile.jpg";
 import storyImg from "@/assets/yume/story.jpg";
 import stayImg from "@/assets/yume/stay.jpg";
 import dine1 from "@/assets/yume/dineImage1.jpg"
@@ -111,6 +112,7 @@ const superiorGallery = [
 ];
 export const IMAGES = {
   hero: landingHeroInsta5,
+  heroMobile: landingHeroInsta5Mobile,
   story: storyImg,    
   storyVideo: "/yume-story.mp4",
   storyVideoWebm: undefined,
