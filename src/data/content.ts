@@ -11,6 +11,7 @@
 // ============================================================
 
 import heroImg from "@/assets/yume/hero.jpg";
+import landingHero from "@/assets/yume/landingpage/14_20261018_013247_0002.png";
 import storyImg from "@/assets/yume/story.jpg";
 import stayImg from "@/assets/yume/stay.jpg";
 import dine1 from "@/assets/yume/dineImage1.jpg"
@@ -22,14 +23,6 @@ import pool2 from "@/assets/yume/poolImage2.jpg"
 import pool3 from "@/assets/yume/poolImage3.jpg"
 import pool4 from "@/assets/yume/poolImage4.jpg"
 import turf1 from "@/assets/yume/turfImage1.jpg"
-import room11 from "@/assets/yume/room1-1.jpg"
-import room14 from "@/assets/yume/room1-4.jpg"
-import room21 from "@/assets/yume/room2-1.jpg"
-import room23 from "@/assets/yume/room2-3.jpg"
-import room31 from "@/assets/yume/room3-1.jpg"
-import room32 from "@/assets/yume/room3-2.jpg"
-import room33 from "@/assets/yume/room3-3.jpg"
-import room34 from "@/assets/yume/room3-4.jpg"
 import dineImg from "@/assets/yume/dine.jpg";
 import poolImg from "@/assets/yume/pool.jpg";
 import turfImg from "@/assets/yume/turf.jpg";
@@ -52,11 +45,26 @@ import insta11 from "@/assets/yume/insta-11.jpg";
 import insta12 from "@/assets/yume/insta-12.jpg";
 import roomBed from "@/assets/yume/room-bed.jpg";
 import roomBath from "@/assets/yume/room-bath.jpg";
-import roomDesk from "@/assets/yume/room-desk.jpg";
-import roomBalcony from "@/assets/yume/room-balcony.jpg";
 import turf2 from "@/assets/yume/turfImage2.jpg";
 import turf3 from "@/assets/yume/turfImage3.jpg";
 import turf4 from "@/assets/yume/turfImage4.jpg";
+// Stay gallery images
+import stayDeluxeRoom from "@/assets/yume/stay/21_20261017_011101_0001.png";
+import stayDeluxeBeds from "@/assets/yume/stay/11_20261015_205154_0000.png";
+import stayDeluxeInterior from "@/assets/yume/stay/13_20261015_205154_0002.png";
+import stayDeluxePoolView from "@/assets/yume/stay/12_20261015_205154_0001.png";
+import stayDeluxeBed from "@/assets/yume/stay/20_20261017_011100_0000.png";
+import stayDeluxeTv from "@/assets/yume/stay/22_20261017_011101_0002.png";
+import stayDeluxeWashroom from "@/assets/yume/stay/24_20261017_011101_0004.png";
+import stayBalconyRoom from "@/assets/yume/stay/23_20261017_011101_0003.png";
+import stayBalconyBed from "@/assets/yume/stay/14_20261015_205155_0003.png";
+import stayBalconySeating from "@/assets/yume/stay/9_20261015_204114_0003.png";
+import stayBalconyExterior from "@/assets/yume/stay/15_20261015_205155_0004.png";
+import staySuperiorRoom from "@/assets/yume/stay/18_20261015_205155_0007.png";
+import staySuperiorBedSeating from "@/assets/yume/stay/10_20261015_204114_0004.png";
+import staySuperiorBeds from "@/assets/yume/stay/16_20261015_205155_0005.png";
+import staySuperiorBed from "@/assets/yume/stay/7_20261015_204114_0001.png";
+import staySuperiorTable from "@/assets/yume/stay/8_20261015_204114_0002.png";
 // Pool gallery images
 const poolImage1 = pool1;
 const poolImage2 = pool2;
@@ -74,33 +82,33 @@ const turfImage1 = turf1;
 const turfImage2 = turf2;
 const turfImage3 = turf3;
 const turfImage4 = turf4;
-// Placeholder room photos - swap per room with real photography.
-const roomPhotos = (main: string) => [
-  { src: room21, label: "Room" },
-  { src: main, label: "Bedroom" },
-  { src: main, label: "Washroom" },
-  { src: room14, label: "Writing table" },
-  { src: room23, label: "Balcony view" },
-  { src: roomDesk, label: "Terrace details" },
+// Room galleries for the Stay page.
+const deluxeGallery = [
+  { src: stayDeluxeRoom, label: "Room" },
+  { src: staySuperiorBedSeating, label: "Bed & seating" },
+  { src: staySuperiorBed, label: "Bed" },
+  { src: stayDeluxePoolView, label: "Pool view" },
+  { src: stayDeluxeBed, label: "Bed" },
+  { src: stayDeluxeWashroom, label: "Washroom" },
 ];
-const deluxePics = (main: string) => [
-  { src: room11, label: "Room" },
-  { src: main, label: "Bedroom" },
-  { src: main, label: "Washroom" },
-  { src: room14, label: "Writing table" },
-  { src: roomBalcony, label: "Balcony view" },
-  { src: roomDesk, label: "Terrace details" },
+const deluxeBalconyGallery = [
+  { src: stayBalconyRoom, label: "Room" },
+  { src: stayBalconyBed, label: "Bed" },
+  { src: stayBalconySeating, label: "Balcony" },
+  { src: stayBalconyExterior, label: "Balcony exterior" },
+  { src: stayDeluxeTv, label: "TV & tea station" },
+  { src: stayDeluxeWashroom, label: "Washroom" },
 ];
-const superior = (main: string) => [
-  { src: room31, label: "Room" },
-  { src: main, label: "Bedroom" },
-  { src: main, label: "Washroom" },
-  { src: room33, label: "Writing table" },
-  { src: room34, label: "Balcony view" },
-  { src: room32, label: "Terrace details" },
+const superiorGallery = [
+  { src: stayDeluxeBeds, label: "Room" },
+  { src: staySuperiorRoom, label: "Beds" },
+  { src: staySuperiorBeds, label: "Beds" },
+  { src: stayDeluxeInterior, label: "Room interior" },
+  { src: staySuperiorTable, label: "Table" },
+  { src: stayDeluxeWashroom, label: "Washroom" },
 ];
 export const IMAGES = {
-  hero: heroImg,
+  hero: landingHero,
   story: storyImg,    
   storyVideo: "/yume-story.mp4",
   storyVideoWebm: undefined,
@@ -158,8 +166,8 @@ export const STAY = {
   {
     name: "Deluxe Room (Without Balcony)",
     description: "A relaxing retreat surrounded by nature, offering a comfortable stay for families, friends, and weekend travellers. Choose from flexible stay packages with or without meals, tailored to your getaway.",
-    image: stayImg,
-    gallery: deluxePics(stayImg),
+    image: stayDeluxeRoom,
+    gallery: deluxeGallery,
     packages: [
       { name: "Couple · With food", weekdayGuests: "2 guests", weekendGuests: "2 guests", unit: "per couple", weekday: 4999, weekend: 6500 },
       { name: "Group · Without food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 1000, weekend: "-" },
@@ -174,8 +182,8 @@ export const STAY = {
   {
     name: "Deluxe Room (With Balcony)",
     description: "A thoughtfully designed room with a private balcony, offering a peaceful space to unwind and enjoy the natural surroundings.",
-    image: stayImg,
-    gallery: roomPhotos(stayImg),
+    image: stayBalconyRoom,
+    gallery: deluxeBalconyGallery,
     packages: [
       { name: "Couple · With food", weekdayGuests: "2 guests", weekendGuests: "2 guests", unit: "per couple", weekday: 5499, weekend: 7000 },
       { name: "Group · Without food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 1000, weekend: "-" },
@@ -190,8 +198,8 @@ export const STAY = {
   {
     name: "Superior Room",
     description: "A spacious option for families and groups looking to spend a relaxing weekend together.",
-    image: stayImg,
-    gallery: superior(stayImg),
+    image: staySuperiorRoom,
+    gallery: superiorGallery,
     packages: [
       { name: "Group of 4+ · Without food", weekdayGuests: "Minimum 4 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 2000, weekend: "-" },
       { name: "Group of 8+ · Without food", weekdayGuests: "Minimum 8 guests", weekendGuests: "Minimum 5 guests", unit: "per person", weekday: 1000, weekend: "-" },
@@ -515,7 +523,7 @@ export const EXPERIENCES = {
 
   turf: {
     eyebrow: "Play at Yume",
-    title: "Floodlit games till late.",
+    title: "Game on, Always.",
     intro:
       "Bring your team together and make every moment count.",
     image: turfImg,
