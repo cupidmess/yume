@@ -70,8 +70,8 @@ export function ExperiencePage({
       {content.video ? (
         <VideoBand
           video={content.video}
-          poster={content.image}
-          alt={`${content.eyebrow} film at Yume Resort`}
+          poster={content.video.poster ?? content.image}
+          alt={content.video.alt ?? `${content.eyebrow} film at Yume Resort`}
           title={content.video.title}
           caption={content.video.caption}
         />

@@ -155,7 +155,7 @@ export function VideoBand({
   title,
   caption,
 }: {
-  video: { mp4: string; webm: string };
+  video: { mp4: string; webm?: string };
   poster: string;
   alt: string;
   eyebrow?: string;
@@ -167,14 +167,26 @@ export function VideoBand({
   useEffect(() => {
     const element = videoRef.current;
     if (!element) return;
+    // Only fetch and play while near the viewport, and never for reduced motion.
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let visible = false;
     const apply = () => {
-      if (reduced.matches) element.pause();
+      if (reduced.matches || !visible) element.pause();
       else void element.play().catch(() => {});
     };
-    apply();
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        visible = entry.isIntersecting;
+        apply();
+      },
+      { rootMargin: "200px 0px" },
+    );
+    io.observe(element);
     reduced.addEventListener("change", apply);
-    return () => reduced.removeEventListener("change", apply);
+    return () => {
+      io.disconnect();
+      reduced.removeEventListener("change", apply);
+    };
   }, []);
 
   return (
@@ -188,15 +200,15 @@ export function VideoBand({
           <video
             ref={videoRef}
             poster={poster}
-            autoPlay
             muted
             loop
             playsInline
-            preload="metadata"
+            disablePictureInPicture
+            preload="none"
             aria-label={alt}
             className="aspect-[4/3] w-full object-cover md:aspect-[16/9]"
           >
-            <source src={video.webm} type="video/webm" />
+            {video.webm ? <source src={video.webm} type="video/webm" /> : null}
             <source src={video.mp4} type="video/mp4" />
           </video>
         </div>

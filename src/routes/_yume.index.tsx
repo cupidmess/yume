@@ -97,11 +97,22 @@ function YumeHome() {
   useReveal();
   const storyVideoRef = useRef<HTMLVideoElement>(null);
 
+  // Below the fold: only fetch and play while on screen, and never autoplay for reduced motion.
   useEffect(() => {
     const video = storyVideoRef.current;
-    if (video && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      video.pause();
-    }
+    if (!video || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { rootMargin: "200px 0px" },
+    );
+    io.observe(video);
+    return () => io.disconnect();
   }, []);
 
   return (
@@ -191,13 +202,15 @@ function YumeHome() {
     <div data-reveal>
       <video
         ref={storyVideoRef}
-        poster={IMAGES.story}
-        autoPlay
+        poster={IMAGES.storyVideoPoster}
         muted
         loop
         playsInline
-        preload="metadata"
-        aria-label="A quiet veranda at Yume Resort in morning light"
+        disablePictureInPicture
+        preload="none"
+        width={1280}
+        height={720}
+        aria-label="Rain falling over the poolside loungers and flowering gardens at Yume Resort"
         className="aspect-[4/5] w-full object-cover md:aspect-video"
       >
         <source src={IMAGES.storyVideoWebm} type="video/webm" />

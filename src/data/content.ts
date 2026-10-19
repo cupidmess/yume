@@ -15,6 +15,10 @@ import landingHero from "@/assets/yume/landingpage/14_20261018_013247_0002.png";
 import landingHeroInsta2 from "@/assets/yume/landingpage/hero-insta-2.jpg";
 import landingHeroInsta5 from "@/assets/yume/landingpage/hero-insta-5.jpg";
 import landingHeroInsta5Mobile from "@/assets/yume/landingpage/hero-insta-5-mobile.jpg";
+// Optimized from src/assets/video/3.mp4: 1280w, 30fps, no audio, faststart.
+import storyVideoMp4 from "@/assets/yume/landingpage/story.mp4";
+import storyVideoWebm from "@/assets/yume/landingpage/story.webm";
+import storyVideoPoster from "@/assets/yume/landingpage/story-poster.jpg";
 import storyImg from "@/assets/yume/story.jpg";
 import stayImg from "@/assets/yume/stay.jpg";
 import dine1 from "@/assets/yume/dineImage1.jpg"
@@ -28,6 +32,10 @@ import pool4 from "@/assets/yume/poolImage4.jpg"
 import turf1 from "@/assets/yume/turfImage1.jpg"
 import dineImg from "@/assets/yume/dine.jpg";
 import poolImg from "@/assets/yume/pool.jpg";
+// Optimized from src/assets/video/lv_0_20261018170125.mp4: 1280w, 30fps, no audio, faststart.
+import poolVideoMp4 from "@/assets/yume/pool-video.mp4";
+import poolVideoWebm from "@/assets/yume/pool-video.webm";
+import poolVideoPoster from "@/assets/yume/pool-video-poster.jpg";
 import turfImg from "@/assets/yume/turf.jpg";
 import weddingsImg from "@/assets/yume/weddings.jpg";
 import weddingBandImg from "@/assets/yume/wedding-band.jpg";
@@ -114,8 +122,9 @@ export const IMAGES = {
   hero: landingHeroInsta5,
   heroMobile: landingHeroInsta5Mobile,
   story: storyImg,    
-  storyVideo: "/yume-story.mp4",
-  storyVideoWebm: undefined,
+  storyVideo: storyVideoMp4,
+  storyVideoWebm: storyVideoWebm,
+  storyVideoPoster: storyVideoPoster,
   weddingBand: weddingBandImg,
   stay: stayImg,
   dine: dineImg,
@@ -517,8 +526,10 @@ export const EXPERIENCES = {
       "Hi Yume! I'd like to enquire about a day picnic and swimming pool visit. Could you please share availability, rates and inclusions?",
 
     video: {
-      mp4: "./pool.mp4",
-      webm: undefined,
+      mp4: poolVideoMp4,
+      webm: poolVideoWebm,
+      poster: poolVideoPoster,
+      alt: "Aerial view of the Yume Resort pool, garden and guest rooms",
       title: "The pool, in motion.",
       caption:
         "A short look at the water before you plan your visit. Pool timings are 8:00 AM to 12:00 PM, and day picnics run from 9:00 AM to 6:00 PM. Visits are subject to availability.",
