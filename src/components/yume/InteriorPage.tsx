@@ -8,13 +8,18 @@ type InteriorHeroProps = {
   title: string;
   intro: string;
   image: string;
+  /** Optional portrait-friendly crop used below the md breakpoint. */
+  mobileImage?: string;
   imageAlt: string;
 };
 
-export function InteriorHero({ eyebrow, title, intro, image, imageAlt }: InteriorHeroProps) {
+export function InteriorHero({ eyebrow, title, intro, image, mobileImage, imageAlt }: InteriorHeroProps) {
   return (
     <section className="relative min-h-[72svh] overflow-hidden">
-      <img src={image} alt={imageAlt} className="absolute inset-0 h-full w-full object-cover" />
+      <picture>
+        {mobileImage ? <source media="(max-width: 767px)" srcSet={mobileImage} /> : null}
+        <img src={image} alt={imageAlt} className="absolute inset-0 h-full w-full object-cover" />
+      </picture>
       <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/35 to-ink/15" />
       <div className="relative mx-auto flex min-h-[72svh] max-w-7xl flex-col justify-end px-6 pb-14 pt-32 md:px-10 md:pb-20">
         <p className="text-[11px] uppercase tracking-[0.3em] text-cream/75">{eyebrow}</p>

@@ -141,6 +141,12 @@ export function RoomPackages({ room }: { room: Room }) {
               {STAY.tariff.note}
             </p>
 
+            {room.note && (
+              <p className="mt-2 text-xs leading-relaxed text-ink/55">
+                {room.note}
+              </p>
+            )}
+
             {room.name.startsWith("Deluxe") && (
               <p className="mt-2 text-xs leading-relaxed text-ink/55">
                 {STAY.tariff.deluxeNote}

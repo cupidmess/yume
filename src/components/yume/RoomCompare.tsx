@@ -1,5 +1,6 @@
 import { Baby, Car, Check, Clock, CalendarCheck, DoorOpen, Dog, Dumbbell, Flower2, Music, Mountain, Sparkles, Users, Utensils, Waves, Wifi, Wind } from "lucide-react";
 import { STAY } from "@/data/content";
+import type { ReactNode } from "react";
 
 // Each inclusion line gets the icon that best matches its wording; unmatched items fall back to a check.
 const iconRules: { test: RegExp; Icon: typeof Check }[] = [
@@ -37,8 +38,20 @@ const coupleOf = (room: Room) => room.packages.find((pkg) => pkg.name.startsWith
 const groupsOf = (room: Room, withFood: boolean) =>
   room.packages.filter((pkg) => !pkg.name.startsWith("Couple") && pkg.name.endsWith(withFood ? "With food" : "Without food"));
 
+const hasRate = (pkgs: Pkg[], key: "weekday" | "weekend") => pkgs.some((pkg) => typeof pkg[key] === "number");
+
 const rateCell = (pkgs: Pkg[], key: "weekday" | "weekend") =>
-  pkgs.map((pkg) => `${currency(pkg[key])}${tierOf(pkg.name)}`).join(" · ");
+  pkgs
+    .map((pkg) => {
+      const rate = pkg[key];
+      return `${typeof rate === "number" ? currency(rate) : "Not available"}${tierOf(pkg.name)}`;
+    })
+    .join(" · ");
+
+function RateValue({ pkgs, rateKey, pp }: { pkgs: Pkg[]; rateKey: "weekday" | "weekend"; pp: ReactNode }) {
+  if (!hasRate(pkgs, rateKey)) return <span className="inline-block text-ink/35">Not available</span>;
+  return <span className="inline-block">{rateCell(pkgs, rateKey)}{pp}</span>;
+}
 
 const rateRows: { label: string; unit: string; pick: (room: Room) => Pkg[] }[] = [
   { label: "Couple · With food", unit: "Per couple", pick: (room) => { const pkg = coupleOf(room); return pkg ? [pkg] : []; } },
@@ -62,9 +75,9 @@ function RateBlock({ pkgs, unit, perPerson }: { pkgs: Pkg[]; unit: string; perPe
     <div className="transition-transform duration-500 ease-out motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 group-hover:translate-x-1">
       <p className="text-[10px] uppercase tracking-[0.18em] text-ink/45">{unit}</p>
       <p className="mt-0.5 font-yume-serif text-[15px] leading-snug text-ink">
-        <span className="inline-block">{rateCell(pkgs, "weekday")}{pp}</span>
+        <RateValue pkgs={pkgs} rateKey="weekday" pp={pp} />
         {!hideWeekendRate && <span className="px-1 text-ink/35">/</span>}
-        {!hideWeekendRate && <span className="inline-block">{rateCell(pkgs, "weekend")}{pp}</span>}
+        {!hideWeekendRate && <RateValue pkgs={pkgs} rateKey="weekend" pp={pp} />}
       </p>
       <p className="text-[10px] tracking-wide text-ink/50">weekday / weekend</p>
     </div>

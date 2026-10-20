@@ -10,7 +10,9 @@ import {
 } from "@/components/yume/InteriorPage";
 import { GALLERY, site, type EXPERIENCE_KEY, type ExperienceContent } from "@/data/content";
 import dineMain from "@/assets/yume/dinemain.jpg";
-import poolMain from "@/assets/yume/poolmain.jpg"
+// Cropped from poolImage4.jpg: 16:9 for the desktop hero, square for mobile.
+import poolMain from "@/assets/yume/pool-hero-desktop.jpg"
+import poolMainMobile from "@/assets/yume/pool-hero-mobile.jpg"
 import turfMain from "@/assets/yume/turfmain.jpg"
 export function ExperiencePage({
   content,
@@ -33,6 +35,9 @@ export function ExperiencePage({
     pool: poolMain,
     turf: turfMain,
   };
+  const EXPERIENCE_HERO_MOBILE_IMAGES: Partial<Record<EXPERIENCE_KEY, string>> = {
+    pool: poolMainMobile,
+  };
   return (
     <PageShell>
  <InteriorHero
@@ -40,6 +45,7 @@ export function ExperiencePage({
   title={content.title}
   intro={content.intro}
   image={EXPERIENCE_HERO_IMAGES[experience]}
+  mobileImage={EXPERIENCE_HERO_MOBILE_IMAGES[experience]}
   imageAlt={`${content.eyebrow} at Yume Resort`}
 />
       <section className="px-6 py-20 md:px-10 md:py-28">

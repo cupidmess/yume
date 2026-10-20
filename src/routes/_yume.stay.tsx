@@ -191,6 +191,11 @@ function StayPage() {
                     {room.name}
                   </h3>
                   <p className="mt-5 max-w-md leading-relaxed text-ink/65">{room.description}</p>
+                  {room.note && (
+                    <p className="mt-4 max-w-md border-l-2 border-peach pl-3 text-sm leading-relaxed text-ink/70">
+                      {room.note}
+                    </p>
+                  )}
                   <RoomPackages room={room} />
                   <a
                     href={waLink(
