@@ -22,9 +22,14 @@ export function InteriorHero({ eyebrow, title, intro, image, mobileImage, imageA
       </picture>
       <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/35 to-ink/15" />
       <div className="relative mx-auto flex min-h-[72svh] max-w-7xl flex-col justify-end px-6 pb-14 pt-32 md:px-10 md:pb-20">
-        <p className="text-[11px] uppercase tracking-[0.3em] text-cream/75">{eyebrow}</p>
-        <h1 className="mt-4 max-w-4xl font-yume-serif text-4xl leading-[1.05] tracking-tight text-cream md:text-6xl lg:text-7xl">
-          {title}
+        {/* The eyebrow carries the page's search keyword, so it leads the H1. */}
+        <h1>
+          <span className="block text-[11px] uppercase tracking-[0.3em] text-cream/75">
+            {eyebrow}
+          </span>
+          <span className="mt-4 block max-w-4xl font-yume-serif text-4xl leading-[1.05] tracking-tight text-cream md:text-6xl lg:text-7xl">
+            {title}
+          </span>
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-cream/75 md:text-lg">{intro}</p>
       </div>

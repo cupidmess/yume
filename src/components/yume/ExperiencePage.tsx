@@ -47,7 +47,7 @@ export function ExperiencePage({
   intro={content.intro}
   image={EXPERIENCE_HERO_IMAGES[experience]}
   mobileImage={EXPERIENCE_HERO_MOBILE_IMAGES[experience]}
-  imageAlt={`${content.eyebrow} at Yume Resort`}
+  imageAlt={`${content.eyebrow} - Yume Resort`}
 />
       <section className="px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:gap-24">

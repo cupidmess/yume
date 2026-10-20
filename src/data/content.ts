@@ -265,7 +265,7 @@ export const WA_MESSAGES = {
 
 export const STAY = {
   hero: {
-    eyebrow: "Stay at Yume",
+    eyebrow: "Resort Stay in Badlapur",
     title: "Wake slowly, close to the river.",
     intro:
       "Escape the ordinary and find comfort in every little moment.",
@@ -434,7 +434,7 @@ tariff: {
 
 export const WEDDINGS = {
   hero: {
-    eyebrow: "Weddings & Events",
+    eyebrow: "Wedding Venue in Badlapur",
     title: "Vows, by the river.",
     intro: "Celebrate your forever in a setting as beautiful as your love.",
   },
@@ -575,7 +575,7 @@ export const WEDDINGS = {
 };
 export const EXPERIENCES = {
   dine: {
-    eyebrow: "Dine at Yume",
+    eyebrow: "Restaurant in Badlapur",
     title: "Savour every moment.",
     intro:
       "Discover beautiful flavours, shared moments, and dining worth remembering.",
@@ -650,7 +650,7 @@ export const EXPERIENCES = {
   },
 
   pool: {
-    eyebrow: "Pool Days",
+    eyebrow: "Day Picnic & Pool in Badlapur",
     title: "Long afternoons by the water.",
     intro:
       "Soak in the sunshine and let time slow down.",
@@ -733,7 +733,7 @@ export const EXPERIENCES = {
   },
 
   turf: {
-    eyebrow: "Play at Yume",
+    eyebrow: "Cricket Turf in Badlapur",
     title: "Game on, Always.",
     intro:
       "Bring your team together and make every moment count.",
@@ -1042,7 +1042,7 @@ export const GALLERY = [
 
 export const CONTACT = {
   hero: {
-    eyebrow: "Contact",
+    eyebrow: "Contact Yume Resort, Badlapur",
     title: "Let’s plan your time at Yume.",
     intro:
       "Tell us what brings you here and our team will help with availability, rates and the details that matter.",
@@ -1113,6 +1113,35 @@ export const STORY = {
   lead: "Set where the hills soften into the river, Yume is a quiet escape from the city.",
   body: "Nestled one hour away from Thane, in Badlapur, Sonivali - just 3 kilometers from Badlapur (W) station. We host slow weekend stays, long lunches, floodlit games and weddings by the water. Come for a day, or stay the weekend.",
 };
+
+// Home page FAQ - answers the broad "resort in Badlapur" questions.
+export const HOME_FAQS = [
+  {
+    question: "Where is Yume Resort in Badlapur?",
+    answer:
+      "Yume Resort is in Sonivali, Badlapur West, near Barvi Dam Road. It is about 3 km from Badlapur (W) station and around an hour from Thane.",
+  },
+  {
+    question: "What can you do at Yume Resort?",
+    answer:
+      "Stay overnight in Deluxe or Superior rooms, spend a day picnic by the swimming pool, play on the cricket turf, eat at the on-site restaurant, or host a wedding or event on the riverside lawns.",
+  },
+  {
+    question: "Is Yume Resort good for couples, families and groups?",
+    answer:
+      "Yes. There are couple packages with meals from ₹4,999, group packages from 4 guests, and children aged 0–7 stay free. Guests rate Yume 4.6 on Google for its food, staff, pool and cleanliness.",
+  },
+  {
+    question: "Can Yume Resort host office outings and parties?",
+    answer:
+      "Yes. Teams book Yume for office outings and overnight stays, with the pool, cricket turf, lawns and restaurant all on site. Contact us with your group size and dates for a quote.",
+  },
+  {
+    question: "How do I book a stay, day picnic or event at Yume Resort?",
+    answer:
+      "Message us on WhatsApp or call +91 70280 43300 or +91 70280 53300. Our team will confirm availability and the latest rates.",
+  },
+];
 
 // Home page wedding band - the small price line under the headline.
 export const WEDDING_BAND = {

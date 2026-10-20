@@ -206,9 +206,43 @@ function StayPage() {
         </div>
       </section>
       <RoomCompare />
+      <section className="bg-ink px-6 py-20 text-cream md:px-10 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2">
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.3em] text-cream/50">
+              Included in your stay
+            </p>
+            <h2 className="mt-4 font-yume-serif text-3xl tracking-tight md:text-5xl">
+              The essentials, thoughtfully covered.
+            </h2>
+          </div>
+          <ul className="grid grid-cols-2 gap-x-8">
+            {STAY.amenities.map((item) => (
+              <li key={item} className="border-b border-cream/15 py-4 text-sm text-cream/75">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <section className="px-6 py-20 md:px-10 md:py-28">
+        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2">
+          <SectionHeading
+            eyebrow="Policies"
+            title="Stay policies."
+            body="We’ll confirm the latest details with your booking."
+          />
+          <Facts items={STAY.policies} />
+        </div>
+      </section>
       <FaqSection items={STAY.faqs} />
-      {/* ...rest of the file stays exactly as in your original:
-          amenities section, policies section, ContactStrip, EnquiryBand */}
+      <ContactStrip />
+      <EnquiryBand
+        title="Make Yume your next escape."
+        body="Tell us your preferred dates, room choice and number of guests. We’ll reply with availability and the latest rates."
+        message={WA_MESSAGES.enquireStay}
+        label="Check availability"
+      />
     </PageShell>
   );
 }

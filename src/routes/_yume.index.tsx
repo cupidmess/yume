@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { Star, Waves } from "lucide-react";
 import {
+  HOME_FAQS,
   IMAGES,
   SPOTLIGHT,
   INSTAGRAM_TILES,
@@ -14,10 +15,11 @@ import {
   waLink,
 } from "@/data/content";
 import { ReviewSlider } from "@/components/yume/ReviewSlider";
-import { resortSchema, seoHead } from "@/lib/seo";
+import { FaqSection } from "@/components/yume/InteriorPage";
+import { faqSchema, resortSchema, seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/_yume/")({
-  head: () => seoHead("home", [resortSchema()]),
+  head: () => seoHead("home", [resortSchema(), faqSchema(HOME_FAQS)]),
   component: YumeHome,
 });
 
@@ -83,11 +85,13 @@ function YumeHome() {
         </picture>
         <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/25 to-ink/10" />
         <div className="relative flex h-full flex-col justify-end px-6 pb-16 md:px-12 md:pb-24">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-cream/80">
-            Sonivali · Badlapur
-          </p>
-          <h1 className="mt-4 max-w-4xl font-yume-serif text-4xl leading-[1.05] tracking-tight text-cream md:text-6xl lg:text-7xl">
-            A hidden retreat for unforgettable moments.
+          <h1>
+            <span className="block text-[11px] uppercase tracking-[0.3em] text-cream/80">
+              {site.name} · Resort in {site.location}
+            </span>
+            <span className="mt-4 block max-w-4xl font-yume-serif text-4xl leading-[1.05] tracking-tight text-cream md:text-6xl lg:text-7xl">
+              {site.tagline}
+            </span>
           </h1>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
@@ -264,6 +268,8 @@ function YumeHome() {
 
       {/* Google reviews */}
       <ReviewSlider />
+
+      <FaqSection items={HOME_FAQS} title="Planning a visit to Yume?" />
 
       {/* Instagram strip */}
       <section className="px-6 pb-24 md:px-12">

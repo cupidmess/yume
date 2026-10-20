@@ -40,9 +40,13 @@ function GalleryPage() {
     <main>
       <section className="bg-ink px-6 pb-16 pt-36 text-cream md:px-10 md:pb-24 md:pt-44">
         <div className="mx-auto max-w-7xl">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-cream/55">Gallery</p>
-          <h1 className="mt-4 max-w-3xl font-yume-serif text-4xl leading-tight tracking-tight md:text-6xl">
-            Moments from around Yume.
+          <h1>
+            <span className="block text-[11px] uppercase tracking-[0.3em] text-cream/55">
+              Photos of Yume Resort, Badlapur
+            </span>
+            <span className="mt-4 block max-w-3xl font-yume-serif text-4xl leading-tight tracking-tight md:text-6xl">
+              Moments from around Yume.
+            </span>
           </h1>
           <p className="mt-6 max-w-xl leading-relaxed text-cream/65">
             A glimpse of slow stays, sunny afternoons, shared meals, games and celebrations by the

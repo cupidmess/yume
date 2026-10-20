@@ -15,11 +15,13 @@ function ContactPage() {
     <PageShell>
       <section className="grid min-h-[72svh] bg-ink pt-24 text-cream lg:grid-cols-2">
         <div className="flex flex-col justify-end px-6 py-16 md:px-10 lg:px-16 lg:py-20">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-cream/55">
-            {CONTACT.hero.eyebrow}
-          </p>
-          <h1 className="mt-4 max-w-xl font-yume-serif text-4xl leading-[1.05] tracking-tight md:text-6xl">
-            {CONTACT.hero.title}
+          <h1>
+            <span className="block text-[11px] uppercase tracking-[0.3em] text-cream/55">
+              {CONTACT.hero.eyebrow}
+            </span>
+            <span className="mt-4 block max-w-xl font-yume-serif text-4xl leading-[1.05] tracking-tight md:text-6xl">
+              {CONTACT.hero.title}
+            </span>
           </h1>
           <p className="mt-6 max-w-lg leading-relaxed text-cream/65">{CONTACT.hero.intro}</p>
           <ul className="mt-8 flex items-center gap-3">
