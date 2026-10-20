@@ -1,18 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ExperiencePage } from "@/components/yume/ExperiencePage";
-import { EXPERIENCES } from "@/data/content";
+import { EXPERIENCES, SEO, site } from "@/data/content";
+import { faqSchema, seoHead, venueSchema } from "@/lib/seo";
 
-const description = "Outdoor dining and relaxed meals at Yume Resort, Sonivali, Badlapur.";
 export const Route = createFileRoute("/_yume/dine")({
-  head: () => ({
-    meta: [
-      { title: "Dine - Yume Resort" },
-      { name: "description", content: description },
-      { property: "og:title", content: "Dine - Yume Resort" },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () =>
+    seoHead("dine", [
+      venueSchema({
+        type: "Restaurant",
+        name: `${site.name} Restaurant`,
+        path: SEO.pages.dine.path,
+        description: SEO.pages.dine.description,
+        image: SEO.pages.dine.image,
+        extra: { openingHours: "Mo-Su 08:00-24:00", acceptsReservations: true },
+      }),
+      faqSchema(EXPERIENCES.dine.faqs),
+    ]),
   component: () => <ExperiencePage content={EXPERIENCES.dine} experience="dine" />,
 });

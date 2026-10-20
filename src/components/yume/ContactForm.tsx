@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { CONTACT, waLink } from "@/data/content";
+import { trackEvent } from "@/lib/analytics";
 
 const enquirySchema = z.object({
   name: z
@@ -82,6 +83,7 @@ export function ContactForm() {
     ]
       .filter(Boolean)
       .join("\n");
+    trackEvent("generate_lead", { method: "contact_form", enquiry_type: value.enquiryType });
     window.open(waLink(message), "_blank", "noopener,noreferrer");
   }
 

@@ -148,6 +148,104 @@ export const site = {
   credit: "Website by cupidmess.dev",
 };
 
+// ------------------------------------------------------------
+// SEO - titles, descriptions and share images for every page.
+// The sitemap, canonical links and structured data all read
+// from here. Keyword map and rationale: docs/SEO.md.
+// ------------------------------------------------------------
+export type SeoPageKey = keyof typeof SEO.pages;
+
+export const SEO = {
+  // Canonical domain. Every other host (non-www, lovable.app) should 301 here.
+  // No trailing slash.
+  siteUrl: "https://www.theyumeresort.com",
+  locale: "en_IN",
+  defaultImage: IMAGES.hero,
+  // Google Business Profile / Maps listing for the resort itself.
+  mapsUrl: "https://www.google.com/travel/hotels/entity/CgoIh4XIqNubjJVGEAE",
+  address: {
+    streetAddress: "Sonavali Gaon, near Trishul Golden Ville, Barvi Dam Road",
+    addressLocality: "Badlapur West",
+    addressRegion: "Maharashtra",
+    postalCode: "421503",
+    addressCountry: "IN",
+  },
+  pages: {
+    home: {
+      path: "/",
+      label: "Home",
+      title: "Yume Resort Badlapur | Riverside Resort Near Mumbai & Thane",
+      description:
+        "Riverside resort in Sonivali, Badlapur, 3 km from Badlapur station. Rooms, pool, day picnics, cricket turf, dining and weddings, an hour from Thane.",
+      image: IMAGES.hero,
+      priority: "1.0",
+    },
+    stay: {
+      path: "/stay",
+      label: "Stay",
+      title: "Resort Rooms in Badlapur from ₹4,999 | Yume Resort",
+      description:
+        "Deluxe and Superior rooms by the river in Sonivali, Badlapur. Couple packages with meals from ₹4,999, group stays from ₹1,000 per person, with pool access.",
+      image: IMAGES.stay,
+      priority: "0.9",
+    },
+    weddings: {
+      path: "/weddings-events",
+      label: "Weddings & Events",
+      title: "Wedding Venue in Badlapur | Riverside Lawns | Yume Resort",
+      description:
+        "Riverside lawns and a hall for weddings, haldi, mehendi and receptions near Mumbai. Packages from ₹1.45 lakh with catering and room buyouts. Check your date.",
+      image: IMAGES.weddings,
+      priority: "0.9",
+    },
+    dine: {
+      path: "/dine",
+      label: "Dine",
+      title: "Restaurant in Badlapur by the River | Dine at Yume Resort",
+      description:
+        "Family dining at Yume Resort, Sonivali, Badlapur. Breakfast, lunch, hi-tea and dinner near Barvi Dam, open 8 AM to midnight. Reserve a table on WhatsApp.",
+      image: IMAGES.dine,
+      priority: "0.7",
+    },
+    pool: {
+      path: "/pool",
+      label: "Pool",
+      title: "Day Picnic & Swimming Pool in Badlapur | Yume Resort",
+      description:
+        "Spend a day by the pool at Yume Resort, Badlapur. Day picnics run 9 AM to 6 PM, an hour from Thane and 3 km from Badlapur station. Enquire for rates.",
+      image: IMAGES.pool,
+      priority: "0.8",
+    },
+    turf: {
+      path: "/turf",
+      label: "Turf",
+      title: "Cricket Turf in Badlapur | Book a Slot | Yume Resort",
+      description:
+        "Book the cricket turf at Yume Resort, Sonivali, Badlapur. Open 7 AM to 11 PM for friendly matches, team outings and weekend games. Book on WhatsApp.",
+      image: IMAGES.turf,
+      priority: "0.7",
+    },
+    gallery: {
+      path: "/gallery",
+      label: "Gallery",
+      title: "Yume Resort Photos | Rooms, Pool & Weddings in Badlapur",
+      description:
+        "Photos of the rooms, pool, riverside wedding lawns, dining and cricket turf at Yume Resort in Sonivali, Badlapur.",
+      image: IMAGES.pool,
+      priority: "0.5",
+    },
+    contact: {
+      path: "/contact",
+      label: "Contact",
+      title: "Contact & Directions | Yume Resort, Badlapur",
+      description:
+        "Call +91 70280 43300 or WhatsApp Yume Resort. Directions from Mumbai, Thane and Kalyan to Sonivali, 3 km from Badlapur (W) station.",
+      image: IMAGES.story,
+      priority: "0.6",
+    },
+  },
+};
+
 // WhatsApp deep links (primary number). To use the secondary
 // number, change the id below.
 const WHATSAPP_ID = "917028043300";
@@ -304,6 +402,34 @@ tariff: {
         "Smoking is prohibited in public areas, including restaurants and the swimming pool. Smoking rooms may be requested in advance, subject to availability.",
     },
   ],
+
+  faqs: [
+    {
+      question: "What are the check-in and check-out times at Yume Resort?",
+      answer:
+        "Check-in is at 1:00 PM and check-out is at 10:30 AM. Early check-in and late check-out are subject to availability and additional charges.",
+    },
+    {
+      question: "How much does a stay at Yume Resort cost?",
+      answer:
+        "Couple packages with meals start at ₹4,999 on weekdays and ₹6,500 on weekends in a Deluxe Room. Group stays without food start at ₹1,000 per person on weekdays, with a minimum of 4 guests. Rates are subject to seasonal offers and availability.",
+    },
+    {
+      question: "Are children charged for a stay?",
+      answer:
+        "Children aged 0–7 stay free. Children aged 8–14 are charged ₹1,200 each, and guests aged 15 and above are counted as adults.",
+    },
+    {
+      question: "What is the cancellation policy for room bookings?",
+      answer:
+        "Standard cancellations need at least 72 hours' notice. Later cancellations are charged one room night. Advance-purchase and group bookings may have separate terms.",
+    },
+    {
+      question: "How far is Yume Resort from Badlapur station?",
+      answer:
+        "Yume Resort is in Sonivali, about 3 km from Badlapur (W) station and around an hour from Thane.",
+    },
+  ],
 };
 
 export const WEDDINGS = {
@@ -417,6 +543,34 @@ export const WEDDINGS = {
     },
   ],
 
+  faqs: [
+    {
+      question: "How much does a wedding at Yume Resort cost?",
+      answer:
+        "Wedding packages start from ₹1,45,000 for Express Vows, a one-day package with catering for 100 guests. Stay packages run from ₹3,50,000 (Celebration Night) to ₹8,99,000 (Royal Wedding Celebration).",
+    },
+    {
+      question: "What wedding venues are available at Yume Resort?",
+      answer:
+        "Yume has a Big Lawn for weddings and receptions by the river, a Small Lawn for ceremonies, haldi and mehendi, and a Small Hall for sangeet and pre-wedding functions.",
+    },
+    {
+      question: "What does wedding catering cost per plate?",
+      answer:
+        "Vegetarian menus are offered in Silver (₹650 per plate), Gold (₹750) and Diamond (₹850) tiers. Non-vegetarian is ₹200 extra per plate, and guests beyond 100 are charged at the per-plate rate.",
+    },
+    {
+      question: "Can wedding guests stay at the resort?",
+      answer:
+        "Yes. Celebration Night, Dream Wedding Weekend and Royal Wedding Celebration include a full room buyout for one or two nights, for 50, 70 or 90 guests.",
+    },
+    {
+      question: "Can we bring our own decorator or vendors?",
+      answer:
+        "Yes. You can work with your preferred decorator or use recommendations from our local vendor network. Outside vendors must be approved in advance, and any fees are confirmed in your quotation.",
+    },
+  ],
+
   contact: "70280 43300 / 70280 53300",
 };
 export const EXPERIENCES = {
@@ -472,6 +626,24 @@ export const EXPERIENCES = {
       },
     ],
 
+    faqs: [
+      {
+        question: "What are the restaurant timings at Yume Resort?",
+        answer:
+          "The restaurant is open from 8:00 AM to 12:00 AM. Breakfast is 9:00–10:00 AM, lunch 1:00–2:30 PM, hi-tea 5:00–5:30 PM and dinner 9:00–10:30 PM.",
+      },
+      {
+        question: "Do I need to reserve a table?",
+        answer:
+          "Advance reservations are recommended for weekends and larger groups. You can reserve on WhatsApp or by calling +91 70280 43300.",
+      },
+      {
+        question: "Can the restaurant cater to dietary requirements?",
+        answer:
+          "Let us know your dietary requirements when you reserve and our team will advise on available options.",
+      },
+    ],
+
     cta: "Reserve a table",
     message: WA_MESSAGES.bookTable,
     video: undefined,
@@ -519,6 +691,29 @@ export const EXPERIENCES = {
         label: "What to bring",
         value:
           "Bring appropriate swimwear and sun protection. Please enquire about towel availability before your visit.",
+      },
+    ],
+
+    faqs: [
+      {
+        question: "What are the swimming pool and day picnic timings?",
+        answer:
+          "The swimming pool is open from 8:00 AM to 12:00 PM, and day picnics run from 9:00 AM to 6:00 PM. Visits are subject to availability.",
+      },
+      {
+        question: "How much is a day picnic at Yume Resort?",
+        answer:
+          "Contact us on WhatsApp or call +91 70280 43300 for current adult and child day picnic rates and inclusions.",
+      },
+      {
+        question: "Can children use the pool?",
+        answer:
+          "Yes. Children must be supervised by an accompanying adult at all times.",
+      },
+      {
+        question: "How far is Yume Resort from Mumbai and Thane?",
+        answer:
+          "Yume is in Sonivali, Badlapur, about an hour from Thane and 3 km from Badlapur (W) station. From Mumbai, drive towards Badlapur via Thane and Kalyan.",
       },
     ],
 
@@ -574,6 +769,23 @@ export const EXPERIENCES = {
         label: "Equipment",
         value:
           "Contact the resort to confirm available sports equipment and rental charges.",
+      },
+    ],
+
+    faqs: [
+      {
+        question: "What are the cricket turf timings?",
+        answer: "The cricket turf is open from 7:00 AM to 11:00 PM.",
+      },
+      {
+        question: "How do I book a turf slot?",
+        answer:
+          "Book on WhatsApp or call +91 70280 43300. Our team will confirm available slots, durations and current rates.",
+      },
+      {
+        question: "Can we combine a turf booking with a stay or meal?",
+        answer:
+          "Yes. The turf sits within the resort, alongside the pool, restaurant and rooms, so teams can plan a full day or an overnight stay.",
       },
     ],
 
@@ -863,6 +1075,23 @@ export const CONTACT = {
     {
       from: "From Kalyan",
       detail: "Head towards Badlapur and continue to Sonivali.",
+    },
+  ],
+  faqs: [
+    {
+      question: "Where is Yume Resort located?",
+      answer:
+        "Yume Resort is at Sonavali Gaon, near Trishul Golden Ville and Barvi Dam Road, Badlapur West, Maharashtra 421503.",
+    },
+    {
+      question: "How do I reach Yume Resort from Mumbai?",
+      answer:
+        "Drive towards Badlapur via Thane and Kalyan, then continue to Sonivali. By train, Badlapur (W) station is about 3 km away.",
+    },
+    {
+      question: "What is the Yume Resort contact number?",
+      answer:
+        "Call +91 70280 43300 or +91 70280 53300, message us on WhatsApp, or email theyumeresort@gmail.com.",
     },
   ],
 };

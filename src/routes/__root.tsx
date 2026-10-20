@@ -13,6 +13,8 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Button } from "@/components/ui/button";
+import { SEO, site } from "@/data/content";
+import { analyticsMeta, analyticsScripts, trackContactClicks } from "@/lib/analytics";
 
 function NotFoundComponent() {
   return (
@@ -80,13 +82,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Yume Resort | Stay, Dine, Pool, Turf & Weddings in Badlapur" },
-      { name: "description", content: "A hidden retreat for unforgettable moments. Stay, dine, pool, turf, weddings and events at Yume Resort, Sonivali, Badlapur." },
-      { name: "author", content: "Yume Resort" },
-      { property: "og:title", content: "Yume Resort | Badlapur" },
-      { property: "og:description", content: "A hidden retreat for unforgettable moments. Weddings, events, stays and day-outs just outside Mumbai." },
+      { title: SEO.pages.home.title },
+      { name: "description", content: SEO.pages.home.description },
+      { name: "author", content: site.name },
+      { property: "og:site_name", content: site.name },
+      { property: "og:locale", content: SEO.locale },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      ...analyticsMeta,
     ],
     links: [
       {
@@ -94,6 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
     ],
+    scripts: analyticsScripts,
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -117,6 +121,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useEffect(() => trackContactClicks(), []);
 
   return (
     <QueryClientProvider client={queryClient}>

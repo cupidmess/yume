@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import {
   EnquiryBand,
+  FaqSection,
   Facts,
   ImageMosaic,
   InteriorHero,
@@ -101,6 +102,7 @@ export function ExperiencePage({
           </div>
         </div>
       </section>
+      <FaqSection items={content.faqs} />
       <EnquiryBand
         title="Ready to make a plan?"
         body="Share your preferred date, group size and any questions. Our team will confirm availability and the latest rates."

@@ -14,59 +14,10 @@ import {
   waLink,
 } from "@/data/content";
 import { ReviewSlider } from "@/components/yume/ReviewSlider";
+import { resortSchema, seoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/_yume/")({
-  head: () => ({
-    meta: [
-      { title: "Yume Resort - A hidden retreat for unforgettable moments" },
-      {
-        name: "description",
-        content:
-          "Yume Resort, Sonivali, Badlapur - stays, dining, pool, turf and riverside weddings. A hidden retreat just outside Mumbai. Enquire on WhatsApp.",
-      },
-      {
-        property: "og:title",
-        content: "Yume Resort - A hidden retreat for unforgettable moments",
-      },
-      {
-        property: "og:description",
-        content:
-          "Stay, dine, swim, play and celebrate by the river at Yume Resort, Sonivali, Badlapur.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      {
-        property: "og:url",
-        content: "https://propertybase-web-spark.lovable.app/yume",
-      },
-    ],
-    links: [
-      {
-        rel: "canonical",
-        href: "https://propertybase-web-spark.lovable.app/yume",
-      },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Resort",
-          name: "Yume Resort",
-          slogan: site.tagline,
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Badlapur",
-            addressRegion: "Maharashtra",
-            addressCountry: "IN",
-          },
-          telephone: "+917028043300",
-          url: "https://propertybase-web-spark.lovable.app/yume",
-          sameAs: site.instagram.url,
-        }),
-      },
-    ],
-  }),
+  head: () => seoHead("home", [resortSchema()]),
   component: YumeHome,
 });
 

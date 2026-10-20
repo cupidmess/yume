@@ -1,9 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ExperiencePage } from "@/components/yume/ExperiencePage";
-import { EXPERIENCES } from "@/data/content";
+import { EXPERIENCES, SEO, site } from "@/data/content";
+import { faqSchema, seoHead, venueSchema } from "@/lib/seo";
 
-const description = "Floodlit football and box cricket turf bookings at Yume Resort, Sonivali, Badlapur.";
 export const Route = createFileRoute("/_yume/turf")({
-  head: () => ({ meta: [{ title: "Turf - Yume Resort" }, { name: "description", content: description }, { property: "og:title", content: "Turf - Yume Resort" }, { property: "og:description", content: description }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }),
+  head: () =>
+    seoHead("turf", [
+      venueSchema({
+        type: "SportsActivityLocation",
+        name: `${site.name} Cricket Turf`,
+        path: SEO.pages.turf.path,
+        description: SEO.pages.turf.description,
+        image: SEO.pages.turf.image,
+        extra: { openingHours: "Mo-Su 07:00-23:00", sport: "Cricket" },
+      }),
+      faqSchema(EXPERIENCES.turf.faqs),
+    ]),
   component: () => <ExperiencePage content={EXPERIENCES.turf} experience="turf" />,
 });

@@ -10,6 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as YumeRouteImport } from './routes/_yume'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as YumeIndexRouteImport } from './routes/_yume.index'
 import { Route as YumeContactRouteImport } from './routes/_yume.contact'
 import { Route as YumeDineRouteImport } from './routes/_yume.dine'
@@ -21,6 +23,16 @@ import { Route as YumeWeddingsEventsRouteImport } from './routes/_yume.weddings-
 
 const YumeRoute = YumeRouteImport.update({
   id: '/_yume',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const YumeIndexRoute = YumeIndexRouteImport.update({
@@ -66,6 +78,8 @@ const YumeWeddingsEventsRoute = YumeWeddingsEventsRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof YumeIndexRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/contact': typeof YumeContactRoute
   '/dine': typeof YumeDineRoute
   '/gallery': typeof YumeGalleryRoute
@@ -75,6 +89,8 @@ export interface FileRoutesByFullPath {
   '/weddings-events': typeof YumeWeddingsEventsRoute
 }
 export interface FileRoutesByTo {
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/contact': typeof YumeContactRoute
   '/dine': typeof YumeDineRoute
   '/gallery': typeof YumeGalleryRoute
@@ -87,6 +103,8 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_yume': typeof YumeRouteWithChildren
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/_yume/contact': typeof YumeContactRoute
   '/_yume/dine': typeof YumeDineRoute
   '/_yume/gallery': typeof YumeGalleryRoute
@@ -100,6 +118,8 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/contact'
     | '/dine'
     | '/gallery'
@@ -109,6 +129,8 @@ export interface FileRouteTypes {
     | '/weddings-events'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/contact'
     | '/dine'
     | '/gallery'
@@ -120,6 +142,8 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/_yume'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/_yume/contact'
     | '/_yume/dine'
     | '/_yume/gallery'
@@ -132,6 +156,8 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   YumeRoute: typeof YumeRouteWithChildren
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -141,6 +167,20 @@ declare module '@tanstack/react-router' {
       path: ''
       fullPath: '/'
       preLoaderRoute: typeof YumeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_yume/': {
@@ -228,6 +268,8 @@ const YumeRouteWithChildren = YumeRoute._addFileChildren(YumeRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   YumeRoute: YumeRouteWithChildren,
+  RobotsDottxtRoute: RobotsDottxtRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

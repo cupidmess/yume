@@ -132,26 +132,17 @@ import {
   Facts,
   InteriorHero,
   PageShell,
+  FaqSection,
   SectionHeading,
 } from "@/components/yume/InteriorPage";
 import { RoomGallery } from "@/components/yume/RoomGallery";
 import { RoomPackages } from "@/components/yume/RoomPackages";
 import { RoomCompare } from "@/components/yume/RoomCompare";
 import { STAY, WA_MESSAGES, waLink } from "@/data/content";
+import { faqSchema, seoHead } from "@/lib/seo";
 
-const description =
-  "Rooms, amenities and stay enquiries at Yume Resort, Sonivali, Badlapur.";
 export const Route = createFileRoute("/_yume/stay")({
-  head: () => ({
-    meta: [
-      { title: "Stay - Yume Resort" },
-      { name: "description", content: description },
-      { property: "og:title", content: "Stay - Yume Resort" },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => seoHead("stay", [faqSchema(STAY.faqs)]),
   component: StayPage,
 });
 
@@ -215,6 +206,7 @@ function StayPage() {
         </div>
       </section>
       <RoomCompare />
+      <FaqSection items={STAY.faqs} />
       {/* ...rest of the file stays exactly as in your original:
           amenities section, policies section, ContactStrip, EnquiryBand */}
     </PageShell>

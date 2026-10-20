@@ -1,22 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { ContactForm } from "@/components/yume/ContactForm";
-import { PageShell, SectionHeading } from "@/components/yume/InteriorPage";
+import { FaqSection, PageShell, SectionHeading } from "@/components/yume/InteriorPage";
 import { CONTACT, IMAGES, WA_MESSAGES, site, waLink } from "@/data/content";
+import { faqSchema, seoHead } from "@/lib/seo";
 
-const description =
-  "Contact Yume Resort in Sonivali, Badlapur for stays, weddings, dining, pool and turf enquiries.";
 export const Route = createFileRoute("/_yume/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact - Yume Resort" },
-      { name: "description", content: description },
-      { property: "og:title", content: "Contact - Yume Resort" },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => seoHead("contact", [faqSchema(CONTACT.faqs)]),
   component: ContactPage,
 });
 
@@ -168,6 +158,7 @@ function ContactPage() {
           </div>
         </div>
       </section>
+      <FaqSection items={CONTACT.faqs} />
     </PageShell>
   );
 }

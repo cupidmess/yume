@@ -1,6 +1,6 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
 import { WA_MESSAGES, site, waLink } from "@/data/content";
 
 type InteriorHeroProps = {
@@ -65,6 +65,38 @@ export function Facts({ items }: { items: ReadonlyArray<{ label: string; value: 
         </div>
       ))}
     </dl>
+  );
+}
+
+// Answers stay in the server-rendered HTML (native <details>), so they match
+// the FAQPage structured data emitted in each route's head.
+export function FaqSection({
+  items,
+  title = "Questions, answered.",
+}: {
+  items: ReadonlyArray<{ question: string; answer: string }>;
+  title?: string;
+}) {
+  return (
+    <section className="px-6 py-20 md:px-10 md:py-28">
+      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+        <SectionHeading eyebrow="Good to know" title={title} />
+        <div className="border-t border-ink/15">
+          {items.map((item) => (
+            <details key={item.question} className="group border-b border-ink/15 py-5">
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-6 font-yume-serif text-xl tracking-tight [&::-webkit-details-marker]:hidden">
+                <h3>{item.question}</h3>
+                <Plus
+                  aria-hidden="true"
+                  className="mt-1 h-5 w-5 shrink-0 text-ink/50 transition-transform group-open:rotate-45"
+                />
+              </summary>
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink/70">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 

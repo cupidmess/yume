@@ -1,43 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   EnquiryBand,
+  FaqSection,
   Facts,
   InteriorHero,
   PageShell,
   SectionHeading,
 } from "@/components/yume/InteriorPage";
-import { WA_MESSAGES, WEDDINGS, waLink } from "@/data/content";
+import { SEO, WA_MESSAGES, WEDDINGS, site, waLink } from "@/data/content";
+import { faqSchema, seoHead, venueSchema } from "@/lib/seo";
 import wedmain from "@/assets/yume/wedmain.jpg"
-const description =
-  "Riverside wedding venues, event packages and date enquiries at Yume Resort, Sonivali, Badlapur.";
 export const Route = createFileRoute("/_yume/weddings-events")({
-  head: () => ({
-    meta: [
-      { title: "Weddings & Events — Yume Resort" },
-      { name: "description", content: description },
-      { property: "og:title", content: "Weddings & Events — Yume Resort" },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "EventVenue",
-          name: "Yume Resort",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Badlapur",
-            addressRegion: "Maharashtra",
-            addressCountry: "IN",
-          },
-          telephone: "+917028043300",
-        }),
-      },
-    ],
-  }),
+  head: () =>
+    seoHead("weddings", [
+      venueSchema({
+        type: "EventVenue",
+        name: `${site.name} Weddings & Events`,
+        path: SEO.pages.weddings.path,
+        description: SEO.pages.weddings.description,
+        image: SEO.pages.weddings.image,
+      }),
+      faqSchema(WEDDINGS.faqs),
+    ]),
   component: WeddingsPage,
 });
 
@@ -124,6 +108,7 @@ function WeddingsPage() {
           <Facts items={WEDDINGS.services} />
         </div>
       </section>
+      <FaqSection items={WEDDINGS.faqs} />
       <EnquiryBand
         title="Have a date in mind?"
         body="Share the date, event type and estimated guest count. Our team will help with venue availability and package details."

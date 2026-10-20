@@ -3,22 +3,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GALLERY } from "@/data/content";
+import { seoHead } from "@/lib/seo";
 
-const description =
-  "Explore stays, pool days, dining, turf and weddings at Yume Resort, Sonivali, Badlapur.";
 const filters = ["All", "Stay", "Pool", "Turf", "Dine", "Weddings"] as const;
 
 export const Route = createFileRoute("/_yume/gallery")({
-  head: () => ({
-    meta: [
-      { title: "Gallery - Yume Resort" },
-      { name: "description", content: description },
-      { property: "og:title", content: "Gallery - Yume Resort" },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => seoHead("gallery"),
   component: GalleryPage,
 });
 
