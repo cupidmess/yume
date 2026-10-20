@@ -96,6 +96,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      // Google shows this icon beside the site name in search results.
+      { rel: "icon", href: "/favicon.ico", sizes: "48x48" },
+      { rel: "icon", type: "image/png", href: "/favicon-96.png", sizes: "96x96" },
+      { rel: "icon", type: "image/png", href: "/favicon-192.png", sizes: "192x192" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
     ],
     scripts: analyticsScripts,
   }),

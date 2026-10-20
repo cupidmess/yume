@@ -16,10 +16,10 @@ import {
 } from "@/data/content";
 import { ReviewSlider } from "@/components/yume/ReviewSlider";
 import { FaqSection } from "@/components/yume/InteriorPage";
-import { faqSchema, resortSchema, seoHead } from "@/lib/seo";
+import { faqSchema, resortSchema, seoHead, websiteSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/_yume/")({
-  head: () => seoHead("home", [resortSchema(), faqSchema(HOME_FAQS)]),
+  head: () => seoHead("home", [websiteSchema(), resortSchema(), faqSchema(HOME_FAQS)]),
   component: YumeHome,
 });
 

@@ -72,7 +72,19 @@ export function faqSchema(faqs: ReadonlyArray<Faq>): JsonLd {
   };
 }
 
-const postalAddress = { "@type": "PostalAddress", ...SEO.address };
+/** Gives Google the site name shown above results ("Yume Resort", not the domain). */
+export function websiteSchema(): JsonLd {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: site.name,
+    alternateName: ["Yume Resort Badlapur", "The Yume Resort"],
+    url: absoluteUrl("/"),
+    publisher: { "@id": RESORT_ID },
+  };
+}
+
+const postalAddress ={ "@type": "PostalAddress", ...SEO.address };
 
 /** The resort entity. Other page schemas point back to it by @id. */
 export function resortSchema(): JsonLd {
@@ -92,6 +104,7 @@ export function resortSchema(): JsonLd {
     slogan: site.tagline,
     description: SEO.pages.home.description,
     url: absoluteUrl("/"),
+    logo: absoluteUrl("/icon-512.png"),
     image: [absoluteUrl(SEO.pages.home.image), absoluteUrl(SEO.pages.stay.image)],
     telephone: site.phones.map((phone) => phone.href),
     email: site.email,
