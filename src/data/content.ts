@@ -73,7 +73,6 @@ import stayDeluxeRoomPoolView from "@/assets/yume/stay/deluxe-room.jpg";
 import stayBalconyBed from "@/assets/yume/stay/14_20261015_205155_0003.png";
 import stayBalconySeating from "@/assets/yume/stay/9_20261015_204114_0003.png";
 import stayBalconyExterior from "@/assets/yume/stay/15_20261015_205155_0004.png";
-import staySuperiorBedSeating from "@/assets/yume/stay/10_20261015_204114_0004.png";
 import staySuperiorBeds from "@/assets/yume/stay/16_20261015_205155_0005.png";
 import staySuperiorBed from "@/assets/yume/stay/7_20261015_204114_0001.png";
 import staySuperiorTable from "@/assets/yume/stay/8_20261015_204114_0002.png";
@@ -97,7 +96,6 @@ const turfImage4 = turf4;
 // Room galleries for the Stay page.
 const deluxeGallery = [
   { src: stayDeluxeRoomPoolView, label: "Room" },
-  { src: staySuperiorBedSeating, label: "Room" },
   { src: staySuperiorBed, label: "Bed" },
   { src: stayDeluxePoolView, label: "Pool view" },
   { src: stayDeluxeSeating, label: "Seating & TV" },
