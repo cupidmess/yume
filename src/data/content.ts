@@ -69,6 +69,7 @@ import stayDeluxeTv from "@/assets/yume/stay/22_20261017_011101_0002.png";
 import stayDeluxeWashroom from "@/assets/yume/stay/24_20261017_011101_0004.png";
 import stayDeluxeSeating from "@/assets/yume/stay/deluxe-seating.jpg";
 import stayDeluxeDecor from "@/assets/yume/stay/deluxe-decor.jpg";
+import stayDeluxeRoomPoolView from "@/assets/yume/stay/deluxe-room.jpg";
 import stayBalconyBed from "@/assets/yume/stay/14_20261015_205155_0003.png";
 import stayBalconySeating from "@/assets/yume/stay/9_20261015_204114_0003.png";
 import stayBalconyExterior from "@/assets/yume/stay/15_20261015_205155_0004.png";
@@ -95,6 +96,7 @@ const turfImage3 = turf3;
 const turfImage4 = turf4;
 // Room galleries for the Stay page.
 const deluxeGallery = [
+  { src: stayDeluxeRoomPoolView, label: "Room" },
   { src: staySuperiorBedSeating, label: "Room" },
   { src: staySuperiorBed, label: "Bed" },
   { src: stayDeluxePoolView, label: "Pool view" },
@@ -277,7 +279,7 @@ export const STAY = {
   {
     name: "Deluxe Room (Without Balcony)",
     description: "A relaxing retreat surrounded by nature, offering a comfortable stay for families, friends, and weekend travellers. Choose from flexible stay packages with or without meals, tailored to your getaway.",
-    image: staySuperiorBedSeating,
+    image: stayDeluxeRoomPoolView,
     gallery: deluxeGallery,
     packages: [
       { name: "Couple · With food", weekdayGuests: "2 guests", weekendGuests: "2 guests", unit: "per couple", weekday: 4999, weekend: 6500 },
